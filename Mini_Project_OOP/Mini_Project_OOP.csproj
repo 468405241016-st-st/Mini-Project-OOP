@@ -76,6 +76,36 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ucBooking.Designer.cs">
+      <DependentUpon>ucBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucBookingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ucBookingList.Designer.cs">
+      <DependentUpon>ucBookingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ucCustomers.Designer.cs">
+      <DependentUpon>ucCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ucDashboard.Designer.cs">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ucRooms.Designer.cs">
+      <DependentUpon>ucRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\ThemeExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +114,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucBooking.resx">
+      <DependentUpon>ucBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucBookingList.resx">
+      <DependentUpon>ucBookingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucCustomers.resx">
+      <DependentUpon>ucCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucDashboard.resx">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucRooms.resx">
+      <DependentUpon>ucRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
