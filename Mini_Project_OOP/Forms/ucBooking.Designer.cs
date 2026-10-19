@@ -848,6 +848,8 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label2;
+
+        private System.Windows.Forms.Label label1;
+
     }
 }
