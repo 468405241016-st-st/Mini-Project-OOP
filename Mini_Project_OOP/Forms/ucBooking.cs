@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mini_Project_OOP
+namespace Mini_Project_OOP.Forms
 {
-    public partial class MainForm : Form
+    public partial class ucBooking : Form
     {
-        public MainForm()
+        public ucBooking()
         {
             InitializeComponent();
         }
