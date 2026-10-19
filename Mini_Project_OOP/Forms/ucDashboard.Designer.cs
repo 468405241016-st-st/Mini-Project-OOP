@@ -84,10 +84,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(173, 6);
+            this.label3.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(182, 6);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 2, 14, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(56, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "ซ่อมบำรุง";
             // 
@@ -181,11 +182,12 @@
             // 
             // flowRooms
             // 
-            this.flowRooms.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowRooms.Location = new System.Drawing.Point(0, 73);
+            this.flowRooms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowRooms.Font = new System.Drawing.Font("Prompt", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowRooms.Location = new System.Drawing.Point(0, 45);
             this.flowRooms.Name = "flowRooms";
             this.flowRooms.Padding = new System.Windows.Forms.Padding(11, 10, 0, 0);
-            this.flowRooms.Size = new System.Drawing.Size(366, 235);
+            this.flowRooms.Size = new System.Drawing.Size(366, 397);
             this.flowRooms.TabIndex = 3;
             // 
             // flowLegend
@@ -196,8 +198,8 @@
             this.flowLegend.Controls.Add(this.label2);
             this.flowLegend.Controls.Add(this.panel3);
             this.flowLegend.Controls.Add(this.label3);
-            this.flowLegend.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLegend.Location = new System.Drawing.Point(0, 45);
+            this.flowLegend.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLegend.Location = new System.Drawing.Point(0, 442);
             this.flowLegend.Name = "flowLegend";
             this.flowLegend.Padding = new System.Windows.Forms.Padding(16, 4, 0, 0);
             this.flowLegend.Size = new System.Drawing.Size(366, 28);
@@ -217,10 +219,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(34, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 2, 14, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.Size = new System.Drawing.Size(27, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "ว่าง";
             // 
@@ -228,7 +231,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(71, 8);
+            this.panel2.Location = new System.Drawing.Point(75, 8);
             this.panel2.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(14, 14);
@@ -237,10 +240,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 6);
+            this.label2.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(93, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 2, 14, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "\tมีผู้เข้าพัก";
             // 
@@ -248,7 +252,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(243)))), ((int)(((byte)(199)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(155, 8);
+            this.panel3.Location = new System.Drawing.Point(164, 8);
             this.panel3.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(14, 14);
@@ -261,7 +265,7 @@
             this.btnNewBooking.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnNewBooking.FlatAppearance.BorderSize = 0;
             this.btnNewBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewBooking.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNewBooking.Font = new System.Drawing.Font("Prompt", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnNewBooking.ForeColor = System.Drawing.Color.White;
             this.btnNewBooking.Location = new System.Drawing.Point(0, 470);
             this.btnNewBooking.Name = "btnNewBooking";
@@ -273,7 +277,7 @@
             // lblBookingTitle
             // 
             this.lblBookingTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblBookingTitle.Font = new System.Drawing.Font("Leelawadee UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblBookingTitle.Font = new System.Drawing.Font("Prompt", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblBookingTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.lblBookingTitle.Location = new System.Drawing.Point(0, 0);
             this.lblBookingTitle.Name = "lblBookingTitle";
@@ -286,7 +290,7 @@
             // lblRoomTitle
             // 
             this.lblRoomTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblRoomTitle.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblRoomTitle.Font = new System.Drawing.Font("Prompt", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblRoomTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.lblRoomTitle.Location = new System.Drawing.Point(0, 0);
             this.lblRoomTitle.Name = "lblRoomTitle";
@@ -343,20 +347,21 @@
             // lblMaintenance
             // 
             this.lblMaintenance.AutoSize = true;
-            this.lblMaintenance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblMaintenance.Font = new System.Drawing.Font("Tahoma", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblMaintenance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(64)))), ((int)(((byte)(14)))));
             this.lblMaintenance.Location = new System.Drawing.Point(20, 40);
             this.lblMaintenance.Name = "lblMaintenance";
-            this.lblMaintenance.Size = new System.Drawing.Size(51, 39);
+            this.lblMaintenance.Size = new System.Drawing.Size(57, 39);
             this.lblMaintenance.TabIndex = 2;
             this.lblMaintenance.Text = "00";
             // 
             // lblTitle4
             // 
             this.lblTitle4.AutoSize = true;
+            this.lblTitle4.Font = new System.Drawing.Font("Prompt", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTitle4.Location = new System.Drawing.Point(20, 15);
             this.lblTitle4.Name = "lblTitle4";
-            this.lblTitle4.Size = new System.Drawing.Size(121, 13);
+            this.lblTitle4.Size = new System.Drawing.Size(154, 19);
             this.lblTitle4.TabIndex = 1;
             this.lblTitle4.Text = "\tซ่อมบำรุง (Maintenance)";
             // 
@@ -385,20 +390,21 @@
             // lblOccupied
             // 
             this.lblOccupied.AutoSize = true;
-            this.lblOccupied.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblOccupied.Font = new System.Drawing.Font("Tahoma", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblOccupied.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.lblOccupied.Location = new System.Drawing.Point(20, 40);
             this.lblOccupied.Name = "lblOccupied";
-            this.lblOccupied.Size = new System.Drawing.Size(51, 39);
+            this.lblOccupied.Size = new System.Drawing.Size(57, 39);
             this.lblOccupied.TabIndex = 2;
             this.lblOccupied.Text = "00";
             // 
             // lblTitle3
             // 
             this.lblTitle3.AutoSize = true;
+            this.lblTitle3.Font = new System.Drawing.Font("Prompt", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTitle3.Location = new System.Drawing.Point(20, 15);
             this.lblTitle3.Name = "lblTitle3";
-            this.lblTitle3.Size = new System.Drawing.Size(107, 13);
+            this.lblTitle3.Size = new System.Drawing.Size(135, 19);
             this.lblTitle3.TabIndex = 1;
             this.lblTitle3.Text = "\tมีผู้เข้าพัก (Occupied)";
             // 
@@ -427,20 +433,21 @@
             // lblAvailable
             // 
             this.lblAvailable.AutoSize = true;
-            this.lblAvailable.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblAvailable.Font = new System.Drawing.Font("Tahoma", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblAvailable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(101)))), ((int)(((byte)(52)))));
             this.lblAvailable.Location = new System.Drawing.Point(20, 40);
             this.lblAvailable.Name = "lblAvailable";
-            this.lblAvailable.Size = new System.Drawing.Size(51, 39);
+            this.lblAvailable.Size = new System.Drawing.Size(57, 39);
             this.lblAvailable.TabIndex = 2;
             this.lblAvailable.Text = "00";
             // 
             // lblTitle2
             // 
             this.lblTitle2.AutoSize = true;
+            this.lblTitle2.Font = new System.Drawing.Font("Prompt", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTitle2.Location = new System.Drawing.Point(20, 15);
             this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(75, 13);
+            this.lblTitle2.Size = new System.Drawing.Size(98, 19);
             this.lblTitle2.TabIndex = 1;
             this.lblTitle2.Text = "ว่าง (Available)";
             // 
@@ -469,20 +476,21 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblTotal.Font = new System.Drawing.Font("Tahoma", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.lblTotal.Location = new System.Drawing.Point(20, 40);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(51, 39);
+            this.lblTotal.Size = new System.Drawing.Size(57, 39);
             this.lblTotal.TabIndex = 2;
             this.lblTotal.Text = "00";
             // 
             // lblTitle1
             // 
             this.lblTitle1.AutoSize = true;
+            this.lblTitle1.Font = new System.Drawing.Font("Prompt", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTitle1.Location = new System.Drawing.Point(20, 15);
             this.lblTitle1.Name = "lblTitle1";
-            this.lblTitle1.Size = new System.Drawing.Size(58, 13);
+            this.lblTitle1.Size = new System.Drawing.Size(74, 19);
             this.lblTitle1.TabIndex = 1;
             this.lblTitle1.Text = "ห้องทั้งหมด";
             // 

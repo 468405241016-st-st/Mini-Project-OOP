@@ -49,7 +49,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -107,8 +106,18 @@
       <DependentUpon>ucRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\ThemeExtensions.cs" />
+    <Compile Include="Model\Repository.cs" />
+    <Compile Include="Model\IRepository.cs" />
+    <Compile Include="Model\tbl_Bookings.cs" />
+    <Compile Include="Model\tbl_BookingStatus.cs" />
+    <Compile Include="Model\tbl_Customers.cs" />
+    <Compile Include="Model\tbl_Rooms.cs" />
+    <Compile Include="Model\tbl_RoomStatus.cs" />
+    <Compile Include="Model\tbl_RoomTypes.cs" />
+    <Compile Include="Model\tbl_Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DatabaseService.cs" />
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,9 +162,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
