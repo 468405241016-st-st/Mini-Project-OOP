@@ -16,5 +16,30 @@ namespace Mini_Project_OOP.Forms
         {
             InitializeComponent();
         }
+
+        private void pnlCard1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlCard1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ucBooking_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
