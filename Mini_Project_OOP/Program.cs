@@ -17,7 +17,7 @@ namespace Mini_Project_OOP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ucDashboard());
+            Application.Run(new FormMain());
         }
     }
 }

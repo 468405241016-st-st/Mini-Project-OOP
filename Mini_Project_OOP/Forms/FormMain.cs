@@ -16,5 +16,10 @@ namespace Mini_Project_OOP.Forms
         {
             InitializeComponent();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
