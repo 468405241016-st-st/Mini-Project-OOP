@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -30,242 +30,387 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flpSidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pnlNavActive = new System.Windows.Forms.Panel();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.lblBrand = new System.Windows.Forms.Label();
+            this.pnlLogoLine = new System.Windows.Forms.Panel();
+            this.btnNavDashboard = new System.Windows.Forms.Button();
+            this.btnNavBooking = new System.Windows.Forms.Button();
+            this.btnNavRooms = new System.Windows.Forms.Button();
+            this.btnNavCustomers = new System.Windows.Forms.Button();
+            this.btnNavBookingList = new System.Windows.Forms.Button();
+            this.pnlUser = new System.Windows.Forms.Panel();
+            this.pnlUserLine = new System.Windows.Forms.Panel();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblUserRole = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblPageTitle = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.pnlHeaderLine = new System.Windows.Forms.Panel();
+            this.pnlHost = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNavDashboard = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flpSidebar.SuspendLayout();
+            this.pnlSidebar.SuspendLayout();
+            this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlUser.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel3
+            // pnlSidebar
             // 
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(220, 64);
-            this.panel3.TabIndex = 1;
+            this.pnlSidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.pnlSidebar.Controls.Add(this.pnlNavActive);
+            this.pnlSidebar.Controls.Add(this.pnlLogo);
+            this.pnlSidebar.Controls.Add(this.btnNavDashboard);
+            this.pnlSidebar.Controls.Add(this.btnNavBooking);
+            this.pnlSidebar.Controls.Add(this.btnNavRooms);
+            this.pnlSidebar.Controls.Add(this.btnNavCustomers);
+            this.pnlSidebar.Controls.Add(this.btnNavBookingList);
+            this.pnlSidebar.Controls.Add(this.pnlUser);
+            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSidebar.Name = "pnlSidebar";
+            this.pnlSidebar.Size = new System.Drawing.Size(220, 760);
+            this.pnlSidebar.TabIndex = 0;
             // 
-            // pictureBox1
+            // pnlNavActive
             // 
-            this.pictureBox1.Image = global::Mini_Project_OOP.Properties.Resources.App_Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pnlNavActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(234)))), ((int)(((byte)(212)))));
+            this.pnlNavActive.Location = new System.Drawing.Point(0, 76);
+            this.pnlNavActive.Name = "pnlNavActive";
+            this.pnlNavActive.Size = new System.Drawing.Size(4, 48);
+            this.pnlNavActive.TabIndex = 0;
             // 
-            // label1
+            // pnlLogo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Leelawadee UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(52, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hotel Booking";
+            this.pnlLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.pnlLogo.Controls.Add(this.picLogo);
+            this.pnlLogo.Controls.Add(this.lblBrand);
+            this.pnlLogo.Controls.Add(this.pnlLogoLine);
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(220, 64);
+            this.pnlLogo.TabIndex = 1;
             // 
-            // panel2
+            // picLogo
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(220, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 64);
-            this.panel2.TabIndex = 1;
+            this.picLogo.Image = global::Mini_Project_OOP.Properties.Resources.App_Icon;
+            this.picLogo.Location = new System.Drawing.Point(20, 19);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(26, 26);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
             // 
-            // flpSidebar
+            // lblBrand
             // 
-            this.flpSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
-            this.flpSidebar.Controls.Add(this.panel3);
-            this.flpSidebar.Controls.Add(this.panel1);
-            this.flpSidebar.Controls.Add(this.btnNavDashboard);
-            this.flpSidebar.Controls.Add(this.label2);
-            this.flpSidebar.Controls.Add(this.label3);
-            this.flpSidebar.Controls.Add(this.label4);
-            this.flpSidebar.Controls.Add(this.label5);
-            this.flpSidebar.Controls.Add(this.panel5);
-            this.flpSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flpSidebar.Location = new System.Drawing.Point(0, 0);
-            this.flpSidebar.Name = "flpSidebar";
-            this.flpSidebar.Size = new System.Drawing.Size(220, 721);
-            this.flpSidebar.TabIndex = 2;
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBrand.Location = new System.Drawing.Point(56, 20);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(120, 21);
+            this.lblBrand.TabIndex = 1;
+            this.lblBrand.Text = "Hotel Booking";
+            // 
+            // pnlLogoLine
+            // 
+            this.pnlLogoLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlLogoLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(106)))), ((int)(((byte)(101)))));
+            this.pnlLogoLine.Location = new System.Drawing.Point(0, 63);
+            this.pnlLogoLine.Name = "pnlLogoLine";
+            this.pnlLogoLine.Size = new System.Drawing.Size(220, 1);
+            this.pnlLogoLine.TabIndex = 2;
+            // 
+            // btnNavDashboard
+            // 
+            this.btnNavDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(106)))), ((int)(((byte)(101)))));
+            this.btnNavDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavDashboard.FlatAppearance.BorderSize = 0;
+            this.btnNavDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavDashboard.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNavDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavDashboard.ImageKey = "Dashboard_Icon.png";
+            this.btnNavDashboard.ImageList = this.imageList1;
+            this.btnNavDashboard.Location = new System.Drawing.Point(0, 76);
+            this.btnNavDashboard.Name = "btnNavDashboard";
+            this.btnNavDashboard.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.btnNavDashboard.Size = new System.Drawing.Size(220, 48);
+            this.btnNavDashboard.TabIndex = 6;
+            this.btnNavDashboard.Text = " Dashboard";
+            this.btnNavDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNavDashboard.UseVisualStyleBackColor = false;
+            // 
+            // btnNavBooking
+            // 
+            this.btnNavBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnNavBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavBooking.FlatAppearance.BorderSize = 0;
+            this.btnNavBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavBooking.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(240)))), ((int)(((byte)(236)))));
+            this.btnNavBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavBooking.ImageKey = "Booking_Icon.png";
+            this.btnNavBooking.ImageList = this.imageList1;
+            this.btnNavBooking.Location = new System.Drawing.Point(0, 124);
+            this.btnNavBooking.Name = "btnNavBooking";
+            this.btnNavBooking.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.btnNavBooking.Size = new System.Drawing.Size(220, 48);
+            this.btnNavBooking.TabIndex = 7;
+            this.btnNavBooking.Text = " จองห้องพัก";
+            this.btnNavBooking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavBooking.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNavBooking.UseVisualStyleBackColor = false;
+            // 
+            // btnNavRooms
+            // 
+            this.btnNavRooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnNavRooms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavRooms.FlatAppearance.BorderSize = 0;
+            this.btnNavRooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavRooms.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavRooms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(240)))), ((int)(((byte)(236)))));
+            this.btnNavRooms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavRooms.ImageKey = "Room_Icon.png";
+            this.btnNavRooms.ImageList = this.imageList1;
+            this.btnNavRooms.Location = new System.Drawing.Point(0, 172);
+            this.btnNavRooms.Name = "btnNavRooms";
+            this.btnNavRooms.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.btnNavRooms.Size = new System.Drawing.Size(220, 48);
+            this.btnNavRooms.TabIndex = 8;
+            this.btnNavRooms.Text = " ห้องพัก / ประเภท";
+            this.btnNavRooms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavRooms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNavRooms.UseVisualStyleBackColor = false;
+            // 
+            // btnNavCustomers
+            // 
+            this.btnNavCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnNavCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavCustomers.FlatAppearance.BorderSize = 0;
+            this.btnNavCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavCustomers.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(240)))), ((int)(((byte)(236)))));
+            this.btnNavCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavCustomers.ImageKey = "Customer_Icon.png";
+            this.btnNavCustomers.ImageList = this.imageList1;
+            this.btnNavCustomers.Location = new System.Drawing.Point(0, 220);
+            this.btnNavCustomers.Name = "btnNavCustomers";
+            this.btnNavCustomers.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.btnNavCustomers.Size = new System.Drawing.Size(220, 48);
+            this.btnNavCustomers.TabIndex = 9;
+            this.btnNavCustomers.Text = " ลูกค้า";
+            this.btnNavCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNavCustomers.UseVisualStyleBackColor = false;
+            // 
+            // btnNavBookingList
+            // 
+            this.btnNavBookingList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnNavBookingList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavBookingList.FlatAppearance.BorderSize = 0;
+            this.btnNavBookingList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavBookingList.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavBookingList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(240)))), ((int)(((byte)(236)))));
+            this.btnNavBookingList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavBookingList.ImageKey = "Order_Icon.png";
+            this.btnNavBookingList.ImageList = this.imageList1;
+            this.btnNavBookingList.Location = new System.Drawing.Point(0, 268);
+            this.btnNavBookingList.Name = "btnNavBookingList";
+            this.btnNavBookingList.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.btnNavBookingList.Size = new System.Drawing.Size(220, 48);
+            this.btnNavBookingList.TabIndex = 10;
+            this.btnNavBookingList.Text = " รายการจอง";
+            this.btnNavBookingList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNavBookingList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNavBookingList.UseVisualStyleBackColor = false;
+            // 
+            // pnlUser
+            // 
+            this.pnlUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.pnlUser.Controls.Add(this.pnlUserLine);
+            this.pnlUser.Controls.Add(this.lblUserName);
+            this.pnlUser.Controls.Add(this.lblUserRole);
+            this.pnlUser.Controls.Add(this.btnLogout);
+            this.pnlUser.Location = new System.Drawing.Point(0, 642);
+            this.pnlUser.Name = "pnlUser";
+            this.pnlUser.Size = new System.Drawing.Size(220, 118);
+            this.pnlUser.TabIndex = 11;
+            // 
+            // pnlUserLine
+            // 
+            this.pnlUserLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlUserLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(106)))), ((int)(((byte)(101)))));
+            this.pnlUserLine.Location = new System.Drawing.Point(0, 0);
+            this.pnlUserLine.Name = "pnlUserLine";
+            this.pnlUserLine.Size = new System.Drawing.Size(220, 1);
+            this.pnlUserLine.TabIndex = 0;
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblUserName.Location = new System.Drawing.Point(20, 16);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(91, 20);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "สมศรี ใจงาม";
+            // 
+            // lblUserRole
+            // 
+            this.lblUserRole.AutoSize = true;
+            this.lblUserRole.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblUserRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(228)))), ((int)(((byte)(223)))));
+            this.lblUserRole.Location = new System.Drawing.Point(20, 38);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(72, 15);
+            this.lblUserRole.TabIndex = 2;
+            this.lblUserRole.Text = "Receptionist";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(234)))), ((int)(((byte)(212)))));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLogout.Location = new System.Drawing.Point(20, 66);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(180, 36);
+            this.btnLogout.TabIndex = 15;
+            this.btnLogout.Text = "ออกจากระบบ";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlHeader.Controls.Add(this.lblPageTitle);
+            this.pnlHeader.Controls.Add(this.lblDate);
+            this.pnlHeader.Controls.Add(this.pnlHeaderLine);
+            this.pnlHeader.Location = new System.Drawing.Point(220, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(1060, 64);
+            this.pnlHeader.TabIndex = 1;
+            // 
+            // lblPageTitle
+            // 
+            this.lblPageTitle.AutoSize = true;
+            this.lblPageTitle.Font = new System.Drawing.Font("Leelawadee UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblPageTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            this.lblPageTitle.Location = new System.Drawing.Point(20, 18);
+            this.lblPageTitle.Name = "lblPageTitle";
+            this.lblPageTitle.Size = new System.Drawing.Size(126, 30);
+            this.lblPageTitle.TabIndex = 0;
+            this.lblPageTitle.Text = "Dashboard";
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDate.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
+            this.lblDate.Location = new System.Drawing.Point(740, 20);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(300, 24);
+            this.lblDate.TabIndex = 1;
+            this.lblDate.Text = "วันที่ 16/10/2026";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnlHeaderLine
+            // 
+            this.pnlHeaderLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlHeaderLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(224)))));
+            this.pnlHeaderLine.Location = new System.Drawing.Point(0, 63);
+            this.pnlHeaderLine.Name = "pnlHeaderLine";
+            this.pnlHeaderLine.Size = new System.Drawing.Size(1060, 1);
+            this.pnlHeaderLine.TabIndex = 2;
+            // 
+            // pnlHost
+            // 
+            this.pnlHost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlHost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
+            this.pnlHost.Location = new System.Drawing.Point(220, 64);
+            this.pnlHost.Name = "pnlHost";
+            this.pnlHost.Size = new System.Drawing.Size(1060, 696);
+            this.pnlHost.TabIndex = 2;
             // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Dashboard_Icon.png");
-            this.imageList1.Images.SetKeyName(1, "Booking_Icon.png");
-            this.imageList1.Images.SetKeyName(2, "Customer_Icon.png");
+            this.imageList1.Images.SetKeyName(0, "Booking_Icon.png");
+            this.imageList1.Images.SetKeyName(1, "Customer_Icon.png");
+            this.imageList1.Images.SetKeyName(2, "Dashboard_Icon.png");
             this.imageList1.Images.SetKeyName(3, "Order_Icon.png");
             this.imageList1.Images.SetKeyName(4, "Room_Icon.png");
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(106)))), ((int)(((byte)(101)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(106)))), ((int)(((byte)(101)))));
-            this.panel1.Location = new System.Drawing.Point(3, 73);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 1);
-            this.panel1.TabIndex = 3;
-            // 
-            // btnNavDashboard
-            // 
-            this.btnNavDashboard.AllowDrop = true;
-            this.btnNavDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNavDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNavDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavDashboard.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.btnNavDashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNavDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNavDashboard.ImageKey = "Dashboard_Icon.png";
-            this.btnNavDashboard.ImageList = this.imageList1;
-            this.btnNavDashboard.Location = new System.Drawing.Point(3, 77);
-            this.btnNavDashboard.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.btnNavDashboard.Name = "btnNavDashboard";
-            this.btnNavDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnNavDashboard.Size = new System.Drawing.Size(220, 48);
-            this.btnNavDashboard.TabIndex = 4;
-            this.btnNavDashboard.Text = "        Dashboard";
-            this.btnNavDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNavDashboard.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label2
-            // 
-            this.label2.AllowDrop = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.ImageKey = "Booking_Icon.png";
-            this.label2.ImageList = this.imageList1;
-            this.label2.Location = new System.Drawing.Point(3, 128);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(220, 48);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "       จองห้องพัก";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.AllowDrop = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.ImageKey = "Room_Icon.png";
-            this.label3.ImageList = this.imageList1;
-            this.label3.Location = new System.Drawing.Point(3, 179);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(220, 48);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "       ห้องพัก / ประเภท";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.AllowDrop = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.ImageKey = "Customer_Icon.png";
-            this.label4.ImageList = this.imageList1;
-            this.label4.Location = new System.Drawing.Point(3, 230);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(220, 48);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "       ลูกค้า";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.AllowDrop = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.ImageKey = "Order_Icon.png";
-            this.label5.ImageList = this.imageList1;
-            this.label5.Location = new System.Drawing.Point(3, 281);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label5.Size = new System.Drawing.Size(220, 48);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "       รายการจอง";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(3, 632);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 300, 3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(220, 84);
-            this.panel5.TabIndex = 10;
-            // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 721);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.flpSidebar);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
+            this.ClientSize = new System.Drawing.Size(1280, 760);
+            this.Controls.Add(this.pnlSidebar);
+            this.Controls.Add(this.pnlHeader);
+            this.Controls.Add(this.pnlHost);
+            this.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormMain";
-            this.Text = "Main";
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.flpSidebar.ResumeLayout(false);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Hotel Booking";
+            this.pnlSidebar.ResumeLayout(false);
+            this.pnlLogo.ResumeLayout(false);
+            this.pnlLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlUser.ResumeLayout(false);
+            this.pnlUser.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel flpSidebar;
+
+        private System.Windows.Forms.Panel pnlSidebar;
+        private System.Windows.Forms.Panel pnlNavActive;
+        private System.Windows.Forms.Panel pnlLogo;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.Panel pnlLogoLine;
+        private System.Windows.Forms.Button btnNavDashboard;
+        private System.Windows.Forms.Button btnNavBooking;
+        private System.Windows.Forms.Button btnNavRooms;
+        private System.Windows.Forms.Button btnNavCustomers;
+        private System.Windows.Forms.Button btnNavBookingList;
+        private System.Windows.Forms.Panel pnlUser;
+        private System.Windows.Forms.Panel pnlUserLine;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblUserRole;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Label lblPageTitle;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Panel pnlHeaderLine;
+        private System.Windows.Forms.Panel pnlHost;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label btnNavDashboard;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel5;
     }
 }
