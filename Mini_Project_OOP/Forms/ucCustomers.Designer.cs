@@ -101,7 +101,7 @@
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtSearch.Location = new System.Drawing.Point(62, 15);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(724, 32);
+            this.txtSearch.Size = new System.Drawing.Size(724, 27);
             this.txtSearch.TabIndex = 2;
             // 
             // btnSearch
@@ -316,7 +316,7 @@
             this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtFullName.Location = new System.Drawing.Point(16, 84);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(326, 32);
+            this.txtFullName.Size = new System.Drawing.Size(326, 27);
             this.txtFullName.TabIndex = 12;
             // 
             // lblPhoneDetail
@@ -340,7 +340,7 @@
             this.txtPhoneDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtPhoneDetail.Location = new System.Drawing.Point(16, 152);
             this.txtPhoneDetail.Name = "txtPhoneDetail";
-            this.txtPhoneDetail.Size = new System.Drawing.Size(326, 32);
+            this.txtPhoneDetail.Size = new System.Drawing.Size(326, 27);
             this.txtPhoneDetail.TabIndex = 14;
             // 
             // lblIdCardDetail
@@ -364,7 +364,7 @@
             this.txtIdCardDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtIdCardDetail.Location = new System.Drawing.Point(16, 220);
             this.txtIdCardDetail.Name = "txtIdCardDetail";
-            this.txtIdCardDetail.Size = new System.Drawing.Size(326, 32);
+            this.txtIdCardDetail.Size = new System.Drawing.Size(326, 27);
             this.txtIdCardDetail.TabIndex = 16;
             // 
             // lblEmailDetail
@@ -388,7 +388,7 @@
             this.txtEmailDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtEmailDetail.Location = new System.Drawing.Point(16, 288);
             this.txtEmailDetail.Name = "txtEmailDetail";
-            this.txtEmailDetail.Size = new System.Drawing.Size(326, 32);
+            this.txtEmailDetail.Size = new System.Drawing.Size(326, 27);
             this.txtEmailDetail.TabIndex = 18;
             // 
             // btnSaveCustomer
@@ -451,7 +451,6 @@
             this.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Name = "ucCustomers";
             this.Padding = new System.Windows.Forms.Padding(20);
-            this.Load += new System.EventHandler(this.ucCustomers_Load);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             this.pnlCustomerList.ResumeLayout(false);

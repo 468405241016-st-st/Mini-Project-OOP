@@ -16,10 +16,5 @@ namespace Mini_Project_OOP.Forms
         {
             InitializeComponent();
         }
-
-        private void ucCustomers_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
