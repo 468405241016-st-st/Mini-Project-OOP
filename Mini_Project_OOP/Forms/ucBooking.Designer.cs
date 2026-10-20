@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRight = new System.Windows.Forms.Panel();
@@ -80,11 +82,11 @@
             this.lblCustomerTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvAvailable = new System.Windows.Forms.DataGridView();
-            this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAvailTitle = new System.Windows.Forms.Label();
+            this.colCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.tlpRight.SuspendLayout();
@@ -113,7 +115,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1044, 596);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1044, 657);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pnlRight
@@ -122,7 +124,7 @@
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRight.Location = new System.Drawing.Point(531, 3);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(510, 590);
+            this.pnlRight.Size = new System.Drawing.Size(510, 651);
             this.pnlRight.TabIndex = 1;
             // 
             // tlpRight
@@ -137,7 +139,7 @@
             this.tlpRight.RowCount = 2;
             this.tlpRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tlpRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRight.Size = new System.Drawing.Size(510, 590);
+            this.tlpRight.Size = new System.Drawing.Size(510, 651);
             this.tlpRight.TabIndex = 0;
             // 
             // pnlSummary
@@ -159,10 +161,11 @@
             this.pnlSummary.Controls.Add(this.panel4);
             this.pnlSummary.Controls.Add(this.lblSummaryTitle);
             this.pnlSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSummary.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.pnlSummary.Location = new System.Drawing.Point(0, 190);
             this.pnlSummary.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSummary.Name = "pnlSummary";
-            this.pnlSummary.Size = new System.Drawing.Size(510, 400);
+            this.pnlSummary.Size = new System.Drawing.Size(510, 461);
             this.pnlSummary.TabIndex = 1;
             this.pnlSummary.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSummary_Paint);
             // 
@@ -173,7 +176,7 @@
             this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpButtons.Controls.Add(this.btnSave, 0, 0);
             this.tlpButtons.Controls.Add(this.btnClear, 1, 0);
-            this.tlpButtons.Location = new System.Drawing.Point(19, 347);
+            this.tlpButtons.Location = new System.Drawing.Point(19, 408);
             this.tlpButtons.Name = "tlpButtons";
             this.tlpButtons.RowCount = 1;
             this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -187,7 +190,7 @@
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSave.Font = new System.Drawing.Font("Prompt", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(6, 6);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
@@ -203,7 +206,7 @@
             this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnClear.Font = new System.Drawing.Font("Prompt", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.btnClear.Location = new System.Drawing.Point(329, 6);
             this.btnClear.Margin = new System.Windows.Forms.Padding(6);
@@ -258,7 +261,7 @@
             this.lblNights.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.lblNights.Location = new System.Drawing.Point(386, 126);
             this.lblNights.Name = "lblNights";
-            this.lblNights.Size = new System.Drawing.Size(77, 14);
+            this.lblNights.Size = new System.Drawing.Size(80, 18);
             this.lblNights.TabIndex = 15;
             this.lblNights.Text = "สถานะการจอง";
             this.lblNights.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -270,7 +273,7 @@
             this.lblPricePerNight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.lblPricePerNight.Location = new System.Drawing.Point(386, 94);
             this.lblPricePerNight.Name = "lblPricePerNight";
-            this.lblPricePerNight.Size = new System.Drawing.Size(77, 14);
+            this.lblPricePerNight.Size = new System.Drawing.Size(80, 18);
             this.lblPricePerNight.TabIndex = 14;
             this.lblPricePerNight.Text = "สถานะการจอง";
             this.lblPricePerNight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -293,7 +296,7 @@
             this.lblStatusCap.AutoSize = true;
             this.lblStatusCap.Location = new System.Drawing.Point(16, 226);
             this.lblStatusCap.Name = "lblStatusCap";
-            this.lblStatusCap.Size = new System.Drawing.Size(77, 14);
+            this.lblStatusCap.Size = new System.Drawing.Size(80, 18);
             this.lblStatusCap.TabIndex = 12;
             this.lblStatusCap.Text = "สถานะการจอง";
             // 
@@ -302,34 +305,37 @@
             this.lblTotalCap.AutoSize = true;
             this.lblTotalCap.Location = new System.Drawing.Point(16, 192);
             this.lblTotalCap.Name = "lblTotalCap";
-            this.lblTotalCap.Size = new System.Drawing.Size(71, 14);
+            this.lblTotalCap.Size = new System.Drawing.Size(75, 18);
             this.lblTotalCap.TabIndex = 11;
             this.lblTotalCap.Text = "ราคารวมสุทธิ";
             // 
             // lblNightsCap
             // 
             this.lblNightsCap.AutoSize = true;
+            this.lblNightsCap.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblNightsCap.Location = new System.Drawing.Point(16, 126);
             this.lblNightsCap.Name = "lblNightsCap";
-            this.lblNightsCap.Size = new System.Drawing.Size(54, 14);
+            this.lblNightsCap.Size = new System.Drawing.Size(59, 18);
             this.lblNightsCap.TabIndex = 10;
             this.lblNightsCap.Text = "\tจำนวนคืน";
             // 
             // lblPriceCap
             // 
             this.lblPriceCap.AutoSize = true;
+            this.lblPriceCap.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblPriceCap.Location = new System.Drawing.Point(16, 94);
             this.lblPriceCap.Name = "lblPriceCap";
-            this.lblPriceCap.Size = new System.Drawing.Size(59, 14);
+            this.lblPriceCap.Size = new System.Drawing.Size(63, 18);
             this.lblPriceCap.TabIndex = 9;
             this.lblPriceCap.Text = "\tราคาต่อคืน";
             // 
             // lblRoomCap
             // 
             this.lblRoomCap.AutoSize = true;
+            this.lblRoomCap.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblRoomCap.Location = new System.Drawing.Point(16, 62);
             this.lblRoomCap.Name = "lblRoomCap";
-            this.lblRoomCap.Size = new System.Drawing.Size(62, 14);
+            this.lblRoomCap.Size = new System.Drawing.Size(63, 18);
             this.lblRoomCap.TabIndex = 8;
             this.lblRoomCap.Text = "ห้องที่เลือก";
             // 
@@ -344,7 +350,7 @@
             // lblSummaryTitle
             // 
             this.lblSummaryTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSummaryTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblSummaryTitle.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblSummaryTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.lblSummaryTitle.Location = new System.Drawing.Point(0, 0);
             this.lblSummaryTitle.Name = "lblSummaryTitle";
@@ -380,7 +386,7 @@
             this.btnCheckAvail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckAvail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.btnCheckAvail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckAvail.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCheckAvail.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnCheckAvail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.btnCheckAvail.Location = new System.Drawing.Point(319, 136);
             this.btnCheckAvail.Name = "btnCheckAvail";
@@ -428,9 +434,10 @@
             // lblRoomType
             // 
             this.lblRoomType.AutoSize = true;
+            this.lblRoomType.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblRoomType.Location = new System.Drawing.Point(16, 111);
             this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(66, 14);
+            this.lblRoomType.Size = new System.Drawing.Size(67, 18);
             this.lblRoomType.TabIndex = 9;
             this.lblRoomType.Text = "ประเภทห้อง";
             this.lblRoomType.Click += new System.EventHandler(this.lblRoomType_Click);
@@ -438,18 +445,20 @@
             // lblCheckOut
             // 
             this.lblCheckOut.AutoSize = true;
+            this.lblCheckOut.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblCheckOut.Location = new System.Drawing.Point(256, 52);
             this.lblCheckOut.Name = "lblCheckOut";
-            this.lblCheckOut.Size = new System.Drawing.Size(134, 14);
+            this.lblCheckOut.Size = new System.Drawing.Size(141, 18);
             this.lblCheckOut.TabIndex = 8;
             this.lblCheckOut.Text = "วันที่คืนห้อง (Check-out)";
             // 
             // lblCheckIn
             // 
             this.lblCheckIn.AutoSize = true;
+            this.lblCheckIn.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblCheckIn.Location = new System.Drawing.Point(16, 52);
             this.lblCheckIn.Name = "lblCheckIn";
-            this.lblCheckIn.Size = new System.Drawing.Size(120, 14);
+            this.lblCheckIn.Size = new System.Drawing.Size(128, 18);
             this.lblCheckIn.TabIndex = 7;
             this.lblCheckIn.Text = "\tวันที่เข้าพัก (Check-in)";
             // 
@@ -464,7 +473,7 @@
             // lblDatesTitle
             // 
             this.lblDatesTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDatesTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblDatesTitle.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblDatesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.lblDatesTitle.Location = new System.Drawing.Point(0, 0);
             this.lblDatesTitle.Name = "lblDatesTitle";
@@ -480,7 +489,7 @@
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLeft.Location = new System.Drawing.Point(15, 3);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(510, 590);
+            this.pnlLeft.Size = new System.Drawing.Size(510, 651);
             this.pnlLeft.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -495,7 +504,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(510, 590);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(510, 651);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // pnlCustomer
@@ -520,7 +529,7 @@
             this.pnlCustomer.Location = new System.Drawing.Point(0, 0);
             this.pnlCustomer.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.pnlCustomer.Name = "pnlCustomer";
-            this.pnlCustomer.Size = new System.Drawing.Size(510, 357);
+            this.pnlCustomer.Size = new System.Drawing.Size(510, 395);
             this.pnlCustomer.TabIndex = 0;
             this.pnlCustomer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCustomer_Paint);
             // 
@@ -546,9 +555,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label5.Location = new System.Drawing.Point(27, 281);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 14);
+            this.label5.Size = new System.Drawing.Size(34, 18);
             this.label5.TabIndex = 12;
             this.label5.Text = "อีเมล";
             // 
@@ -566,9 +576,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label4.Location = new System.Drawing.Point(255, 213);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 14);
+            this.label4.Size = new System.Drawing.Size(157, 18);
             this.label4.TabIndex = 10;
             this.label4.Text = "เลขบัตรประชาชน / พาสปอร์ต";
             // 
@@ -586,9 +597,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label3.Location = new System.Drawing.Point(27, 213);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 14);
+            this.label3.Size = new System.Drawing.Size(76, 18);
             this.label3.TabIndex = 8;
             this.label3.Text = "เบอร์โทรศัพท์";
             // 
@@ -606,9 +618,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.Location = new System.Drawing.Point(27, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 14);
+            this.label2.Size = new System.Drawing.Size(70, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "ชื่อ-นามสกุล";
             // 
@@ -636,7 +649,7 @@
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSearch.Font = new System.Drawing.Font("Prompt", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.btnSearch.Location = new System.Drawing.Point(396, 86);
             this.btnSearch.Name = "btnSearch";
@@ -648,16 +661,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.Location = new System.Drawing.Point(27, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 14);
+            this.label1.Size = new System.Drawing.Size(193, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "ค้นหาลูกค้าเดิม (เบอร์โทร / เลขบัตร)";
             // 
             // lblCustomerTitle
             // 
             this.lblCustomerTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCustomerTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblCustomerTitle.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblCustomerTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.lblCustomerTitle.Location = new System.Drawing.Point(0, 0);
             this.lblCustomerTitle.Name = "lblCustomerTitle";
@@ -674,10 +688,10 @@
             this.panel2.Controls.Add(this.dgvAvailable);
             this.panel2.Controls.Add(this.lblAvailTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 365);
+            this.panel2.Location = new System.Drawing.Point(0, 403);
             this.panel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(510, 217);
+            this.panel2.Size = new System.Drawing.Size(510, 240);
             this.panel2.TabIndex = 1;
             // 
             // dgvAvailable
@@ -694,7 +708,7 @@
             this.dgvAvailable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(239)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(239)))), ((int)(((byte)(236)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
@@ -707,55 +721,39 @@
             this.colType,
             this.colPrice,
             this.colCapacity});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAvailable.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAvailable.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAvailable.EnableHeadersVisualStyles = false;
             this.dgvAvailable.Location = new System.Drawing.Point(0, 40);
             this.dgvAvailable.MultiSelect = false;
             this.dgvAvailable.Name = "dgvAvailable";
             this.dgvAvailable.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvailable.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAvailable.RowHeadersVisible = false;
             this.dgvAvailable.RowTemplate.Height = 36;
             this.dgvAvailable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAvailable.Size = new System.Drawing.Size(508, 175);
+            this.dgvAvailable.Size = new System.Drawing.Size(508, 198);
             this.dgvAvailable.TabIndex = 2;
-            // 
-            // colRoom
-            // 
-            this.colRoom.HeaderText = "ห้อง";
-            this.colRoom.Name = "colRoom";
-            this.colRoom.ReadOnly = true;
-            // 
-            // colType
-            // 
-            this.colType.HeaderText = "ประเภท";
-            this.colType.Name = "colType";
-            this.colType.ReadOnly = true;
-            // 
-            // colPrice
-            // 
-            this.colPrice.HeaderText = "ราคา/คืน";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
-            // 
-            // colCapacity
-            // 
-            this.colCapacity.HeaderText = "ความจุ";
-            this.colCapacity.Name = "colCapacity";
-            this.colCapacity.ReadOnly = true;
             // 
             // lblAvailTitle
             // 
             this.lblAvailTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAvailTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblAvailTitle.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblAvailTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.lblAvailTitle.Location = new System.Drawing.Point(0, 0);
             this.lblAvailTitle.Name = "lblAvailTitle";
@@ -765,12 +763,38 @@
             this.lblAvailTitle.Text = "ห้องว่างตามช่วงวันที่";
             this.lblAvailTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // colCapacity
+            // 
+            this.colCapacity.HeaderText = "ความจุ";
+            this.colCapacity.Name = "colCapacity";
+            this.colCapacity.ReadOnly = true;
+            // 
+            // colPrice
+            // 
+            this.colPrice.HeaderText = "ราคา/คืน";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            // 
+            // colType
+            // 
+            this.colType.HeaderText = "ประเภท";
+            this.colType.Name = "colType";
+            this.colType.ReadOnly = true;
+            // 
+            // colRoom
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colRoom.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colRoom.HeaderText = "ห้อง";
+            this.colRoom.Name = "colRoom";
+            this.colRoom.ReadOnly = true;
+            // 
             // ucBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(1044, 596);
+            this.ClientSize = new System.Drawing.Size(1044, 657);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
             this.Name = "ucBooking";
@@ -811,10 +835,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblAvailTitle;
         private System.Windows.Forms.DataGridView dgvAvailable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCapacity;
         private System.Windows.Forms.TableLayoutPanel tlpRight;
         private System.Windows.Forms.Panel pnlSummary;
         private System.Windows.Forms.Panel panel3;
@@ -850,6 +870,9 @@
         private System.Windows.Forms.TextBox txtName;
 
         private System.Windows.Forms.Label label1;
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCapacity;
     }
 }

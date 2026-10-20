@@ -119,11 +119,11 @@
             // lblRoomTypesTitle
             // 
             this.lblRoomTypesTitle.AutoSize = true;
-            this.lblRoomTypesTitle.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblRoomTypesTitle.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblRoomTypesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             this.lblRoomTypesTitle.Location = new System.Drawing.Point(16, 11);
             this.lblRoomTypesTitle.Name = "lblRoomTypesTitle";
-            this.lblRoomTypesTitle.Size = new System.Drawing.Size(109, 21);
+            this.lblRoomTypesTitle.Size = new System.Drawing.Size(114, 24);
             this.lblRoomTypesTitle.TabIndex = 0;
             this.lblRoomTypesTitle.Text = "ประเภทห้องพัก";
             // 
@@ -154,7 +154,7 @@
             this.dgvRoomTypes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Prompt", 11F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
@@ -218,11 +218,11 @@
             // lblTypeName
             // 
             this.lblTypeName.AutoSize = true;
-            this.lblTypeName.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblTypeName.Font = new System.Drawing.Font("Prompt", 10F);
             this.lblTypeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblTypeName.Location = new System.Drawing.Point(16, 200);
             this.lblTypeName.Name = "lblTypeName";
-            this.lblTypeName.Size = new System.Drawing.Size(160, 19);
+            this.lblTypeName.Size = new System.Drawing.Size(183, 21);
             this.lblTypeName.TabIndex = 2;
             this.lblTypeName.Text = "ชื่อประเภทห้อง (TypeName)";
             // 
@@ -236,17 +236,17 @@
             this.txtTypeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtTypeName.Location = new System.Drawing.Point(16, 224);
             this.txtTypeName.Name = "txtTypeName";
-            this.txtTypeName.Size = new System.Drawing.Size(466, 32);
+            this.txtTypeName.Size = new System.Drawing.Size(466, 27);
             this.txtTypeName.TabIndex = 6;
             // 
             // lblTypePrice
             // 
             this.lblTypePrice.AutoSize = true;
-            this.lblTypePrice.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblTypePrice.Font = new System.Drawing.Font("Prompt", 10F);
             this.lblTypePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblTypePrice.Location = new System.Drawing.Point(16, 268);
             this.lblTypePrice.Name = "lblTypePrice";
-            this.lblTypePrice.Size = new System.Drawing.Size(100, 19);
+            this.lblTypePrice.Size = new System.Drawing.Size(113, 21);
             this.lblTypePrice.TabIndex = 7;
             this.lblTypePrice.Text = "ราคาต่อคืน (บาท)";
             // 
@@ -258,17 +258,17 @@
             this.txtTypePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtTypePrice.Location = new System.Drawing.Point(16, 292);
             this.txtTypePrice.Name = "txtTypePrice";
-            this.txtTypePrice.Size = new System.Drawing.Size(227, 32);
+            this.txtTypePrice.Size = new System.Drawing.Size(227, 27);
             this.txtTypePrice.TabIndex = 8;
             // 
             // lblTypeCapacity
             // 
             this.lblTypeCapacity.AutoSize = true;
-            this.lblTypeCapacity.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblTypeCapacity.Font = new System.Drawing.Font("Prompt", 10F);
             this.lblTypeCapacity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblTypeCapacity.Location = new System.Drawing.Point(255, 268);
             this.lblTypeCapacity.Name = "lblTypeCapacity";
-            this.lblTypeCapacity.Size = new System.Drawing.Size(72, 19);
+            this.lblTypeCapacity.Size = new System.Drawing.Size(83, 21);
             this.lblTypeCapacity.TabIndex = 9;
             this.lblTypeCapacity.Text = "ความจุ (คน)";
             // 
@@ -280,17 +280,17 @@
             this.txtTypeCapacity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtTypeCapacity.Location = new System.Drawing.Point(255, 292);
             this.txtTypeCapacity.Name = "txtTypeCapacity";
-            this.txtTypeCapacity.Size = new System.Drawing.Size(227, 32);
+            this.txtTypeCapacity.Size = new System.Drawing.Size(227, 27);
             this.txtTypeCapacity.TabIndex = 10;
             // 
             // lblTypeDesc
             // 
             this.lblTypeDesc.AutoSize = true;
-            this.lblTypeDesc.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblTypeDesc.Font = new System.Drawing.Font("Prompt", 10F);
             this.lblTypeDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblTypeDesc.Location = new System.Drawing.Point(16, 336);
             this.lblTypeDesc.Name = "lblTypeDesc";
-            this.lblTypeDesc.Size = new System.Drawing.Size(177, 19);
+            this.lblTypeDesc.Size = new System.Drawing.Size(208, 21);
             this.lblTypeDesc.TabIndex = 11;
             this.lblTypeDesc.Text = "รายละเอียดสิ่งอำนวยความสะดวก";
             // 
@@ -315,7 +315,7 @@
             this.btnTypeAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTypeAdd.FlatAppearance.BorderSize = 0;
             this.btnTypeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTypeAdd.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnTypeAdd.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnTypeAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnTypeAdd.Location = new System.Drawing.Point(16, 602);
             this.btnTypeAdd.Name = "btnTypeAdd";
@@ -331,7 +331,7 @@
             this.btnTypeEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTypeEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnTypeEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTypeEdit.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnTypeEdit.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnTypeEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnTypeEdit.Location = new System.Drawing.Point(174, 602);
             this.btnTypeEdit.Name = "btnTypeEdit";
@@ -347,7 +347,7 @@
             this.btnTypeDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTypeDelete.FlatAppearance.BorderSize = 0;
             this.btnTypeDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTypeDelete.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnTypeDelete.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnTypeDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnTypeDelete.Location = new System.Drawing.Point(332, 602);
             this.btnTypeDelete.Name = "btnTypeDelete";
@@ -394,11 +394,11 @@
             // lblRoomListTitle
             // 
             this.lblRoomListTitle.AutoSize = true;
-            this.lblRoomListTitle.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblRoomListTitle.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblRoomListTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             this.lblRoomListTitle.Location = new System.Drawing.Point(16, 11);
             this.lblRoomListTitle.Name = "lblRoomListTitle";
-            this.lblRoomListTitle.Size = new System.Drawing.Size(113, 21);
+            this.lblRoomListTitle.Size = new System.Drawing.Size(113, 24);
             this.lblRoomListTitle.TabIndex = 0;
             this.lblRoomListTitle.Text = "รายการห้องพัก";
             // 
@@ -429,7 +429,7 @@
             this.dgvRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Prompt", 11F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
@@ -488,11 +488,11 @@
             // lblRoomNumber
             // 
             this.lblRoomNumber.AutoSize = true;
-            this.lblRoomNumber.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblRoomNumber.Font = new System.Drawing.Font("Prompt", 10F);
             this.lblRoomNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblRoomNumber.Location = new System.Drawing.Point(16, 380);
             this.lblRoomNumber.Name = "lblRoomNumber";
-            this.lblRoomNumber.Size = new System.Drawing.Size(147, 19);
+            this.lblRoomNumber.Size = new System.Drawing.Size(165, 21);
             this.lblRoomNumber.TabIndex = 2;
             this.lblRoomNumber.Text = "เลขห้อง (RoomNumber)";
             // 
@@ -504,17 +504,17 @@
             this.txtRoomNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtRoomNumber.Location = new System.Drawing.Point(16, 404);
             this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(227, 32);
+            this.txtRoomNumber.Size = new System.Drawing.Size(227, 27);
             this.txtRoomNumber.TabIndex = 22;
             // 
             // lblRoomStatus
             // 
             this.lblRoomStatus.AutoSize = true;
-            this.lblRoomStatus.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblRoomStatus.Font = new System.Drawing.Font("Prompt", 10F);
             this.lblRoomStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblRoomStatus.Location = new System.Drawing.Point(255, 380);
             this.lblRoomStatus.Name = "lblRoomStatus";
-            this.lblRoomStatus.Size = new System.Drawing.Size(64, 19);
+            this.lblRoomStatus.Size = new System.Drawing.Size(75, 21);
             this.lblRoomStatus.TabIndex = 23;
             this.lblRoomStatus.Text = "สถานะห้อง";
             // 
@@ -538,11 +538,11 @@
             // lblRoomTypeId
             // 
             this.lblRoomTypeId.AutoSize = true;
-            this.lblRoomTypeId.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblRoomTypeId.Font = new System.Drawing.Font("Prompt", 10F);
             this.lblRoomTypeId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblRoomTypeId.Location = new System.Drawing.Point(16, 448);
             this.lblRoomTypeId.Name = "lblRoomTypeId";
-            this.lblRoomTypeId.Size = new System.Drawing.Size(159, 19);
+            this.lblRoomTypeId.Size = new System.Drawing.Size(177, 21);
             this.lblRoomTypeId.TabIndex = 25;
             this.lblRoomTypeId.Text = "ประเภทห้อง (RoomTypeID)";
             // 
@@ -568,7 +568,7 @@
             this.btnRoomAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomAdd.FlatAppearance.BorderSize = 0;
             this.btnRoomAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoomAdd.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnRoomAdd.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnRoomAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnRoomAdd.Location = new System.Drawing.Point(16, 602);
             this.btnRoomAdd.Name = "btnRoomAdd";
@@ -584,7 +584,7 @@
             this.btnRoomEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnRoomEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoomEdit.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnRoomEdit.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnRoomEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnRoomEdit.Location = new System.Drawing.Point(174, 602);
             this.btnRoomEdit.Name = "btnRoomEdit";
@@ -600,7 +600,7 @@
             this.btnRoomDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomDelete.FlatAppearance.BorderSize = 0;
             this.btnRoomDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoomDelete.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnRoomDelete.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnRoomDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnRoomDelete.Location = new System.Drawing.Point(332, 602);
             this.btnRoomDelete.Name = "btnRoomDelete";

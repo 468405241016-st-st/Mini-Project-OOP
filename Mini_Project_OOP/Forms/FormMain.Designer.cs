@@ -37,6 +37,7 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.pnlLogoLine = new System.Windows.Forms.Panel();
             this.btnNavDashboard = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnNavBooking = new System.Windows.Forms.Button();
             this.btnNavRooms = new System.Windows.Forms.Button();
             this.btnNavCustomers = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.pnlHeaderLine = new System.Windows.Forms.Panel();
             this.pnlHost = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlSidebar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -150,13 +150,23 @@
             this.btnNavDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNavDashboard.UseVisualStyleBackColor = false;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Booking_Icon.png");
+            this.imageList1.Images.SetKeyName(1, "Customer_Icon.png");
+            this.imageList1.Images.SetKeyName(2, "Dashboard_Icon.png");
+            this.imageList1.Images.SetKeyName(3, "Order_Icon.png");
+            this.imageList1.Images.SetKeyName(4, "Room_Icon.png");
+            // 
             // btnNavBooking
             // 
             this.btnNavBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
             this.btnNavBooking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavBooking.FlatAppearance.BorderSize = 0;
             this.btnNavBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavBooking.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavBooking.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnNavBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(240)))), ((int)(((byte)(236)))));
             this.btnNavBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavBooking.ImageKey = "Booking_Icon.png";
@@ -177,7 +187,7 @@
             this.btnNavRooms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavRooms.FlatAppearance.BorderSize = 0;
             this.btnNavRooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavRooms.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavRooms.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnNavRooms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(240)))), ((int)(((byte)(236)))));
             this.btnNavRooms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavRooms.ImageKey = "Room_Icon.png";
@@ -198,7 +208,7 @@
             this.btnNavCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavCustomers.FlatAppearance.BorderSize = 0;
             this.btnNavCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavCustomers.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavCustomers.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnNavCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(240)))), ((int)(((byte)(236)))));
             this.btnNavCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavCustomers.ImageKey = "Customer_Icon.png";
@@ -219,7 +229,7 @@
             this.btnNavBookingList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavBookingList.FlatAppearance.BorderSize = 0;
             this.btnNavBookingList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavBookingList.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnNavBookingList.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnNavBookingList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(240)))), ((int)(((byte)(236)))));
             this.btnNavBookingList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavBookingList.ImageKey = "Order_Icon.png";
@@ -261,11 +271,11 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblUserName.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lblUserName.Location = new System.Drawing.Point(20, 16);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(91, 20);
+            this.lblUserName.Size = new System.Drawing.Size(93, 22);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "สมศรี ใจงาม";
             // 
@@ -286,7 +296,7 @@
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(234)))), ((int)(((byte)(212)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnLogout.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLogout.Location = new System.Drawing.Point(20, 66);
             this.btnLogout.Name = "btnLogout";
@@ -351,16 +361,6 @@
             this.pnlHost.Name = "pnlHost";
             this.pnlHost.Size = new System.Drawing.Size(1060, 696);
             this.pnlHost.TabIndex = 2;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Booking_Icon.png");
-            this.imageList1.Images.SetKeyName(1, "Customer_Icon.png");
-            this.imageList1.Images.SetKeyName(2, "Dashboard_Icon.png");
-            this.imageList1.Images.SetKeyName(3, "Order_Icon.png");
-            this.imageList1.Images.SetKeyName(4, "Room_Icon.png");
             // 
             // FormMain
             // 

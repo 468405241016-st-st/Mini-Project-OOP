@@ -83,11 +83,11 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblSearch.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblSearch.Location = new System.Drawing.Point(16, 21);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(39, 19);
+            this.lblSearch.Size = new System.Drawing.Size(43, 21);
             this.lblSearch.TabIndex = 0;
             this.lblSearch.Text = "ค้นหา";
             // 
@@ -111,7 +111,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSearch.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSearch.Location = new System.Drawing.Point(798, 15);
             this.btnSearch.Name = "btnSearch";
@@ -127,7 +127,7 @@
             this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowAll.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnShowAll.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnShowAll.Location = new System.Drawing.Point(906, 15);
             this.btnShowAll.Name = "btnShowAll";
@@ -143,7 +143,7 @@
             this.pnlCustomerList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnlCustomerList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCustomerList.Controls.Add(this.dgvCustomers);
-            this.pnlCustomerList.Location = new System.Drawing.Point(19, 81);
+            this.pnlCustomerList.Location = new System.Drawing.Point(19, 71);
             this.pnlCustomerList.Name = "pnlCustomerList";
             this.pnlCustomerList.Size = new System.Drawing.Size(640, 576);
             this.pnlCustomerList.TabIndex = 1;
@@ -166,7 +166,7 @@
             this.dgvCustomers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
@@ -257,7 +257,7 @@
             this.pnlCustomerDetail.Controls.Add(this.btnSaveCustomer);
             this.pnlCustomerDetail.Controls.Add(this.btnClearCustomer);
             this.pnlCustomerDetail.Controls.Add(this.btnDeleteCustomer);
-            this.pnlCustomerDetail.Location = new System.Drawing.Point(679, 82);
+            this.pnlCustomerDetail.Location = new System.Drawing.Point(679, 73);
             this.pnlCustomerDetail.Name = "pnlCustomerDetail";
             this.pnlCustomerDetail.Size = new System.Drawing.Size(360, 575);
             this.pnlCustomerDetail.TabIndex = 2;
@@ -277,11 +277,11 @@
             // lblCustomerDetailTitle
             // 
             this.lblCustomerDetailTitle.AutoSize = true;
-            this.lblCustomerDetailTitle.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblCustomerDetailTitle.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblCustomerDetailTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             this.lblCustomerDetailTitle.Location = new System.Drawing.Point(16, 11);
             this.lblCustomerDetailTitle.Name = "lblCustomerDetailTitle";
-            this.lblCustomerDetailTitle.Size = new System.Drawing.Size(126, 21);
+            this.lblCustomerDetailTitle.Size = new System.Drawing.Size(125, 24);
             this.lblCustomerDetailTitle.TabIndex = 0;
             this.lblCustomerDetailTitle.Text = "รายละเอียดลูกค้า";
             // 
@@ -298,11 +298,11 @@
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFullName.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFullName.Location = new System.Drawing.Point(16, 60);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(76, 19);
+            this.lblFullName.Size = new System.Drawing.Size(84, 21);
             this.lblFullName.TabIndex = 1;
             this.lblFullName.Text = "ชื่อ-นามสกุล";
             // 
@@ -322,11 +322,11 @@
             // lblPhoneDetail
             // 
             this.lblPhoneDetail.AutoSize = true;
-            this.lblPhoneDetail.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblPhoneDetail.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblPhoneDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblPhoneDetail.Location = new System.Drawing.Point(16, 128);
             this.lblPhoneDetail.Name = "lblPhoneDetail";
-            this.lblPhoneDetail.Size = new System.Drawing.Size(79, 19);
+            this.lblPhoneDetail.Size = new System.Drawing.Size(89, 21);
             this.lblPhoneDetail.TabIndex = 13;
             this.lblPhoneDetail.Text = "เบอร์โทรศัพท์";
             // 
@@ -346,11 +346,11 @@
             // lblIdCardDetail
             // 
             this.lblIdCardDetail.AutoSize = true;
-            this.lblIdCardDetail.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblIdCardDetail.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblIdCardDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblIdCardDetail.Location = new System.Drawing.Point(16, 196);
             this.lblIdCardDetail.Name = "lblIdCardDetail";
-            this.lblIdCardDetail.Size = new System.Drawing.Size(165, 19);
+            this.lblIdCardDetail.Size = new System.Drawing.Size(185, 21);
             this.lblIdCardDetail.TabIndex = 15;
             this.lblIdCardDetail.Text = "เลขบัตรประชาชน / พาสปอร์ต";
             // 
@@ -370,11 +370,11 @@
             // lblEmailDetail
             // 
             this.lblEmailDetail.AutoSize = true;
-            this.lblEmailDetail.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblEmailDetail.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblEmailDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblEmailDetail.Location = new System.Drawing.Point(16, 264);
             this.lblEmailDetail.Name = "lblEmailDetail";
-            this.lblEmailDetail.Size = new System.Drawing.Size(36, 19);
+            this.lblEmailDetail.Size = new System.Drawing.Size(41, 21);
             this.lblEmailDetail.TabIndex = 17;
             this.lblEmailDetail.Text = "อีเมล";
             // 
@@ -398,7 +398,7 @@
             this.btnSaveCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveCustomer.FlatAppearance.BorderSize = 0;
             this.btnSaveCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveCustomer.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSaveCustomer.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnSaveCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSaveCustomer.Location = new System.Drawing.Point(16, 521);
             this.btnSaveCustomer.Name = "btnSaveCustomer";
@@ -414,7 +414,7 @@
             this.btnClearCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClearCustomer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnClearCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearCustomer.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnClearCustomer.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnClearCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnClearCustomer.Location = new System.Drawing.Point(183, 521);
             this.btnClearCustomer.Name = "btnClearCustomer";

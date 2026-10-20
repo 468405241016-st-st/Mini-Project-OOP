@@ -93,11 +93,11 @@
             // lblFilterStatus
             // 
             this.lblFilterStatus.AutoSize = true;
-            this.lblFilterStatus.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFilterStatus.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFilterStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFilterStatus.Location = new System.Drawing.Point(16, 16);
             this.lblFilterStatus.Name = "lblFilterStatus";
-            this.lblFilterStatus.Size = new System.Drawing.Size(44, 19);
+            this.lblFilterStatus.Size = new System.Drawing.Size(48, 21);
             this.lblFilterStatus.TabIndex = 0;
             this.lblFilterStatus.Text = "สถานะ";
             // 
@@ -123,11 +123,11 @@
             // lblFilterFrom
             // 
             this.lblFilterFrom.AutoSize = true;
-            this.lblFilterFrom.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFilterFrom.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFilterFrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFilterFrom.Location = new System.Drawing.Point(188, 16);
             this.lblFilterFrom.Name = "lblFilterFrom";
-            this.lblFilterFrom.Size = new System.Drawing.Size(72, 19);
+            this.lblFilterFrom.Size = new System.Drawing.Size(84, 21);
             this.lblFilterFrom.TabIndex = 3;
             this.lblFilterFrom.Text = "เช็คอินตั้งแต่";
             // 
@@ -144,11 +144,11 @@
             // lblFilterTo
             // 
             this.lblFilterTo.AutoSize = true;
-            this.lblFilterTo.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFilterTo.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFilterTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFilterTo.Location = new System.Drawing.Point(340, 16);
             this.lblFilterTo.Name = "lblFilterTo";
-            this.lblFilterTo.Size = new System.Drawing.Size(44, 19);
+            this.lblFilterTo.Size = new System.Drawing.Size(54, 21);
             this.lblFilterTo.TabIndex = 5;
             this.lblFilterTo.Text = "ถึงวันที่";
             // 
@@ -165,11 +165,11 @@
             // lblFilterKeyword
             // 
             this.lblFilterKeyword.AutoSize = true;
-            this.lblFilterKeyword.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFilterKeyword.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFilterKeyword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFilterKeyword.Location = new System.Drawing.Point(492, 16);
             this.lblFilterKeyword.Name = "lblFilterKeyword";
-            this.lblFilterKeyword.Size = new System.Drawing.Size(107, 19);
+            this.lblFilterKeyword.Size = new System.Drawing.Size(125, 21);
             this.lblFilterKeyword.TabIndex = 7;
             this.lblFilterKeyword.Text = "ชื่อลูกค้า / เลขห้อง";
             // 
@@ -183,7 +183,7 @@
             this.txtFilterKeyword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtFilterKeyword.Location = new System.Drawing.Point(492, 40);
             this.txtFilterKeyword.Name = "txtFilterKeyword";
-            this.txtFilterKeyword.Size = new System.Drawing.Size(294, 32);
+            this.txtFilterKeyword.Size = new System.Drawing.Size(294, 27);
             this.txtFilterKeyword.TabIndex = 8;
             // 
             // btnFilterSearch
@@ -193,7 +193,7 @@
             this.btnFilterSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilterSearch.FlatAppearance.BorderSize = 0;
             this.btnFilterSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterSearch.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnFilterSearch.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnFilterSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnFilterSearch.Location = new System.Drawing.Point(798, 40);
             this.btnFilterSearch.Name = "btnFilterSearch";
@@ -209,7 +209,7 @@
             this.btnFilterReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilterReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnFilterReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterReset.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnFilterReset.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnFilterReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnFilterReset.Location = new System.Drawing.Point(906, 40);
             this.btnFilterReset.Name = "btnFilterReset";
@@ -251,7 +251,7 @@
             this.dgvBookings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Prompt", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
@@ -398,7 +398,7 @@
             this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckIn.FlatAppearance.BorderSize = 0;
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckIn.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCheckIn.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnCheckIn.Location = new System.Drawing.Point(16, 8);
             this.btnCheckIn.Name = "btnCheckIn";
@@ -415,7 +415,7 @@
             this.btnCheckOut.Enabled = false;
             this.btnCheckOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCheckOut.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnCheckOut.Location = new System.Drawing.Point(164, 8);
             this.btnCheckOut.Name = "btnCheckOut";
@@ -431,7 +431,7 @@
             this.btnCancelBooking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelBooking.FlatAppearance.BorderSize = 0;
             this.btnCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelBooking.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCancelBooking.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnCancelBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnCancelBooking.Location = new System.Drawing.Point(312, 8);
             this.btnCancelBooking.Name = "btnCancelBooking";
@@ -443,7 +443,7 @@
             // lblTotalCount
             // 
             this.lblTotalCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalCount.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblTotalCount.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblTotalCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblTotalCount.Location = new System.Drawing.Point(802, 16);
             this.lblTotalCount.Name = "lblTotalCount";
