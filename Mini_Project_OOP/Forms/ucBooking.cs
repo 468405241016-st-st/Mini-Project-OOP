@@ -16,5 +16,20 @@ namespace Mini_Project_OOP.Forms
         {
             InitializeComponent();
         }
+
+        private void pnlCustomer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblRoomType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlSummary_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
