@@ -8,6 +8,9 @@ namespace Mini_Project_OOP.Model
 {
     public class tbl_Users
     {
+
+        public int UserId { get; set; }
+
         public string UserName { get; set; }
 
         public string Password { get; set; }
@@ -15,6 +18,8 @@ namespace Mini_Project_OOP.Model
         public string FullName { get; set; }
 
         public string UserRole { get; set; }
+
+
 
     }
 }

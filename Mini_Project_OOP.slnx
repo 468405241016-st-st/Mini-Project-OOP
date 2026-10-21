@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Mini_Project_OOP/Mini_Project_Database.accdb" />
+  </Folder>
   <Project Path="Mini_Project_OOP/Mini_Project_OOP.csproj" Id="1e3c1160-1dd8-4f04-b756-f12ee7e28287" />
 </Solution>
