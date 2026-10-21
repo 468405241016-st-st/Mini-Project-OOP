@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mini_Project_OOP.Forms;
@@ -17,7 +18,7 @@ namespace Mini_Project_OOP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ucRooms());
+            Application.Run(new FormMain());
         }
     }
 }

@@ -31,5 +31,10 @@ namespace Mini_Project_OOP.Forms
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -99,9 +99,9 @@
             this.pnlRoomTypes.Controls.Add(this.btnTypeAdd);
             this.pnlRoomTypes.Controls.Add(this.btnTypeEdit);
             this.pnlRoomTypes.Controls.Add(this.btnTypeDelete);
-            this.pnlRoomTypes.Location = new System.Drawing.Point(20, -1);
+            this.pnlRoomTypes.Location = new System.Drawing.Point(12, 12);
             this.pnlRoomTypes.Name = "pnlRoomTypes";
-            this.pnlRoomTypes.Size = new System.Drawing.Size(500, 660);
+            this.pnlRoomTypes.Size = new System.Drawing.Size(488, 633);
             this.pnlRoomTypes.TabIndex = 0;
             // 
             // pnlRoomTypesHeader
@@ -113,7 +113,7 @@
             this.pnlRoomTypesHeader.Controls.Add(this.pnlRoomTypesHeaderLine);
             this.pnlRoomTypesHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlRoomTypesHeader.Name = "pnlRoomTypesHeader";
-            this.pnlRoomTypesHeader.Size = new System.Drawing.Size(498, 44);
+            this.pnlRoomTypesHeader.Size = new System.Drawing.Size(486, 44);
             this.pnlRoomTypesHeader.TabIndex = 0;
             // 
             // lblRoomTypesTitle
@@ -134,7 +134,7 @@
             this.pnlRoomTypesHeaderLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(224)))));
             this.pnlRoomTypesHeaderLine.Location = new System.Drawing.Point(0, 43);
             this.pnlRoomTypesHeaderLine.Name = "pnlRoomTypesHeaderLine";
-            this.pnlRoomTypesHeaderLine.Size = new System.Drawing.Size(498, 1);
+            this.pnlRoomTypesHeaderLine.Size = new System.Drawing.Size(486, 1);
             this.pnlRoomTypesHeaderLine.TabIndex = 1;
             // 
             // dgvRoomTypes
@@ -154,7 +154,7 @@
             this.dgvRoomTypes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Prompt", 11F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
@@ -185,7 +185,7 @@
             this.dgvRoomTypes.RowHeadersVisible = false;
             this.dgvRoomTypes.RowTemplate.Height = 36;
             this.dgvRoomTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRoomTypes.Size = new System.Drawing.Size(498, 140);
+            this.dgvRoomTypes.Size = new System.Drawing.Size(486, 140);
             this.dgvRoomTypes.TabIndex = 1;
             // 
             // colTypeName
@@ -236,7 +236,7 @@
             this.txtTypeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.txtTypeName.Location = new System.Drawing.Point(16, 224);
             this.txtTypeName.Name = "txtTypeName";
-            this.txtTypeName.Size = new System.Drawing.Size(466, 27);
+            this.txtTypeName.Size = new System.Drawing.Size(454, 27);
             this.txtTypeName.TabIndex = 6;
             // 
             // lblTypePrice
@@ -305,7 +305,7 @@
             this.txtTypeDesc.Location = new System.Drawing.Point(16, 360);
             this.txtTypeDesc.Multiline = true;
             this.txtTypeDesc.Name = "txtTypeDesc";
-            this.txtTypeDesc.Size = new System.Drawing.Size(466, 80);
+            this.txtTypeDesc.Size = new System.Drawing.Size(454, 80);
             this.txtTypeDesc.TabIndex = 12;
             // 
             // btnTypeAdd
@@ -317,7 +317,7 @@
             this.btnTypeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTypeAdd.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnTypeAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnTypeAdd.Location = new System.Drawing.Point(16, 602);
+            this.btnTypeAdd.Location = new System.Drawing.Point(16, 575);
             this.btnTypeAdd.Name = "btnTypeAdd";
             this.btnTypeAdd.Size = new System.Drawing.Size(150, 40);
             this.btnTypeAdd.TabIndex = 13;
@@ -333,7 +333,7 @@
             this.btnTypeEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTypeEdit.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnTypeEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
-            this.btnTypeEdit.Location = new System.Drawing.Point(174, 602);
+            this.btnTypeEdit.Location = new System.Drawing.Point(174, 575);
             this.btnTypeEdit.Name = "btnTypeEdit";
             this.btnTypeEdit.Size = new System.Drawing.Size(150, 40);
             this.btnTypeEdit.TabIndex = 14;
@@ -349,7 +349,7 @@
             this.btnTypeDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTypeDelete.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnTypeDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnTypeDelete.Location = new System.Drawing.Point(332, 602);
+            this.btnTypeDelete.Location = new System.Drawing.Point(332, 575);
             this.btnTypeDelete.Name = "btnTypeDelete";
             this.btnTypeDelete.Size = new System.Drawing.Size(150, 40);
             this.btnTypeDelete.TabIndex = 15;
@@ -374,9 +374,9 @@
             this.pnlRoomList.Controls.Add(this.btnRoomAdd);
             this.pnlRoomList.Controls.Add(this.btnRoomEdit);
             this.pnlRoomList.Controls.Add(this.btnRoomDelete);
-            this.pnlRoomList.Location = new System.Drawing.Point(540, -1);
+            this.pnlRoomList.Location = new System.Drawing.Point(520, 12);
             this.pnlRoomList.Name = "pnlRoomList";
-            this.pnlRoomList.Size = new System.Drawing.Size(500, 660);
+            this.pnlRoomList.Size = new System.Drawing.Size(512, 633);
             this.pnlRoomList.TabIndex = 1;
             // 
             // pnlRoomListHeader
@@ -388,7 +388,7 @@
             this.pnlRoomListHeader.Controls.Add(this.pnlRoomListHeaderLine);
             this.pnlRoomListHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlRoomListHeader.Name = "pnlRoomListHeader";
-            this.pnlRoomListHeader.Size = new System.Drawing.Size(498, 44);
+            this.pnlRoomListHeader.Size = new System.Drawing.Size(510, 44);
             this.pnlRoomListHeader.TabIndex = 0;
             // 
             // lblRoomListTitle
@@ -409,7 +409,7 @@
             this.pnlRoomListHeaderLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(224)))));
             this.pnlRoomListHeaderLine.Location = new System.Drawing.Point(0, 43);
             this.pnlRoomListHeaderLine.Name = "pnlRoomListHeaderLine";
-            this.pnlRoomListHeaderLine.Size = new System.Drawing.Size(498, 1);
+            this.pnlRoomListHeaderLine.Size = new System.Drawing.Size(510, 1);
             this.pnlRoomListHeaderLine.TabIndex = 1;
             // 
             // dgvRooms
@@ -429,7 +429,7 @@
             this.dgvRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Prompt", 11F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
@@ -460,7 +460,7 @@
             this.dgvRooms.RowHeadersVisible = false;
             this.dgvRooms.RowTemplate.Height = 36;
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRooms.Size = new System.Drawing.Size(498, 320);
+            this.dgvRooms.Size = new System.Drawing.Size(510, 320);
             this.dgvRooms.TabIndex = 1;
             // 
             // colRoomNo
@@ -558,7 +558,7 @@
             this.cboRoomTypeId.FormattingEnabled = true;
             this.cboRoomTypeId.Location = new System.Drawing.Point(16, 472);
             this.cboRoomTypeId.Name = "cboRoomTypeId";
-            this.cboRoomTypeId.Size = new System.Drawing.Size(466, 28);
+            this.cboRoomTypeId.Size = new System.Drawing.Size(478, 28);
             this.cboRoomTypeId.TabIndex = 26;
             // 
             // btnRoomAdd
@@ -570,7 +570,7 @@
             this.btnRoomAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRoomAdd.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnRoomAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnRoomAdd.Location = new System.Drawing.Point(16, 602);
+            this.btnRoomAdd.Location = new System.Drawing.Point(16, 575);
             this.btnRoomAdd.Name = "btnRoomAdd";
             this.btnRoomAdd.Size = new System.Drawing.Size(150, 40);
             this.btnRoomAdd.TabIndex = 27;
@@ -586,7 +586,7 @@
             this.btnRoomEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRoomEdit.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnRoomEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
-            this.btnRoomEdit.Location = new System.Drawing.Point(174, 602);
+            this.btnRoomEdit.Location = new System.Drawing.Point(174, 575);
             this.btnRoomEdit.Name = "btnRoomEdit";
             this.btnRoomEdit.Size = new System.Drawing.Size(150, 40);
             this.btnRoomEdit.TabIndex = 28;
@@ -602,7 +602,7 @@
             this.btnRoomDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRoomDelete.Font = new System.Drawing.Font("Prompt", 11F);
             this.btnRoomDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnRoomDelete.Location = new System.Drawing.Point(332, 602);
+            this.btnRoomDelete.Location = new System.Drawing.Point(332, 575);
             this.btnRoomDelete.Name = "btnRoomDelete";
             this.btnRoomDelete.Size = new System.Drawing.Size(150, 40);
             this.btnRoomDelete.TabIndex = 29;
@@ -618,7 +618,6 @@
             this.Controls.Add(this.pnlRoomList);
             this.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Name = "ucRooms";
-            this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "ucRooms";
             this.pnlRoomTypes.ResumeLayout(false);
             this.pnlRoomTypes.PerformLayout();
@@ -637,9 +636,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlRoomTypes;
-        private System.Windows.Forms.Panel pnlRoomTypesHeader;
-        private System.Windows.Forms.Label lblRoomTypesTitle;
-        private System.Windows.Forms.Panel pnlRoomTypesHeaderLine;
         private System.Windows.Forms.DataGridView dgvRoomTypes;
         private System.Windows.Forms.Label lblTypeName;
         private System.Windows.Forms.TextBox txtTypeName;
@@ -672,5 +668,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomStatusCol;
+        private System.Windows.Forms.Panel pnlRoomTypesHeader;
+        private System.Windows.Forms.Label lblRoomTypesTitle;
+        private System.Windows.Forms.Panel pnlRoomTypesHeaderLine;
     }
 }

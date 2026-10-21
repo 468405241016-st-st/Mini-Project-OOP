@@ -75,7 +75,7 @@
             this.pnlSearch.Controls.Add(this.txtSearch);
             this.pnlSearch.Controls.Add(this.btnSearch);
             this.pnlSearch.Controls.Add(this.btnShowAll);
-            this.pnlSearch.Location = new System.Drawing.Point(19, 1);
+            this.pnlSearch.Location = new System.Drawing.Point(19, 6);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(1020, 64);
             this.pnlSearch.TabIndex = 0;
@@ -143,9 +143,9 @@
             this.pnlCustomerList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnlCustomerList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCustomerList.Controls.Add(this.dgvCustomers);
-            this.pnlCustomerList.Location = new System.Drawing.Point(19, 71);
+            this.pnlCustomerList.Location = new System.Drawing.Point(19, 85);
             this.pnlCustomerList.Name = "pnlCustomerList";
-            this.pnlCustomerList.Size = new System.Drawing.Size(640, 576);
+            this.pnlCustomerList.Size = new System.Drawing.Size(640, 562);
             this.pnlCustomerList.TabIndex = 1;
             // 
             // dgvCustomers
@@ -166,7 +166,7 @@
             this.dgvCustomers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
@@ -192,14 +192,14 @@
             this.dgvCustomers.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomers.EnableHeadersVisualStyles = false;
             this.dgvCustomers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(238)))));
-            this.dgvCustomers.Location = new System.Drawing.Point(0, 0);
+            this.dgvCustomers.Location = new System.Drawing.Point(0, -1);
             this.dgvCustomers.MultiSelect = false;
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
             this.dgvCustomers.RowHeadersVisible = false;
             this.dgvCustomers.RowTemplate.Height = 36;
             this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomers.Size = new System.Drawing.Size(640, 576);
+            this.dgvCustomers.Size = new System.Drawing.Size(640, 563);
             this.dgvCustomers.TabIndex = 0;
             // 
             // colCustomerId
@@ -257,9 +257,9 @@
             this.pnlCustomerDetail.Controls.Add(this.btnSaveCustomer);
             this.pnlCustomerDetail.Controls.Add(this.btnClearCustomer);
             this.pnlCustomerDetail.Controls.Add(this.btnDeleteCustomer);
-            this.pnlCustomerDetail.Location = new System.Drawing.Point(679, 73);
+            this.pnlCustomerDetail.Location = new System.Drawing.Point(679, 85);
             this.pnlCustomerDetail.Name = "pnlCustomerDetail";
-            this.pnlCustomerDetail.Size = new System.Drawing.Size(360, 575);
+            this.pnlCustomerDetail.Size = new System.Drawing.Size(360, 563);
             this.pnlCustomerDetail.TabIndex = 2;
             // 
             // pnlCustomerDetailHeader
@@ -400,7 +400,7 @@
             this.btnSaveCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveCustomer.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnSaveCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSaveCustomer.Location = new System.Drawing.Point(16, 521);
+            this.btnSaveCustomer.Location = new System.Drawing.Point(16, 509);
             this.btnSaveCustomer.Name = "btnSaveCustomer";
             this.btnSaveCustomer.Size = new System.Drawing.Size(159, 40);
             this.btnSaveCustomer.TabIndex = 19;
@@ -416,7 +416,7 @@
             this.btnClearCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearCustomer.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnClearCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
-            this.btnClearCustomer.Location = new System.Drawing.Point(183, 521);
+            this.btnClearCustomer.Location = new System.Drawing.Point(183, 509);
             this.btnClearCustomer.Name = "btnClearCustomer";
             this.btnClearCustomer.Size = new System.Drawing.Size(159, 40);
             this.btnClearCustomer.TabIndex = 20;
@@ -433,7 +433,7 @@
             this.btnDeleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteCustomer.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnDeleteCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(16, 593);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(16, 581);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(326, 40);
             this.btnDeleteCustomer.TabIndex = 21;
