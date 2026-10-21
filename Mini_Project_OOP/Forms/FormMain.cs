@@ -28,6 +28,14 @@ namespace Mini_Project_OOP.Forms
         {
             InitializeComponent();
 
+            if (CurrentUser.User != null)
+            {
+                lblUserName.Text = CurrentUser.User.UserName;   // เปลี่ยนเป็น FullName ถ้าอยากโชว์ชื่อเต็ม
+                lblUserRole.Text = CurrentUser.User.UserRole;
+            }
+
+            btnLogout.Click += btnLogout_Click;
+
             RegisterNavItem(btnNavDashboard);
             RegisterNavItem(btnNavBooking);
             RegisterNavItem(btnNavRooms);
@@ -35,6 +43,17 @@ namespace Mini_Project_OOP.Forms
             RegisterNavItem(btnNavBookingList);
 
             SelectNavItem(btnNavDashboard);
+        }
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("ต้องการออกจากระบบหรือไม่?", "ออกจากระบบ",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                CurrentUser.User = null;
+                Application.Restart();   // กลับไปหน้า login
+            }
         }
 
         private void RegisterNavItem(Button button)
