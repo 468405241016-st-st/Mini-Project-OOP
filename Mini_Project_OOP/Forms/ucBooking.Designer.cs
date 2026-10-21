@@ -736,8 +736,6 @@
         private System.Windows.Forms.Label lblAvailableHeader;
         private System.Windows.Forms.Panel pnlAvailableHeaderLine;
         private System.Windows.Forms.DataGridView dgvAvailableRooms;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCapacity;
         private System.Windows.Forms.Panel pnlStay;

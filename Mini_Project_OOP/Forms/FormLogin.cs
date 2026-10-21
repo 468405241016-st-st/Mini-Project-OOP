@@ -20,8 +20,10 @@ namespace Mini_Project_OOP
             this.AcceptButton = btnLogin;
 
             btnLogin.Click += btnLogin_Click;
+
+            txtPassword.UseSystemPasswordChar = checkBox1.Checked;
             checkBox1.CheckedChanged += (s, e) =>
-                txtPassword.UseSystemPasswordChar = !checkBox1.Checked;
+                txtPassword.UseSystemPasswordChar = checkBox1.Checked;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
