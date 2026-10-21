@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.pnlNavActive = new System.Windows.Forms.Panel();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblBrand = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.pnlHeaderLine = new System.Windows.Forms.Panel();
             this.pnlHost = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlSidebar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -64,7 +64,6 @@
             this.pnlSidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
-            this.pnlSidebar.Controls.Add(this.pnlNavActive);
             this.pnlSidebar.Controls.Add(this.pnlLogo);
             this.pnlSidebar.Controls.Add(this.btnNavDashboard);
             this.pnlSidebar.Controls.Add(this.btnNavBooking);
@@ -76,14 +75,6 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(220, 760);
             this.pnlSidebar.TabIndex = 0;
-            // 
-            // pnlNavActive
-            // 
-            this.pnlNavActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(234)))), ((int)(((byte)(212)))));
-            this.pnlNavActive.Location = new System.Drawing.Point(0, 76);
-            this.pnlNavActive.Name = "pnlNavActive";
-            this.pnlNavActive.Size = new System.Drawing.Size(4, 48);
-            this.pnlNavActive.TabIndex = 0;
             // 
             // pnlLogo
             // 
@@ -132,6 +123,7 @@
             // btnNavDashboard
             // 
             this.btnNavDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(106)))), ((int)(((byte)(101)))));
+            this.btnNavDashboard.CausesValidation = false;
             this.btnNavDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavDashboard.FlatAppearance.BorderSize = 0;
             this.btnNavDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -145,10 +137,12 @@
             this.btnNavDashboard.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.btnNavDashboard.Size = new System.Drawing.Size(220, 48);
             this.btnNavDashboard.TabIndex = 6;
+            this.btnNavDashboard.TabStop = false;
             this.btnNavDashboard.Text = " Dashboard";
             this.btnNavDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNavDashboard.UseVisualStyleBackColor = false;
+            this.btnNavDashboard.Click += new System.EventHandler(this.btnNavDashboard_Click);
             // 
             // imageList1
             // 
@@ -163,6 +157,7 @@
             // btnNavBooking
             // 
             this.btnNavBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnNavBooking.CausesValidation = false;
             this.btnNavBooking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavBooking.FlatAppearance.BorderSize = 0;
             this.btnNavBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -176,14 +171,17 @@
             this.btnNavBooking.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.btnNavBooking.Size = new System.Drawing.Size(220, 48);
             this.btnNavBooking.TabIndex = 7;
+            this.btnNavBooking.TabStop = false;
             this.btnNavBooking.Text = " จองห้องพัก";
             this.btnNavBooking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavBooking.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNavBooking.UseVisualStyleBackColor = false;
+            this.btnNavBooking.Click += new System.EventHandler(this.btnNavBooking_Click);
             // 
             // btnNavRooms
             // 
             this.btnNavRooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnNavRooms.CausesValidation = false;
             this.btnNavRooms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavRooms.FlatAppearance.BorderSize = 0;
             this.btnNavRooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -197,14 +195,17 @@
             this.btnNavRooms.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.btnNavRooms.Size = new System.Drawing.Size(220, 48);
             this.btnNavRooms.TabIndex = 8;
+            this.btnNavRooms.TabStop = false;
             this.btnNavRooms.Text = " ห้องพัก / ประเภท";
             this.btnNavRooms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavRooms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNavRooms.UseVisualStyleBackColor = false;
+            this.btnNavRooms.Click += new System.EventHandler(this.btnNavRooms_Click);
             // 
             // btnNavCustomers
             // 
             this.btnNavCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnNavCustomers.CausesValidation = false;
             this.btnNavCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavCustomers.FlatAppearance.BorderSize = 0;
             this.btnNavCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -218,14 +219,17 @@
             this.btnNavCustomers.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.btnNavCustomers.Size = new System.Drawing.Size(220, 48);
             this.btnNavCustomers.TabIndex = 9;
-            this.btnNavCustomers.Text = " ลูกค้า";
+            this.btnNavCustomers.TabStop = false;
+            this.btnNavCustomers.Text = " ข้อมูลลูกค้า";
             this.btnNavCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNavCustomers.UseVisualStyleBackColor = false;
+            this.btnNavCustomers.Click += new System.EventHandler(this.btnNavCustomers_Click);
             // 
             // btnNavBookingList
             // 
             this.btnNavBookingList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(70)))));
+            this.btnNavBookingList.CausesValidation = false;
             this.btnNavBookingList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavBookingList.FlatAppearance.BorderSize = 0;
             this.btnNavBookingList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -239,10 +243,12 @@
             this.btnNavBookingList.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.btnNavBookingList.Size = new System.Drawing.Size(220, 48);
             this.btnNavBookingList.TabIndex = 10;
+            this.btnNavBookingList.TabStop = false;
             this.btnNavBookingList.Text = " รายการจอง";
             this.btnNavBookingList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavBookingList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNavBookingList.UseVisualStyleBackColor = false;
+            this.btnNavBookingList.Click += new System.EventHandler(this.btnNavBookingList_Click);
             // 
             // pnlUser
             // 
@@ -363,6 +369,12 @@
             this.pnlHost.TabIndex = 2;
             this.pnlHost.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHost_Paint);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -392,7 +404,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlSidebar;
-        private System.Windows.Forms.Panel pnlNavActive;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label lblBrand;
@@ -413,5 +424,6 @@
         private System.Windows.Forms.Panel pnlHeaderLine;
         private System.Windows.Forms.Panel pnlHost;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

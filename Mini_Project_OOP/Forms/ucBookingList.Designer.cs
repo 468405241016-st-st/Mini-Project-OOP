@@ -85,7 +85,7 @@
             this.pnlFilter.Controls.Add(this.txtFilterKeyword);
             this.pnlFilter.Controls.Add(this.btnFilterSearch);
             this.pnlFilter.Controls.Add(this.btnFilterReset);
-            this.pnlFilter.Location = new System.Drawing.Point(20, 9);
+            this.pnlFilter.Location = new System.Drawing.Point(13, 12);
             this.pnlFilter.Name = "pnlFilter";
             this.pnlFilter.Size = new System.Drawing.Size(1020, 90);
             this.pnlFilter.TabIndex = 0;
@@ -228,9 +228,9 @@
             this.pnlBookingGrid.Controls.Add(this.dgvBookings);
             this.pnlBookingGrid.Controls.Add(this.pnlFooterLine);
             this.pnlBookingGrid.Controls.Add(this.pnlBookingFooter);
-            this.pnlBookingGrid.Location = new System.Drawing.Point(20, 116);
+            this.pnlBookingGrid.Location = new System.Drawing.Point(12, 124);
             this.pnlBookingGrid.Name = "pnlBookingGrid";
-            this.pnlBookingGrid.Size = new System.Drawing.Size(1020, 541);
+            this.pnlBookingGrid.Size = new System.Drawing.Size(1020, 521);
             this.pnlBookingGrid.TabIndex = 1;
             // 
             // dgvBookings
@@ -251,7 +251,7 @@
             this.dgvBookings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Prompt", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(98)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(242)))), ((int)(((byte)(240)))));
@@ -288,7 +288,7 @@
             this.dgvBookings.RowHeadersVisible = false;
             this.dgvBookings.RowTemplate.Height = 36;
             this.dgvBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBookings.Size = new System.Drawing.Size(1018, 482);
+            this.dgvBookings.Size = new System.Drawing.Size(1018, 462);
             this.dgvBookings.TabIndex = 0;
             // 
             // colBkId
@@ -372,7 +372,7 @@
             this.pnlFooterLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlFooterLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(224)))));
-            this.pnlFooterLine.Location = new System.Drawing.Point(0, 482);
+            this.pnlFooterLine.Location = new System.Drawing.Point(0, 462);
             this.pnlFooterLine.Name = "pnlFooterLine";
             this.pnlFooterLine.Size = new System.Drawing.Size(1018, 1);
             this.pnlFooterLine.TabIndex = 1;
@@ -386,7 +386,7 @@
             this.pnlBookingFooter.Controls.Add(this.btnCheckOut);
             this.pnlBookingFooter.Controls.Add(this.btnCancelBooking);
             this.pnlBookingFooter.Controls.Add(this.lblTotalCount);
-            this.pnlBookingFooter.Location = new System.Drawing.Point(0, 483);
+            this.pnlBookingFooter.Location = new System.Drawing.Point(0, 463);
             this.pnlBookingFooter.Name = "pnlBookingFooter";
             this.pnlBookingFooter.Size = new System.Drawing.Size(1018, 56);
             this.pnlBookingFooter.TabIndex = 2;
@@ -461,7 +461,6 @@
             this.Controls.Add(this.pnlBookingGrid);
             this.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Name = "ucBookingList";
-            this.Padding = new System.Windows.Forms.Padding(20);
             this.pnlFilter.ResumeLayout(false);
             this.pnlFilter.PerformLayout();
             this.pnlBookingGrid.ResumeLayout(false);
