@@ -48,6 +48,12 @@
             this.btnFilterReset = new System.Windows.Forms.Button();
             this.pnlBookingGrid = new System.Windows.Forms.Panel();
             this.dgvBookings = new System.Windows.Forms.DataGridView();
+            this.pnlFooterLine = new System.Windows.Forms.Panel();
+            this.pnlBookingFooter = new System.Windows.Forms.Panel();
+            this.btnCheckIn = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.btnCancelBooking = new System.Windows.Forms.Button();
+            this.lblTotalCount = new System.Windows.Forms.Label();
             this.colBkId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +63,6 @@
             this.colBkTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlFooterLine = new System.Windows.Forms.Panel();
-            this.pnlBookingFooter = new System.Windows.Forms.Panel();
-            this.btnCheckIn = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.btnCancelBooking = new System.Windows.Forms.Button();
-            this.lblTotalCount = new System.Windows.Forms.Label();
             this.pnlFilter.SuspendLayout();
             this.pnlBookingGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).BeginInit();
@@ -201,6 +201,7 @@
             this.btnFilterSearch.TabIndex = 9;
             this.btnFilterSearch.Text = "ค้นหา";
             this.btnFilterSearch.UseVisualStyleBackColor = false;
+            this.btnFilterSearch.Click += new System.EventHandler(this.btnFilterSearch_Click);
             // 
             // btnFilterReset
             // 
@@ -217,6 +218,7 @@
             this.btnFilterReset.TabIndex = 10;
             this.btnFilterReset.Text = "รีเซ็ต";
             this.btnFilterReset.UseVisualStyleBackColor = false;
+            this.btnFilterReset.Click += new System.EventHandler(this.btnFilterReset_Click);
             // 
             // pnlBookingGrid
             // 
@@ -290,82 +292,6 @@
             this.dgvBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBookings.Size = new System.Drawing.Size(1018, 462);
             this.dgvBookings.TabIndex = 0;
-            // 
-            // colBkId
-            // 
-            this.colBkId.HeaderText = "รหัส";
-            this.colBkId.Name = "colBkId";
-            this.colBkId.ReadOnly = true;
-            this.colBkId.Width = 70;
-            // 
-            // colBkCustomer
-            // 
-            this.colBkCustomer.HeaderText = "ลูกค้า";
-            this.colBkCustomer.Name = "colBkCustomer";
-            this.colBkCustomer.ReadOnly = true;
-            this.colBkCustomer.Width = 190;
-            // 
-            // colBkRoom
-            // 
-            this.colBkRoom.HeaderText = "ห้อง";
-            this.colBkRoom.Name = "colBkRoom";
-            this.colBkRoom.ReadOnly = true;
-            this.colBkRoom.Width = 80;
-            // 
-            // colBkType
-            // 
-            this.colBkType.HeaderText = "ประเภท";
-            this.colBkType.Name = "colBkType";
-            this.colBkType.ReadOnly = true;
-            this.colBkType.Width = 110;
-            // 
-            // colBkCheckIn
-            // 
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colBkCheckIn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colBkCheckIn.HeaderText = "เช็คอิน";
-            this.colBkCheckIn.Name = "colBkCheckIn";
-            this.colBkCheckIn.ReadOnly = true;
-            this.colBkCheckIn.Width = 110;
-            // 
-            // colBkCheckOut
-            // 
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colBkCheckOut.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colBkCheckOut.HeaderText = "เช็คเอาท์";
-            this.colBkCheckOut.Name = "colBkCheckOut";
-            this.colBkCheckOut.ReadOnly = true;
-            this.colBkCheckOut.Width = 110;
-            // 
-            // colBkTotal
-            // 
-            dataGridViewCellStyle5.Format = "฿#,##0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.colBkTotal.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colBkTotal.HeaderText = "ราคารวม";
-            this.colBkTotal.Name = "colBkTotal";
-            this.colBkTotal.ReadOnly = true;
-            this.colBkTotal.Width = 110;
-            // 
-            // colBkStatus
-            // 
-            this.colBkStatus.HeaderText = "สถานะ";
-            this.colBkStatus.Name = "colBkStatus";
-            this.colBkStatus.ReadOnly = true;
-            this.colBkStatus.Width = 120;
-            // 
-            // colBkCreated
-            // 
-            this.colBkCreated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle6.NullValue = null;
-            this.colBkCreated.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colBkCreated.HeaderText = "สร้างเมื่อ";
-            this.colBkCreated.MinimumWidth = 60;
-            this.colBkCreated.Name = "colBkCreated";
-            this.colBkCreated.ReadOnly = true;
             // 
             // pnlFooterLine
             // 
@@ -451,6 +377,90 @@
             this.lblTotalCount.TabIndex = 18;
             this.lblTotalCount.Text = "รวม 0 รายการ";
             this.lblTotalCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // colBkId
+            // 
+            this.colBkId.DataPropertyName = "Id";
+            this.colBkId.HeaderText = "รหัส";
+            this.colBkId.Name = "colBkId";
+            this.colBkId.ReadOnly = true;
+            this.colBkId.Width = 70;
+            // 
+            // colBkCustomer
+            // 
+            this.colBkCustomer.DataPropertyName = "CustomerId";
+            this.colBkCustomer.HeaderText = "ลูกค้า";
+            this.colBkCustomer.Name = "colBkCustomer";
+            this.colBkCustomer.ReadOnly = true;
+            this.colBkCustomer.Width = 190;
+            // 
+            // colBkRoom
+            // 
+            this.colBkRoom.DataPropertyName = "RoomId";
+            this.colBkRoom.HeaderText = "ห้อง";
+            this.colBkRoom.Name = "colBkRoom";
+            this.colBkRoom.ReadOnly = true;
+            this.colBkRoom.Width = 80;
+            // 
+            // colBkType
+            // 
+            this.colBkType.DataPropertyName = "BookingStatusId";
+            this.colBkType.HeaderText = "ประเภท";
+            this.colBkType.Name = "colBkType";
+            this.colBkType.ReadOnly = true;
+            this.colBkType.Width = 110;
+            // 
+            // colBkCheckIn
+            // 
+            this.colBkCheckIn.DataPropertyName = "CheckinDate";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colBkCheckIn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colBkCheckIn.HeaderText = "เช็คอิน";
+            this.colBkCheckIn.Name = "colBkCheckIn";
+            this.colBkCheckIn.ReadOnly = true;
+            this.colBkCheckIn.Width = 110;
+            // 
+            // colBkCheckOut
+            // 
+            this.colBkCheckOut.DataPropertyName = "CheckoutDate";
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colBkCheckOut.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colBkCheckOut.HeaderText = "เช็คเอาท์";
+            this.colBkCheckOut.Name = "colBkCheckOut";
+            this.colBkCheckOut.ReadOnly = true;
+            this.colBkCheckOut.Width = 110;
+            // 
+            // colBkTotal
+            // 
+            this.colBkTotal.DataPropertyName = "TotalPrice";
+            dataGridViewCellStyle5.Format = "฿#,##0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colBkTotal.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colBkTotal.HeaderText = "ราคารวม";
+            this.colBkTotal.Name = "colBkTotal";
+            this.colBkTotal.ReadOnly = true;
+            this.colBkTotal.Width = 110;
+            // 
+            // colBkStatus
+            // 
+            this.colBkStatus.HeaderText = "สถานะ";
+            this.colBkStatus.Name = "colBkStatus";
+            this.colBkStatus.ReadOnly = true;
+            this.colBkStatus.Width = 120;
+            // 
+            // colBkCreated
+            // 
+            this.colBkCreated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBkCreated.DataPropertyName = "CreatedAt";
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colBkCreated.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colBkCreated.HeaderText = "สร้างเมื่อ";
+            this.colBkCreated.MinimumWidth = 60;
+            this.colBkCreated.Name = "colBkCreated";
+            this.colBkCreated.ReadOnly = true;
             // 
             // ucBookingList
             // 

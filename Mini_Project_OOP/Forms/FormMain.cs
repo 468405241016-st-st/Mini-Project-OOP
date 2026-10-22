@@ -43,6 +43,9 @@ namespace Mini_Project_OOP.Forms
             RegisterNavItem(btnNavBookingList);
 
             SelectNavItem(btnNavDashboard);
+
+            SelectNavItem(btnNavDashboard);
+            OpenChildForm(new ucDashboard());
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {

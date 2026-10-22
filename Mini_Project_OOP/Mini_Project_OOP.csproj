@@ -106,6 +106,7 @@
       <DependentUpon>ucRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\ThemeExtensions.cs" />
+    <Compile Include="Model\Filter.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\IRepository.cs" />
     <Compile Include="Model\tbl_Bookings.cs" />

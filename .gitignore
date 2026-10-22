@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+*.laccdb
+/Mini_Project_OOP/Mini_Project_Database.laccdb
