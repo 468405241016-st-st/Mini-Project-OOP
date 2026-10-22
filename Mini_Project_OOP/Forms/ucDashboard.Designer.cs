@@ -138,7 +138,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 36;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(608, 479);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 366);
             this.dataGridView1.TabIndex = 1;
             // 
             // colId
@@ -308,7 +308,7 @@
             this.pnlBookings.Controls.Add(this.lblBookingTitle);
             this.pnlBookings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBookings.Location = new System.Drawing.Point(16, 8);
-            this.pnlBookings.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlBookings.Margin = new System.Windows.Forms.Padding(8);
             this.pnlBookings.Name = "pnlBookings";
             this.pnlBookings.Size = new System.Drawing.Size(444, 416);
             this.pnlBookings.TabIndex = 0;
@@ -341,7 +341,7 @@
             this.pnlCard4.Controls.Add(this.pnlStripe4);
             this.pnlCard4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCard4.Location = new System.Drawing.Point(590, 8);
-            this.pnlCard4.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlCard4.Margin = new System.Windows.Forms.Padding(8);
             this.pnlCard4.Name = "pnlCard4";
             this.pnlCard4.Size = new System.Drawing.Size(181, 84);
             this.pnlCard4.TabIndex = 3;
@@ -383,7 +383,7 @@
             this.pnlCard3.Controls.Add(this.pnlStripe3);
             this.pnlCard3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCard3.Location = new System.Drawing.Point(396, 8);
-            this.pnlCard3.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlCard3.Margin = new System.Windows.Forms.Padding(8);
             this.pnlCard3.Name = "pnlCard3";
             this.pnlCard3.Size = new System.Drawing.Size(178, 84);
             this.pnlCard3.TabIndex = 2;
@@ -425,7 +425,7 @@
             this.pnlCard2.Controls.Add(this.pnlStripe2);
             this.pnlCard2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCard2.Location = new System.Drawing.Point(202, 8);
-            this.pnlCard2.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlCard2.Margin = new System.Windows.Forms.Padding(8);
             this.pnlCard2.Name = "pnlCard2";
             this.pnlCard2.Size = new System.Drawing.Size(178, 84);
             this.pnlCard2.TabIndex = 1;
@@ -467,7 +467,7 @@
             this.pnlCard1.Controls.Add(this.pnlStripe1);
             this.pnlCard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCard1.Location = new System.Drawing.Point(8, 8);
-            this.pnlCard1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlCard1.Margin = new System.Windows.Forms.Padding(8);
             this.pnlCard1.Name = "pnlCard1";
             this.pnlCard1.Size = new System.Drawing.Size(178, 84);
             this.pnlCard1.TabIndex = 0;
@@ -530,7 +530,7 @@
             this.pnlRooms.Controls.Add(this.lblRoomTitle);
             this.pnlRooms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRooms.Location = new System.Drawing.Point(476, 8);
-            this.pnlRooms.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlRooms.Margin = new System.Windows.Forms.Padding(8);
             this.pnlRooms.Name = "pnlRooms";
             this.pnlRooms.Size = new System.Drawing.Size(267, 416);
             this.pnlRooms.TabIndex = 1;
