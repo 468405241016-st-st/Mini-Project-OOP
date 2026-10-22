@@ -24,18 +24,18 @@ namespace Mini_Project_OOP.Constants
         public static readonly Font Input = new Font("Leelawadee UI", 11F);
         public static readonly Font Title = new Font("Leelawadee UI", 16F, FontStyle.Bold);
 
-        // สีป้ายสถานะ (RoomStatus และ BookingStatus)
+        // สีป้ายสถานะ (RoomStatus และ BookingStatus) สถานะที่ไม่รู้จัก = สีเทา (เช่น CheckedOut)
         public static Color StatusBack(string s)
         {
             switch (s)
             {
-                case "Available": return Color.FromArgb(220, 252, 231);
-                case "Occupied":
-                case "Cancelled": return Color.FromArgb(254, 226, 226);
-                case "Maintenance": return Color.FromArgb(254, 243, 199);
-                case "Confirmed": return Color.FromArgb(219, 234, 254);
-                case "CheckedIn": return Color.FromArgb(204, 251, 241);
-                default: return Color.FromArgb(229, 231, 235); // CheckedOut
+                case RoomStatusName.Available: return Color.FromArgb(220, 252, 231);
+                case RoomStatusName.Occupied:
+                case BookingStatusName.Cancelled: return Color.FromArgb(254, 226, 226);
+                case RoomStatusName.Maintenance: return Color.FromArgb(254, 243, 199);
+                case BookingStatusName.Confirmed: return Color.FromArgb(219, 234, 254);
+                case BookingStatusName.CheckedIn: return Color.FromArgb(204, 251, 241);
+                default: return Color.FromArgb(229, 231, 235);
             }
         }
 
@@ -43,12 +43,12 @@ namespace Mini_Project_OOP.Constants
         {
             switch (s)
             {
-                case "Available": return Color.FromArgb(22, 101, 52);
-                case "Occupied":
-                case "Cancelled": return Color.FromArgb(153, 27, 27);
-                case "Maintenance": return Color.FromArgb(146, 64, 14);
-                case "Confirmed": return Color.FromArgb(30, 64, 175);
-                case "CheckedIn": return Color.FromArgb(17, 94, 89);
+                case RoomStatusName.Available: return Color.FromArgb(22, 101, 52);
+                case RoomStatusName.Occupied:
+                case BookingStatusName.Cancelled: return Color.FromArgb(153, 27, 27);
+                case RoomStatusName.Maintenance: return Color.FromArgb(146, 64, 14);
+                case BookingStatusName.Confirmed: return Color.FromArgb(30, 64, 175);
+                case BookingStatusName.CheckedIn: return Color.FromArgb(17, 94, 89);
                 default: return Color.FromArgb(55, 65, 81);
             }
         }

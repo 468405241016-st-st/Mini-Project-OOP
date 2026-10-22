@@ -456,7 +456,6 @@
             this.Controls.Add(this.pnlBookingGrid);
             this.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Name = "ucBookingList";
-            this.Load += new System.EventHandler(this.ucBookingList_Load);
             this.pnlFilter.ResumeLayout(false);
             this.pnlFilter.PerformLayout();
             this.pnlBookingGrid.ResumeLayout(false);

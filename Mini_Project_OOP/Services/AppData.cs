@@ -1,12 +1,8 @@
 ﻿using Mini_Project_OOP.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mini_Project_OOP.Services
 {
+    /// <summary>จุดรวม Repository ของทุกตาราง (ทุกหน้าจอใช้ตัวเดียวกันที่ส่งมาจาก FormMain)</summary>
     public class AppData
     {
         public Repository<Customer> Customers { get; }

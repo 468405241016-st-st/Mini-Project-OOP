@@ -1,17 +1,18 @@
 ﻿using Mini_Project_OOP.Constants;
+using Mini_Project_OOP.Helper;
 using Mini_Project_OOP.Model;
 using Mini_Project_OOP.Services;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Mini_Project_OOP.Helper.TextUtils;
 
 namespace Mini_Project_OOP.Forms
 {
-    public partial class ucRooms : Form
+    public partial class ucRooms : DataForm
     {
         // แถวของตารางห้องพัก: ตารางผูกกับ property ซ้อนกัน (Room.RoomType.NameType) ไม่ได้ จึงแปลงเป็นแถวแบนๆ ก่อน
         private sealed class RoomRow
@@ -31,7 +32,6 @@ namespace Mini_Project_OOP.Forms
         private RoomType _selectedType;     // null = กำลังเพิ่มประเภทใหม่
         private Room _selectedRoom;         // null = กำลังเพิ่มห้องใหม่
         private bool _binding;              // กัน SelectionChanged ตอนกำลัง bind ข้อมูล
-        private bool _busy;                 // กันกดซ้ำตอนกำลังคุยกับฐานข้อมูล
 
         // ใช้ตอนเปิดใน Designer เท่านั้น
         public ucRooms()
@@ -67,15 +67,8 @@ namespace Mini_Project_OOP.Forms
             cboRoomTypeId.DisplayMember = nameof(RoomType.NameType);
             cboRoomTypeId.ValueMember = nameof(RoomType.Id);
 
-            EnableDoubleBuffer(dgvRoomTypes);
-            EnableDoubleBuffer(dgvRooms);
-        }
-
-        private static void EnableDoubleBuffer(DataGridView grid)
-        {
-            typeof(DataGridView)
-                .GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic)
-                ?.SetValue(grid, true, null);
+            dgvRoomTypes.EnableDoubleBuffer();
+            dgvRooms.EnableDoubleBuffer();
         }
 
         private void WireEvents()
@@ -295,7 +288,7 @@ namespace Mini_Project_OOP.Forms
         // ---------------------------------------------------------------
         private async Task SaveTypeAsync()
         {
-            if (_busy) return;
+            if (IsBusy) return;
 
             string name = txtTypeName.Text.Trim();
             if (name.Length == 0) { Warn("กรุณากรอกชื่อประเภทห้อง", txtTypeName); return; }
@@ -328,13 +321,12 @@ namespace Mini_Project_OOP.Forms
             if (!await TryAsync(ReloadTypesAsync, "บันทึกแล้ว แต่โหลดรายการใหม่ไม่สำเร็จ")) return;
 
             RefreshTypeViews();
-            MessageBox.Show(isNew ? "เพิ่มประเภทห้องเรียบร้อยแล้ว" : "บันทึกการแก้ไขเรียบร้อยแล้ว",
-                "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ShowSuccess(isNew ? "เพิ่มประเภทห้องเรียบร้อยแล้ว" : "บันทึกการแก้ไขเรียบร้อยแล้ว");
         }
 
         private async Task DeleteTypeAsync()
         {
-            if (_busy || _selectedType == null) return;
+            if (IsBusy || _selectedType == null) return;
             var target = _selectedType;
 
             // ประเภทที่มีห้องใช้อยู่ลบไม่ได้
@@ -346,20 +338,17 @@ namespace Mini_Project_OOP.Forms
 
             if (rooms > 0)
             {
-                MessageBox.Show($"ลบไม่ได้ เพราะประเภท \"{target.NameType}\" ถูกใช้กับห้องพัก {rooms} ห้อง",
-                    "ลบไม่ได้", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ShowCannotDelete($"ลบไม่ได้ เพราะประเภท \"{target.NameType}\" ถูกใช้กับห้องพัก {rooms} ห้อง");
                 return;
             }
 
-            var confirm = MessageBox.Show($"ต้องการลบประเภทห้อง \"{target.NameType}\" ใช่หรือไม่?",
-                "ยืนยันการลบ", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (confirm != DialogResult.Yes) return;
+            if (!ConfirmDelete($"ต้องการลบประเภทห้อง \"{target.NameType}\" ใช่หรือไม่?")) return;
 
             if (!await TryAsync(() => _data.RoomTypes.DeleteAsync(target.Id), "ลบข้อมูลไม่สำเร็จ")) return;
             if (!await TryAsync(ReloadTypesAsync, "ลบแล้ว แต่โหลดรายการใหม่ไม่สำเร็จ")) return;
 
             RefreshTypeViews();
-            MessageBox.Show("ลบประเภทห้องเรียบร้อยแล้ว", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ShowSuccess("ลบประเภทห้องเรียบร้อยแล้ว");
         }
 
         // หลังประเภทห้องเปลี่ยน: อัปเดตตารางประเภท, ComboBox ประเภทห้อง และชื่อประเภทในตารางห้องพัก (ไม่ต้องโหลดห้องใหม่)
@@ -406,7 +395,7 @@ namespace Mini_Project_OOP.Forms
         // ---------------------------------------------------------------
         private async Task SaveRoomAsync()
         {
-            if (_busy) return;
+            if (IsBusy) return;
 
             string number = txtRoomNumber.Text.Trim();
             if (number.Length == 0) { Warn("กรุณากรอกเลขห้อง", txtRoomNumber); return; }
@@ -435,13 +424,12 @@ namespace Mini_Project_OOP.Forms
 
             ClearRoomForm();
             BindRooms();
-            MessageBox.Show(isNew ? "เพิ่มห้องพักเรียบร้อยแล้ว" : "บันทึกการแก้ไขเรียบร้อยแล้ว",
-                "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ShowSuccess(isNew ? "เพิ่มห้องพักเรียบร้อยแล้ว" : "บันทึกการแก้ไขเรียบร้อยแล้ว");
         }
 
         private async Task DeleteRoomAsync()
         {
-            if (_busy || _selectedRoom == null) return;
+            if (IsBusy || _selectedRoom == null) return;
             var target = _selectedRoom;
 
             // ห้องที่มีประวัติการจองลบไม่ได้
@@ -453,69 +441,35 @@ namespace Mini_Project_OOP.Forms
 
             if (bookings > 0)
             {
-                MessageBox.Show($"ลบไม่ได้ เพราะห้อง \"{target.RoomNumber}\" มีประวัติการจอง {bookings} รายการ",
-                    "ลบไม่ได้", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ShowCannotDelete($"ลบไม่ได้ เพราะห้อง \"{target.RoomNumber}\" มีประวัติการจอง {bookings} รายการ");
                 return;
             }
 
-            var confirm = MessageBox.Show($"ต้องการลบห้อง \"{target.RoomNumber}\" ใช่หรือไม่?",
-                "ยืนยันการลบ", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (confirm != DialogResult.Yes) return;
+            if (!ConfirmDelete($"ต้องการลบห้อง \"{target.RoomNumber}\" ใช่หรือไม่?")) return;
 
             if (!await TryAsync(() => _data.Rooms.DeleteAsync(target.Id), "ลบข้อมูลไม่สำเร็จ")) return;
             if (!await TryAsync(ReloadRoomsAsync, "ลบแล้ว แต่โหลดรายการใหม่ไม่สำเร็จ")) return;
 
             ClearRoomForm();
             BindRooms();
-            MessageBox.Show("ลบห้องพักเรียบร้อยแล้ว", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ShowSuccess("ลบห้องพักเรียบร้อยแล้ว");
         }
 
         // ---------------------------------------------------------------
         // HELPERS
         // ---------------------------------------------------------------
         // เพิ่ม = ใช้ได้เฉพาะตอนไม่ได้เลือกแถว / แก้ไข+ลบ = ใช้ได้เฉพาะตอนเลือกแถวอยู่
-        private void UpdateButtons()
+        protected override void UpdateButtons()
         {
             bool hasType = _selectedType != null;
-            btnTypeAdd.Enabled = !_busy && !hasType;
-            btnTypeEdit.Enabled = !_busy && hasType;
-            btnTypeDelete.Enabled = !_busy && hasType;
+            btnTypeAdd.Enabled = !IsBusy && !hasType;
+            btnTypeEdit.Enabled = !IsBusy && hasType;
+            btnTypeDelete.Enabled = !IsBusy && hasType;
 
             bool hasRoom = _selectedRoom != null;
-            btnRoomAdd.Enabled = !_busy && !hasRoom;
-            btnRoomEdit.Enabled = !_busy && hasRoom;
-            btnRoomDelete.Enabled = !_busy && hasRoom;
-        }
-
-        // รันงานฐานข้อมูล: กันกดซ้ำ + โชว์ cursor รอ + จับ error แสดงเป็นข้อความ
-        private async Task<bool> TryAsync(Func<Task> action, string errorTitle)
-        {
-            _busy = true;
-            UseWaitCursor = true;
-            UpdateButtons();
-            try
-            {
-                await action();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(errorTitle + "\n\n" + ex.Message, "เกิดข้อผิดพลาด",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                _busy = false;
-                UseWaitCursor = false;
-                UpdateButtons();
-            }
-        }
-
-        private static void Warn(string message, Control focus)
-        {
-            MessageBox.Show(message, "ข้อมูลไม่ครบ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            focus.Focus();
+            btnRoomAdd.Enabled = !IsBusy && !hasRoom;
+            btnRoomEdit.Enabled = !IsBusy && hasRoom;
+            btnRoomDelete.Enabled = !IsBusy && hasRoom;
         }
 
         private static bool TryParsePrice(string text, out decimal price)
@@ -527,12 +481,6 @@ namespace Mini_Project_OOP.Forms
                 return true;
             }
             return false;
-        }
-
-        private static string NullIfEmpty(string s)
-        {
-            s = s?.Trim();
-            return string.IsNullOrEmpty(s) ? null : s;
         }
     }
 }

@@ -1,17 +1,16 @@
-﻿using Mini_Project_OOP.Model;
+﻿using Mini_Project_OOP.Helper;
+using Mini_Project_OOP.Model;
 using Mini_Project_OOP.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Mini_Project_OOP.Helper.TextUtils;
 
 namespace Mini_Project_OOP.Forms
 {
-    public partial class ucCustomers : Form
+    public partial class ucCustomers : DataForm
     {
         private readonly AppData _data;
         private readonly System.Windows.Forms.Timer _searchTimer = new System.Windows.Forms.Timer { Interval = 250 };
@@ -20,7 +19,6 @@ namespace Mini_Project_OOP.Forms
         private Dictionary<int, string> _keys = new Dictionary<int, string>();    // ข้อความรวมทุกช่อง ไว้ค้นหาเร็วๆ (คีย์ = Id)
         private Customer _selected;                                               // null = กำลังเพิ่มลูกค้าใหม่
         private bool _binding;                                                    // กัน SelectionChanged ตอนกำลัง bind ข้อมูล
-        private bool _busy;                                                       // กันกดซ้ำตอนกำลังคุยกับฐานข้อมูล
 
         // ใช้ตอนเปิดใน Designer เท่านั้น
         public ucCustomers()
@@ -48,10 +46,7 @@ namespace Mini_Project_OOP.Forms
             colIdCard.DataPropertyName = nameof(Customer.NationalId);
             colEmail.DataPropertyName = nameof(Customer.Email);
 
-            // Double buffer ให้ตารางเลื่อน/วาดลื่นขึ้น
-            typeof(DataGridView)
-                .GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic)
-                ?.SetValue(dgvCustomers, true, null);
+            dgvCustomers.EnableDoubleBuffer();
         }
 
         private void WireEvents()
@@ -107,22 +102,6 @@ namespace Mini_Project_OOP.Forms
                 c.FullName, c.PhoneNumber, Compact(c.PhoneNumber), c.NationalId, Compact(c.NationalId), c.Email);
         }
 
-        private static string Compact(string s)
-        {
-            if (string.IsNullOrEmpty(s)) return "";
-            var sb = new StringBuilder(s.Length);
-            foreach (char ch in s)
-                if (ch != ' ' && ch != '-') sb.Append(ch);
-            return sb.ToString();
-        }
-
-        private static bool IsNumericLike(string s)
-        {
-            foreach (char ch in s)
-                if (!char.IsDigit(ch) && ch != ' ' && ch != '-') return false;
-            return true;
-        }
-
         private void ClearSearch()
         {
             txtSearch.Text = "";
@@ -145,8 +124,8 @@ namespace Mini_Project_OOP.Forms
                 view = _all.Where(c =>
                 {
                     string key = _keys[c.Id];
-                    return key.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0
-                        || (compact.Length > 0 && key.IndexOf(compact, StringComparison.OrdinalIgnoreCase) >= 0);
+                    return ContainsIgnoreCase(key, term)
+                        || (compact.Length > 0 && ContainsIgnoreCase(key, compact));
                 }).ToList();
             }
 
@@ -209,11 +188,11 @@ namespace Mini_Project_OOP.Forms
             txtFullName.Focus();
         }
 
-        private void UpdateButtons()
+        protected override void UpdateButtons()
         {
-            btnSaveCustomer.Enabled = !_busy;
-            btnClearCustomer.Enabled = !_busy;
-            btnDeleteCustomer.Enabled = !_busy && _selected != null;
+            btnSaveCustomer.Enabled = !IsBusy;
+            btnClearCustomer.Enabled = !IsBusy;
+            btnDeleteCustomer.Enabled = !IsBusy && _selected != null;
         }
 
         // ---------------------------------------------------------------
@@ -221,7 +200,7 @@ namespace Mini_Project_OOP.Forms
         // ---------------------------------------------------------------
         private async Task SaveAsync()
         {
-            if (_busy) return;
+            if (IsBusy) return;
 
             string name = txtFullName.Text.Trim();
             string email = txtEmailDetail.Text.Trim();
@@ -256,24 +235,15 @@ namespace Mini_Project_OOP.Forms
 
             _selected = null;
             ApplyFilter();
-            if (savedId.HasValue) SelectSavedRow(savedId.Value);
+            if (savedId.HasValue) SelectRow(_all, savedId.Value);   // SelectionChanged จะเติมฟอร์มให้เอง
             UpdateButtons();
 
-            MessageBox.Show(isNew ? "เพิ่มลูกค้าใหม่เรียบร้อยแล้ว" : "บันทึกการแก้ไขเรียบร้อยแล้ว",
-                "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void SelectSavedRow(int id)
-        {
-            int index = _all.FindIndex(c => c.Id == id);
-            if (index < 0) return;
-            dgvCustomers.Rows[index].Selected = true;                       // SelectionChanged จะเติมฟอร์มให้เอง
-            dgvCustomers.CurrentCell = dgvCustomers.Rows[index].Cells[colFullName.Index];
+            ShowSuccess(isNew ? "เพิ่มลูกค้าใหม่เรียบร้อยแล้ว" : "บันทึกการแก้ไขเรียบร้อยแล้ว");
         }
 
         private async Task DeleteAsync()
         {
-            if (_busy || _selected == null) return;
+            if (IsBusy || _selected == null) return;
             var target = _selected;
 
             // ลูกค้าที่มีประวัติการจองลบไม่ได้ (กันข้อมูลการจองกลายเป็นกำพร้า)
@@ -285,67 +255,18 @@ namespace Mini_Project_OOP.Forms
 
             if (bookings > 0)
             {
-                MessageBox.Show($"ลบไม่ได้ เพราะ \"{target.FullName}\" มีประวัติการจอง {bookings} รายการ",
-                    "ลบไม่ได้", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ShowCannotDelete($"ลบไม่ได้ เพราะ \"{target.FullName}\" มีประวัติการจอง {bookings} รายการ");
                 return;
             }
 
-            var confirm = MessageBox.Show($"ต้องการลบลูกค้า \"{target.FullName}\" ใช่หรือไม่?",
-                "ยืนยันการลบ", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (confirm != DialogResult.Yes) return;
+            if (!ConfirmDelete($"ต้องการลบลูกค้า \"{target.FullName}\" ใช่หรือไม่?")) return;
 
             if (!await TryAsync(() => _data.Customers.DeleteAsync(target.Id), "ลบข้อมูลไม่สำเร็จ")) return;
             if (!await TryAsync(ReloadCacheAsync, "ลบแล้ว แต่โหลดรายการใหม่ไม่สำเร็จ")) return;
 
             ClearForm();
             ApplyFilter();
-            MessageBox.Show("ลบลูกค้าเรียบร้อยแล้ว", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        // ---------------------------------------------------------------
-        // HELPERS
-        // ---------------------------------------------------------------
-        // รันงานฐานข้อมูล: กันกดซ้ำ + โชว์ cursor รอ + จับ error แสดงเป็นข้อความ
-        private async Task<bool> TryAsync(Func<Task> action, string errorTitle)
-        {
-            _busy = true;
-            UseWaitCursor = true;
-            UpdateButtons();
-            try
-            {
-                await action();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(errorTitle + "\n\n" + ex.Message, "เกิดข้อผิดพลาด",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                _busy = false;
-                UseWaitCursor = false;
-                UpdateButtons();
-            }
-        }
-
-        private static void Warn(string message, Control focus)
-        {
-            MessageBox.Show(message, "ข้อมูลไม่ครบ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            focus.Focus();
-        }
-
-        private static string NullIfEmpty(string s)
-        {
-            s = s?.Trim();
-            return string.IsNullOrEmpty(s) ? null : s;
-        }
-
-        private static bool IsValidEmail(string email)
-        {
-            try { return new MailAddress(email).Address == email; }
-            catch (FormatException) { return false; }
+            ShowSuccess("ลบลูกค้าเรียบร้อยแล้ว");
         }
     }
 }

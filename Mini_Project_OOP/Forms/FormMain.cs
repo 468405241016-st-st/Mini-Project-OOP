@@ -2,31 +2,24 @@
 using Mini_Project_OOP.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Mini_Project_OOP.Forms
 {
     public partial class FormMain : Form
     {
-
-        private Form _activeForm = null;
-
-        private readonly Color sidebarColor = AppTheme.Sidebar;
-        private readonly Color activeColor = AppTheme.SidebarActive;
-
-        private readonly Color indicatorColor = AppTheme.Accent;
-        private readonly List<Button> navItems = new List<Button>();
-        private readonly Dictionary<Button, Panel> indicators =
-            new Dictionary<Button, Panel>();
+        // ไฟล์ฐานข้อมูลอยู่ที่โฟลเดอร์โปรเจกต์ (ขึ้นจาก bin\Debug สองชั้น)
+        private const string DatabaseRelativePath = @"..\..\" + AppDb.DatabaseFileName;
+        private const int IndicatorWidth = 3;
 
         private readonly AppData _appData;
+        private readonly List<Button> _navItems = new List<Button>();
+        private readonly Dictionary<Button, Panel> _indicators = new Dictionary<Button, Panel>();
+
+        private Form _activeForm;
+
         public FormMain()
         {
             InitializeComponent();
@@ -45,84 +38,72 @@ namespace Mini_Project_OOP.Forms
             RegisterNavItem(btnNavCustomers);
             RegisterNavItem(btnNavBookingList);
 
-            
-
             _appData = new AppData(Path.GetFullPath(
-                Path.Combine(Application.StartupPath, @"..\..\Mini_Project_Database.accdb")));
+                Path.Combine(Application.StartupPath, DatabaseRelativePath)));
 
             ShowDashboard();
-        
         }
 
+        // ---------------------------------------------------------------
+        // NAVIGATION
+        // ---------------------------------------------------------------
         private void ShowDashboard()
         {
-            SelectNavItem(btnNavDashboard);
-            OpenChildForm(new ucDashboard(_appData, () => btnNavBooking.PerformClick()));
-            lblPageTitle.Text = btnNavDashboard.Text;
+            ShowPage(btnNavDashboard, new ucDashboard(_appData, () => btnNavBooking.PerformClick()));
         }
 
-
-
-        private void btnLogout_Click(object sender, EventArgs e)
+        // เลือกเมนู + เปิดหน้าลงในพื้นที่หลัก + ตั้งหัวข้อหน้าตามชื่อเมนู
+        private void ShowPage(Button navItem, Form page)
         {
-            DialogResult result = MessageBox.Show("ต้องการออกจากระบบหรือไม่?", "ออกจากระบบ",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                CurrentUser.User = null;
-                Application.Restart();   // กลับไปหน้า login
-            }
+            SelectNavItem(navItem);
+            OpenChildForm(page);
+            lblPageTitle.Text = navItem.Text;
         }
 
         private void RegisterNavItem(Button button)
         {
-            navItems.Add(button);
+            _navItems.Add(button);
 
             button.FlatStyle = FlatStyle.Flat;
             button.UseVisualStyleBackColor = false;
 
             button.FlatAppearance.BorderSize = 0;
-            button.FlatAppearance.BorderColor = sidebarColor;
-            button.FlatAppearance.MouseDownBackColor = activeColor;
-            button.FlatAppearance.MouseOverBackColor = activeColor;
+            button.FlatAppearance.BorderColor = AppTheme.Sidebar;
+            button.FlatAppearance.MouseDownBackColor = AppTheme.SidebarActive;
+            button.FlatAppearance.MouseOverBackColor = AppTheme.SidebarActive;
 
-            button.BackColor = sidebarColor;
+            button.BackColor = AppTheme.Sidebar;
             button.ForeColor = Color.White;
             button.Cursor = Cursors.Hand;
             button.TextAlign = ContentAlignment.MiddleLeft;
 
-            Panel indicator = new Panel
+            var indicator = new Panel
             {
-                Width = 3,
+                Width = IndicatorWidth,
                 Dock = DockStyle.Left,
-                BackColor = indicatorColor,
+                BackColor = AppTheme.Accent,
                 Visible = false
             };
 
             button.Controls.Add(indicator);
             indicator.BringToFront();
 
-            indicators.Add(button, indicator);
-
+            _indicators.Add(button, indicator);
         }
 
         private void SelectNavItem(Button selectedButton)
         {
-            foreach (Button button in navItems)
+            foreach (Button button in _navItems)
             {
                 bool isSelected = button == selectedButton;
+                Color background = isSelected ? AppTheme.SidebarActive : AppTheme.Sidebar;
 
-                Color bgColor = isSelected
-                    ? activeColor
-                    : sidebarColor;
-
-                button.BackColor = bgColor;
+                button.BackColor = background;
                 button.FlatAppearance.BorderSize = 0;
-                button.FlatAppearance.BorderColor = bgColor;
+                button.FlatAppearance.BorderColor = background;
 
-                indicators[button].Visible = isSelected;
-                indicators[button].BringToFront();
+                _indicators[button].Visible = isSelected;
+                _indicators[button].BringToFront();
             }
         }
 
@@ -153,52 +134,39 @@ namespace Mini_Project_OOP.Forms
             childForm.BringToFront();
         }
 
-        private void btnNavDashboard_Click(object sender, EventArgs e)
-        {
-            ShowDashboard();
-        }
+        // ---------------------------------------------------------------
+        // EVENT HANDLERS (ผูกจาก Designer)
+        // ---------------------------------------------------------------
+        private void btnNavDashboard_Click(object sender, EventArgs e) => ShowDashboard();
 
-        private void btnNavBooking_Click(object sender, EventArgs e)
-        {
-            SelectNavItem(btnNavBooking);
-            OpenChildForm(new ucBooking(_appData));
-            lblPageTitle.Text = btnNavBooking.Text;
-        }
+        private void btnNavBooking_Click(object sender, EventArgs e) =>
+            ShowPage(btnNavBooking, new ucBooking(_appData));
 
-        private void btnNavRooms_Click(object sender, EventArgs e)
-        {
-            SelectNavItem(btnNavRooms);
-            OpenChildForm(new ucRooms(_appData));
-            lblPageTitle.Text = btnNavRooms.Text;
-        }
+        private void btnNavRooms_Click(object sender, EventArgs e) =>
+            ShowPage(btnNavRooms, new ucRooms(_appData));
 
-        private void btnNavCustomers_Click(object sender, EventArgs e)
-        {
-            SelectNavItem(btnNavCustomers);
-            OpenChildForm(new ucCustomers(_appData));
-            lblPageTitle.Text = btnNavCustomers.Text;
-        }
+        private void btnNavCustomers_Click(object sender, EventArgs e) =>
+            ShowPage(btnNavCustomers, new ucCustomers(_appData));
 
-        private void btnNavBookingList_Click(object sender, EventArgs e)
+        private void btnNavBookingList_Click(object sender, EventArgs e) =>
+            ShowPage(btnNavBookingList, new ucBookingList(_appData));
+
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            SelectNavItem(btnNavBookingList);
-            OpenChildForm(new ucBookingList(_appData));
-            lblPageTitle.Text = btnNavBookingList.Text;
+            DialogResult result = MessageBox.Show("ต้องการออกจากระบบหรือไม่?", "ออกจากระบบ",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes) return;
+
+            CurrentUser.User = null;
+            Application.Restart();   // กลับไปหน้า login
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblDate.Text =
-                $"วันที่ {DateTime.Now:dd/MM/yyyy HH:mm:ss}";
-        }
-        protected override bool ShowFocusCues
-        {
-            get { return false; }
+            lblDate.Text = $"วันที่ {DateTime.Now:dd/MM/yyyy HH:mm:ss}";
         }
 
-        private void pnlHost_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        protected override bool ShowFocusCues => false;
     }
 }

@@ -8,7 +8,7 @@ namespace Mini_Project_OOP.Model
     /// <summary>
     /// ตัวสร้างเงื่อนไข where / orderBy แบบ fluent ใช้ parameter ทุกค่า (กัน SQL Injection)
     /// ใส่ชื่อ property ของ Model ได้เลย (ระบบแปลงเป็นชื่อคอลัมน์จริงให้)
-    /// ตัวอย่าง: new Filter().Eq("Status", "Paid").Gt("TotalPrice", 100).OrderBy("Id", desc: true)
+    /// ตัวอย่าง: new Filter().Eq("Status", "Paid").Gt("TotalPrice", 100).OrderBy("Id", desc: true).Take(10)
     /// </summary>
     public class Filter
     {
@@ -21,6 +21,7 @@ namespace Mini_Project_OOP.Model
 
         private readonly List<Cond> _conds = new List<Cond>();
         private readonly List<KeyValuePair<string, bool>> _orders = new List<KeyValuePair<string, bool>>();
+        private int? _limit;
 
         public Filter Eq(string col, object value) => Add(col, "=", value);
         public Filter NotEq(string col, object value) => Add(col, "<>", value);
@@ -40,7 +41,17 @@ namespace Mini_Project_OOP.Model
             return this;
         }
 
+        /// <summary>จำกัดจำนวนแถวที่ดึงจากฐานข้อมูล (SELECT TOP n) ใช้กับ FindAsync ควรใช้ร่วมกับ OrderBy</summary>
+        public Filter Take(int count)
+        {
+            if (count <= 0) throw new ArgumentOutOfRangeException(nameof(count), "จำนวนแถวต้องมากกว่า 0");
+            _limit = count;
+            return this;
+        }
+
         // ---- ใช้ภายใน Repository ----
+        internal int? Limit => _limit;
+
         internal string BuildWhere(Dictionary<string, object> parameters, Type entityType)
         {
             var parts = new List<string>();

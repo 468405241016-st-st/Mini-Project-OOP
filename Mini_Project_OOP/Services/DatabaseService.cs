@@ -2,114 +2,71 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mini_Project_OOP.Services
 {
+    /// <summary>ส่งคำสั่ง SQL (แบบ parameter) ไปยังฐานข้อมูล Access ผ่าน OleDb</summary>
     public class DatabaseService
     {
         private readonly string _connectionString;
-
-        public string ConnectionString => _connectionString;
 
         public DatabaseService(string dbPath)
         {
             _connectionString = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};Persist Security Info=False;";
         }
 
-        public DatabaseService(string connectionString, bool isCustomString)
-        {
-            _connectionString = connectionString;
-        }
-
         public DataTable ExecuteQuery(string sql, Dictionary<string, object> parameters = null)
         {
-            DataTable dt = new DataTable();
-
-            using (OleDbConnection conn = new OleDbConnection(_connectionString))
+            return Execute(sql, parameters, command =>
             {
-                using (OleDbCommand cmd = new OleDbCommand(sql, conn))
+                var table = new DataTable();
+                using (var adapter = new OleDbDataAdapter(command))
                 {
-                    AddParameters(cmd, parameters);
-                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
-                    {
-                        adapter.Fill(dt);
-                    }
+                    adapter.Fill(table);
                 }
-            }
-
-            return dt;
+                return table;
+            });
         }
 
         public int ExecuteNonQuery(string sql, Dictionary<string, object> parameters = null)
         {
-            int rowsAffected = 0;
-
-            using (OleDbConnection conn = new OleDbConnection(_connectionString))
-            {
-                using (OleDbCommand cmd = new OleDbCommand(sql, conn))
-                {
-                    AddParameters(cmd, parameters);
-                    conn.Open();
-                    rowsAffected = cmd.ExecuteNonQuery();
-                }
-            }
-
-            return rowsAffected;
+            return Execute(sql, parameters, command => command.ExecuteNonQuery());
         }
 
         public object ExecuteScalar(string sql, Dictionary<string, object> parameters = null)
         {
-            object result = null;
-
-            using (OleDbConnection conn = new OleDbConnection(_connectionString))
-            {
-                using (OleDbCommand cmd = new OleDbCommand(sql, conn))
-                {
-                    AddParameters(cmd, parameters);
-                    conn.Open();
-                    result = cmd.ExecuteScalar();
-                }
-            }
-
-            return result;
+            return Execute(sql, parameters, command => command.ExecuteScalar());
         }
 
-        public bool TestConnection()
+        // เปิด-ปิดการเชื่อมต่อและสร้าง command ที่เดียว เพื่อให้ทุกเมธอดข้างบนเหลือแค่ส่วนที่ต่างกัน
+        private T Execute<T>(string sql, Dictionary<string, object> parameters, Func<OleDbCommand, T> run)
         {
-            try
+            using (var connection = new OleDbConnection(_connectionString))
+            using (var command = new OleDbCommand(sql, connection))
             {
-                using (OleDbConnection conn = new OleDbConnection(_connectionString))
-                {
-                    conn.Open();
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
+                AddParameters(command, parameters);
+                connection.Open();
+                return run(command);
             }
         }
 
-        private void AddParameters(OleDbCommand cmd, Dictionary<string, object> parameters)
+        private static void AddParameters(OleDbCommand command, Dictionary<string, object> parameters)
         {
             if (parameters == null) return;
 
-            foreach (var param in parameters)
+            foreach (var parameter in parameters)
             {
-                object value = param.Value ?? DBNull.Value;
+                object value = parameter.Value ?? DBNull.Value;
 
                 if (value is DateTime dt)
                 {
                     // ตัดมิลลิวินาทีทิ้ง และบอกชนิดเป็น Date ให้ Access
-                    var p = cmd.Parameters.Add(param.Key, OleDbType.Date);
-                    p.Value = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second);
+                    var dateParameter = command.Parameters.Add(parameter.Key, OleDbType.Date);
+                    dateParameter.Value = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second);
                 }
                 else
                 {
-                    cmd.Parameters.AddWithValue(param.Key, value);
+                    command.Parameters.AddWithValue(parameter.Key, value);
                 }
             }
         }

@@ -13,12 +13,14 @@ namespace Mini_Project_OOP.Model
     {
         private const int ChunkSize = 500;
         private readonly DatabaseService _dbService;
+        private readonly EntityInfo _entity;
         private readonly string _tableName;
 
         public Repository(DatabaseService dbService)
         {
             _dbService = dbService;
-            _tableName = EntityMap.Table(typeof(T)); // [TableName] หรือชื่อคลาส
+            _entity = EntityMap.Of(typeof(T));
+            _tableName = _entity.Table; // [TableName] หรือชื่อคลาส
         }
 
         // ---------------------------------------------------------------
@@ -32,7 +34,7 @@ namespace Mini_Project_OOP.Model
         public async Task<IEnumerable<T>> FindAsync(Filter where, params IncludeSpec[] includes)
         {
             var parameters = new Dictionary<string, object>();
-            string sql = BuildSelect(where, parameters, false);
+            string sql = BuildSelect(where, parameters, where?.Limit);
 
             var rows = await QueryAsync(typeof(T), sql, parameters);
             await LoadIncludesAsync(typeof(T), rows, includes);
@@ -42,7 +44,7 @@ namespace Mini_Project_OOP.Model
         public async Task<T> FirstOrDefaultAsync(Filter where, params IncludeSpec[] includes)
         {
             var parameters = new Dictionary<string, object>();
-            string sql = BuildSelect(where, parameters, true);
+            string sql = BuildSelect(where, parameters, 1);
 
             var rows = await QueryAsync(typeof(T), sql, parameters);
             if (rows.Count == 0) return null;
@@ -67,10 +69,10 @@ namespace Mini_Project_OOP.Model
             return Convert.ToInt32(result);
         }
 
-        private string BuildSelect(Filter where, Dictionary<string, object> parameters, bool top1)
+        private string BuildSelect(Filter where, Dictionary<string, object> parameters, int? limit)
         {
             string cond = where?.BuildWhere(parameters, typeof(T)) ?? "";
-            return $"SELECT {(top1 ? "TOP 1 " : "")}* FROM [{_tableName}]"
+            return $"SELECT {(limit.HasValue ? "TOP " + limit.Value + " " : "")}* FROM [{_tableName}]"
                  + (cond.Length > 0 ? " WHERE " + cond : "")
                  + (where?.BuildOrderBy(typeof(T)) ?? "");
         }
@@ -80,16 +82,12 @@ namespace Mini_Project_OOP.Model
         // ---------------------------------------------------------------
         public async Task AddAsync(T entity)
         {
-            var key = EntityMap.Key(typeof(T));
-            var columns = new List<string>();
+            var props = _entity.WritableProps;   // ข้าม Primary Key (AutoNumber)
+            var columns = _entity.WritableColumns.Select(c => $"[{c}]");
             var parameters = new Dictionary<string, object>();
 
-            foreach (var prop in EntityMap.ScalarProps(typeof(T)))
-            {
-                if (prop.Name == key.Name) continue; // AutoNumber
-                columns.Add($"[{EntityMap.Column(prop)}]");
+            foreach (var prop in props)
                 parameters.Add($"@p{parameters.Count}", prop.GetValue(entity) ?? DBNull.Value);
-            }
 
             string sql = $"INSERT INTO [{_tableName}] ({string.Join(", ", columns)}) VALUES ({string.Join(", ", parameters.Keys)})";
             await Task.Run(() => _dbService.ExecuteNonQuery(sql, parameters));
@@ -97,16 +95,17 @@ namespace Mini_Project_OOP.Model
 
         public async Task UpdateAsync(T entity)
         {
-            var key = EntityMap.Key(typeof(T));
-            var updateFields = new List<string>();
+            var key = _entity.Key;
+            var props = _entity.WritableProps;
+            var columns = _entity.WritableColumns;
+            var updateFields = new List<string>(props.Length);
             var parameters = new Dictionary<string, object>();
 
-            foreach (var prop in EntityMap.ScalarProps(typeof(T)))
+            for (int i = 0; i < props.Length; i++)
             {
-                if (prop.Name == key.Name) continue;
                 string pn = $"@p{parameters.Count}";
-                updateFields.Add($"[{EntityMap.Column(prop)}] = {pn}");
-                parameters.Add(pn, prop.GetValue(entity) ?? DBNull.Value);
+                updateFields.Add($"[{columns[i]}] = {pn}");
+                parameters.Add(pn, props[i].GetValue(entity) ?? DBNull.Value);
             }
 
             parameters.Add("@id", key.GetValue(entity)); // OleDb ใช้ลำดับ จึงต้องไว้ท้ายสุด
@@ -116,7 +115,7 @@ namespace Mini_Project_OOP.Model
 
         public async Task DeleteAsync(int id)
         {
-            var key = EntityMap.Key(typeof(T));
+            var key = _entity.Key;
             string sql = $"DELETE FROM [{_tableName}] WHERE [{EntityMap.Column(key)}] = @id";
             var parameters = new Dictionary<string, object> { { "@id", id } };
             await Task.Run(() => _dbService.ExecuteNonQuery(sql, parameters));
@@ -263,22 +262,35 @@ namespace Mini_Project_OOP.Model
         private async Task<List<object>> QueryAsync(Type type, string sql, Dictionary<string, object> parameters = null)
         {
             DataTable dt = await Task.Run(() => _dbService.ExecuteQuery(sql, parameters));
-            var list = new List<object>();
-            foreach (DataRow row in dt.Rows)
-                list.Add(MapRow(type, row));
-            return list;
+            return MapRows(type, dt);
         }
 
-        private static object MapRow(Type type, DataRow row)
+        private static List<object> MapRows(Type type, DataTable table)
         {
-            var item = Activator.CreateInstance(type);
-            foreach (var prop in EntityMap.ScalarProps(type))
+            // จับคู่ property กับคอลัมน์ของตารางผลลัพธ์ "ครั้งเดียวต่อตาราง" ไม่ค้นหาซ้ำทุกแถว
+            var entity = EntityMap.Of(type);
+            var props = new List<PropertyInfo>();
+            var columns = new List<DataColumn>();
+            for (int i = 0; i < entity.ScalarProps.Length; i++)
             {
-                string col = EntityMap.Column(prop);
-                if (row.Table.Columns.Contains(col) && row[col] != DBNull.Value)
-                    prop.SetValue(item, ConvertValue(row[col], prop.PropertyType));
+                if (!table.Columns.Contains(entity.ScalarColumns[i])) continue;
+                props.Add(entity.ScalarProps[i]);
+                columns.Add(table.Columns[entity.ScalarColumns[i]]);
             }
-            return item;
+
+            var list = new List<object>(table.Rows.Count);
+            foreach (DataRow row in table.Rows)
+            {
+                var item = Activator.CreateInstance(type);
+                for (int i = 0; i < props.Count; i++)
+                {
+                    object value = row[columns[i]];
+                    if (value != DBNull.Value)
+                        props[i].SetValue(item, ConvertValue(value, props[i].PropertyType));
+                }
+                list.Add(item);
+            }
+            return list;
         }
 
         private static object ConvertValue(object value, Type targetType)

@@ -1,18 +1,19 @@
-﻿using Mini_Project_OOP.Model;
+﻿using Mini_Project_OOP.Constants;
+using Mini_Project_OOP.Helper;
+using Mini_Project_OOP.Model;
 using Mini_Project_OOP.Services;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Net.Mail;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Mini_Project_OOP.Helper.TextUtils;
 
 namespace Mini_Project_OOP.Forms
 {
-    public partial class ucBooking : Form
+    public partial class ucBooking : DataForm
     {
         // แถวของตารางห้องว่าง (แปลงจาก Room + RoomType เป็นแถวแบนๆ ให้ตารางผูกได้)
         private sealed class AvailRow
@@ -34,7 +35,8 @@ namespace Mini_Project_OOP.Forms
 
         private Customer _customer;     // null = ลูกค้าใหม่ (กรอกเอง) / มีค่า = เลือกลูกค้าเดิมจากการค้นหา
         private bool _binding;          // กัน event ตอนกำลังตั้งค่า/bind ข้อมูล
-        private bool _busy;             // กันกดซ้ำตอนกำลังคุยกับฐานข้อมูล
+
+        protected override string ValidationTitle => "ข้อมูลไม่ถูกต้อง";
 
         // ใช้ตอนเปิดใน Designer เท่านั้น
         public ucBooking()
@@ -64,9 +66,7 @@ namespace Mini_Project_OOP.Forms
             cboStatus.DisplayMember = nameof(BookingStatus.Status);
             cboStatus.ValueMember = nameof(BookingStatus.Id);
 
-            typeof(DataGridView)
-                .GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic)
-                ?.SetValue(dgvAvailableRooms, true, null);
+            dgvAvailableRooms.EnableDoubleBuffer();
         }
 
         // ตารางใน Designer มีแค่ราคา/ความจุ จึงเพิ่มคอลัมน์ เลขห้อง + ประเภท ตอนรันจริง (ไม่แตะ Designer)
@@ -160,7 +160,7 @@ namespace Mini_Project_OOP.Forms
                 cboStatus.DataSource = null;
                 cboStatus.Items.Clear();
                 cboStatus.DataSource = _bookingStatuses;
-                int? confirmed = StatusId("Confirmed");
+                int? confirmed = StatusId(BookingStatusName.Confirmed);
                 if (confirmed.HasValue) cboStatus.SelectedValue = confirmed.Value;
                 else cboStatus.SelectedIndex = -1;
             }
@@ -213,7 +213,7 @@ namespace Mini_Project_OOP.Forms
         {
             // การจองที่ยังกินห้องอยู่ = Confirmed / CheckedIn (Cancelled และ CheckedOut ไม่นับ)
             return _bookingStatuses
-                .Where(s => s.Status == "Confirmed" || s.Status == "CheckedIn")
+                .Where(s => s.Status == BookingStatusName.Confirmed || s.Status == BookingStatusName.CheckedIn)
                 .Select(s => s.Id).ToList();
         }
 
@@ -222,7 +222,7 @@ namespace Mini_Project_OOP.Forms
         // ---------------------------------------------------------------
         private async Task SearchCustomerAsync()
         {
-            if (_busy) return;
+            if (IsBusy) return;
 
             string term = txtSearch.Text.Trim();
             if (term.Length == 0) { Warn("กรุณากรอกเบอร์โทรหรือเลขบัตรที่ต้องการค้นหา", txtSearch); return; }
@@ -243,8 +243,8 @@ namespace Mini_Project_OOP.Forms
             if (matches.Count == 0)
             {
                 matches = all.Where(c =>
-                    Contains(c.FullName, term) || Contains(c.Email, term)
-                    || Contains(c.PhoneNumber, term) || Contains(c.NationalId, term)
+                    ContainsIgnoreCase(c.FullName, term) || ContainsIgnoreCase(c.Email, term)
+                    || ContainsIgnoreCase(c.PhoneNumber, term) || ContainsIgnoreCase(c.NationalId, term)
                     || (compact.Length > 0 && (Compact(c.PhoneNumber).Contains(compact) || Compact(c.NationalId).Contains(compact))))
                     .ToList();
             }
@@ -289,7 +289,7 @@ namespace Mini_Project_OOP.Forms
         // ---------------------------------------------------------------
         private async Task CheckAvailabilityAsync()
         {
-            if (_busy) return;
+            if (IsBusy) return;
             if (!TryGetStay(out DateTime checkIn, out DateTime checkOut)) return;
 
             int typeId = cboRoomType.SelectedValue is int v ? v : 0;
@@ -320,7 +320,7 @@ namespace Mini_Project_OOP.Forms
             var booked = new HashSet<int>((await _data.Bookings.FindAsync(OverlapFilter(null, checkIn, checkOut)))
                 .Select(b => b.RoomId));
 
-            int? maintenanceId = _roomStatuses.FirstOrDefault(s => s.Status == "Maintenance")?.Id;
+            int? maintenanceId = _roomStatuses.FirstOrDefault(s => s.Status == RoomStatusName.Maintenance)?.Id;
 
             return rooms
                 .Where(r => r.RoomStatusId != maintenanceId && !booked.Contains(r.Id) && typeMap.ContainsKey(r.RoomTypeId))
@@ -406,7 +406,7 @@ namespace Mini_Project_OOP.Forms
         // ---------------------------------------------------------------
         private async Task SaveAsync()
         {
-            if (_busy) return;
+            if (IsBusy) return;
 
             var row = SelectedRoom();
             if (row == null) { Warn("กรุณาตรวจสอบห้องว่างแล้วเลือกห้องจากตาราง", dgvAvailableRooms); return; }
@@ -421,7 +421,7 @@ namespace Mini_Project_OOP.Forms
                 if (!IsValidEmail(email)) { Warn("รูปแบบอีเมลไม่ถูกต้อง", txtEmail); return; }
             }
 
-            int? statusId = StatusId("Confirmed");
+            int? statusId = StatusId(BookingStatusName.Confirmed);
             if (!statusId.HasValue)
             {
                 MessageBox.Show("ไม่พบสถานะการจอง \"Confirmed\" ในฐานข้อมูล", "เกิดข้อผิดพลาด",
@@ -472,10 +472,9 @@ namespace Mini_Project_OOP.Forms
                         Email = email
                     });
 
-                    // AddAsync ไม่คืน Id: โหลดใหม่แล้วหาแถวล่าสุดที่ชื่อ+อีเมลตรงกัน
-                    all = (await _data.Customers.FindAsync(new Filter().OrderBy("Id"))).ToList();
-                    var created = all.Where(c => c.FullName == name && c.Email == email)
-                                     .OrderByDescending(c => c.Id).FirstOrDefault();
+                    // AddAsync ไม่คืน Id: ถามฐานข้อมูลหาแถวล่าสุดที่ชื่อ+อีเมลตรงกัน (ดึงแถวเดียว ไม่โหลดลูกค้าทั้งหมดซ้ำ)
+                    var created = await _data.Customers.FirstOrDefaultAsync(
+                        new Filter().Eq("FullName", name).Eq("Email", email).OrderBy("Id", desc: true));
                     if (created == null) throw new InvalidOperationException("เพิ่มลูกค้าแล้ว แต่หารหัสลูกค้าที่เพิ่งสร้างไม่พบ");
                     customerId = created.Id;
                 }
@@ -502,9 +501,7 @@ namespace Mini_Project_OOP.Forms
                 return;
             }
 
-            MessageBox.Show(
-                $"บันทึกการจองเรียบร้อยแล้ว\nห้อง {row.RoomNumber}  {checkIn:dd/MM/yyyy} - {checkOut:dd/MM/yyyy}  รวม {Baht(total)}",
-                "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ShowSuccess($"บันทึกการจองเรียบร้อยแล้ว\nห้อง {row.RoomNumber}  {checkIn:dd/MM/yyyy} - {checkOut:dd/MM/yyyy}  รวม {Baht(total)}");
             ClearForm();
         }
 
@@ -536,79 +533,12 @@ namespace Mini_Project_OOP.Forms
         // ---------------------------------------------------------------
         // HELPERS
         // ---------------------------------------------------------------
-        private void UpdateButtons()
+        protected override void UpdateButtons()
         {
-            btnSearchCustomer.Enabled = !_busy;
-            btnCheckAvailability.Enabled = !_busy;
-            btnSave.Enabled = !_busy;
-            btnClear.Enabled = !_busy;
-        }
-
-        // รันงานฐานข้อมูล: กันกดซ้ำ + โชว์ cursor รอ + จับ error แสดงเป็นข้อความ
-        private async Task<bool> TryAsync(Func<Task> action, string errorTitle)
-        {
-            _busy = true;
-            UseWaitCursor = true;
-            UpdateButtons();
-            try
-            {
-                await action();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(errorTitle + "\n\n" + ex.Message, "เกิดข้อผิดพลาด",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                _busy = false;
-                UseWaitCursor = false;
-                UpdateButtons();
-            }
-        }
-
-        private static void Warn(string message, Control focus)
-        {
-            MessageBox.Show(message, "ข้อมูลไม่ถูกต้อง", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            focus.Focus();
-        }
-
-        private static string Compact(string s)
-        {
-            if (string.IsNullOrEmpty(s)) return "";
-            var chars = s.Where(ch => ch != ' ' && ch != '-').ToArray();
-            return new string(chars);
-        }
-
-        private static bool IsNumericLike(string s)
-        {
-            foreach (char ch in s)
-                if (!char.IsDigit(ch) && ch != ' ' && ch != '-') return false;
-            return true;
-        }
-
-        private static bool Contains(string source, string term)
-        {
-            return source != null && source.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0;
-        }
-
-        private static string NullIfEmpty(string s)
-        {
-            s = s?.Trim();
-            return string.IsNullOrEmpty(s) ? null : s;
-        }
-
-        private static bool IsValidEmail(string email)
-        {
-            try { return new MailAddress(email).Address == email; }
-            catch (FormatException) { return false; }
-        }
-
-        private void ucBooking_Load(object sender, EventArgs e)
-        {
-
+            btnSearchCustomer.Enabled = !IsBusy;
+            btnCheckAvailability.Enabled = !IsBusy;
+            btnSave.Enabled = !IsBusy;
+            btnClear.Enabled = !IsBusy;
         }
     }
 }

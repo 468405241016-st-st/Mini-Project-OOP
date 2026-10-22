@@ -4,6 +4,7 @@ using Mini_Project_OOP.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Mini_Project_OOP
@@ -16,9 +17,7 @@ namespace Mini_Project_OOP
         {
             InitializeComponent();
 
-            txtPassword.UseSystemPasswordChar = true;
-            this.AcceptButton = btnLogin;
-
+            AcceptButton = btnLogin;
             btnLogin.Click += btnLogin_Click;
 
             txtPassword.UseSystemPasswordChar = checkBox1.Checked;
@@ -28,7 +27,7 @@ namespace Mini_Project_OOP
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();   // ถ้าเปลี่ยนชื่อเป็น txtUsername แล้ว ให้แก้ตรงนี้
+            string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
             if (username == "" || password == "")
@@ -40,56 +39,71 @@ namespace Mini_Project_OOP
 
             try
             {
-                string sql = @"SELECT user_id, User_name, full_name, user_role
-                               FROM tbl_Users
-                               WHERE User_name = @User_name AND [PassWord] = @PassWord";
-
-                // OleDb ใช้พารามิเตอร์ตามลำดับ ต้องเรียง User_name ก่อน PassWord
-                var parameters = new Dictionary<string, object>
+                AppUser user = FindUser(username, password);
+                if (user == null)
                 {
-                    { "@User_name", username },
-                    { "@PassWord", password }
-                };
-
-                DataTable dt = _db.ExecuteQuery(sql, parameters);
-
-                if (dt.Rows.Count == 0)
-                {
-                    MessageBox.Show("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง", "เข้าสู่ระบบไม่สำเร็จ",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtPassword.Clear();
-                    txtPassword.Focus();
+                    ShowLoginFailed();
                     return;
                 }
 
-                DataRow row = dt.Rows[0];
-
-                CurrentUser.User = new tbl_Users
-                {
-                    UserName = row["User_name"].ToString(),
-                    FullName = row["full_name"].ToString(),
-                    UserRole = row["user_role"].ToString()
-                };
-
-                FormMain main = new FormMain();
-                main.FormClosed += (s, args) => this.Close();
-                this.Hide();
-                main.Show();
+                CurrentUser.User = user;
+                OpenMainForm();
             }
             catch (Exception ex)
             {
-                string dbFile = System.IO.Path.Combine(Application.StartupPath, "Mini_Project_Database.accdb");
-                MessageBox.Show(
-                    "เชื่อมต่อฐานข้อมูลไม่สำเร็จ\n" + ex.Message +
-                    "\n\nPath: " + dbFile +
-                    "\nมีไฟล์อยู่: " + System.IO.File.Exists(dbFile) +
-                    "\nProcess 64-bit: " + Environment.Is64BitProcess);
+                ShowConnectionError(ex);
             }
         }
 
-        private void FormLogin_Load(object sender, EventArgs e)
+        // คืน null ถ้าชื่อผู้ใช้หรือรหัสผ่านไม่ตรง
+        private AppUser FindUser(string username, string password)
         {
+            const string sql = @"SELECT user_id, User_name, full_name, user_role
+                                 FROM tbl_Users
+                                 WHERE User_name = @User_name AND [PassWord] = @PassWord";
 
+            // OleDb ใช้พารามิเตอร์ตามลำดับ ต้องเรียง User_name ก่อน PassWord
+            var parameters = new Dictionary<string, object>
+            {
+                { "@User_name", username },
+                { "@PassWord", password }
+            };
+
+            DataTable table = _db.ExecuteQuery(sql, parameters);
+            if (table.Rows.Count == 0) return null;
+
+            DataRow row = table.Rows[0];
+            return new AppUser
+            {
+                UserName = row["User_name"].ToString(),
+                FullName = row["full_name"].ToString(),
+                UserRole = row["user_role"].ToString()
+            };
+        }
+
+        private void ShowLoginFailed()
+        {
+            MessageBox.Show("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง", "เข้าสู่ระบบไม่สำเร็จ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            txtPassword.Clear();
+            txtPassword.Focus();
+        }
+
+        private void OpenMainForm()
+        {
+            var main = new FormMain();
+            main.FormClosed += (s, args) => Close();
+            Hide();
+            main.Show();
+        }
+
+        private static void ShowConnectionError(Exception ex)
+        {
+            MessageBox.Show(
+                "เชื่อมต่อฐานข้อมูลไม่สำเร็จ\n" + ex.Message +
+                "\n\nPath: " + AppDb.DbPath +
+                "\nมีไฟล์อยู่: " + File.Exists(AppDb.DbPath) +
+                "\nProcess 64-bit: " + Environment.Is64BitProcess);
         }
     }
 }

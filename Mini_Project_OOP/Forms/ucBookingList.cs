@@ -16,15 +16,6 @@ namespace Mini_Project_OOP.Forms
         // ------------------------------------------------------------------
         private const string AllStatuses = "ทั้งหมด";
 
-        // ชื่อสถานะต้องตรงกับคอลัมน์ status ใน tbl_BookingStatus
-        private static class StatusName
-        {
-            public const string Confirmed = "Confirmed";
-            public const string CheckedIn = "CheckedIn";
-            public const string CheckedOut = "CheckedOut";
-            public const string Cancelled = "Cancelled";
-        }
-
         // 1 ปุ่ม = เปลี่ยนสถานะจาก From -> To
         private sealed class StatusAction
         {
@@ -57,15 +48,11 @@ namespace Mini_Project_OOP.Forms
         // ------------------------------------------------------------------
         // Fields
         // ------------------------------------------------------------------
-        private readonly Repository<Booking> bookingRepo;
-        private readonly Repository<Customer> customerRepo;
-        private readonly Repository<BookingStatus> statusRepo;
-        private readonly Repository<Room> roomRepo;
-        private readonly Dictionary<Button, StatusAction> statusActions;
+        private readonly AppData _data;
+        private readonly Dictionary<Button, StatusAction> _statusActions;
 
         // cache ชื่อสถานะ -> Id (ตารางสถานะเล็กและแทบไม่เปลี่ยน โหลดครั้งเดียวพอ)
-        private Dictionary<string, int> statusIds;
-        private AppData _data;
+        private Dictionary<string, int> _statusIds;
 
         // ------------------------------------------------------------------
         // Constructor
@@ -74,19 +61,14 @@ namespace Mini_Project_OOP.Forms
         {
             InitializeComponent();
 
-            // รับ AppData ตัวเดียวกันจากฟอร์มหลัก (ไม่สร้างเองแล้ว)
-            if (data == null) throw new ArgumentNullException(nameof(data));
-            _data = data;
-            bookingRepo = data.Bookings;
-            customerRepo = data.Customers;
-            statusRepo = data.BookingStatuses;
-            roomRepo = data.Rooms;
+            // รับ AppData ตัวเดียวกันจากฟอร์มหลัก
+            _data = data ?? throw new ArgumentNullException(nameof(data));
 
-            statusActions = new Dictionary<Button, StatusAction>
+            _statusActions = new Dictionary<Button, StatusAction>
             {
-                [btnCheckIn] = new StatusAction(StatusName.Confirmed, StatusName.CheckedIn, "เช็คอิน"),
-                [btnCheckOut] = new StatusAction(StatusName.CheckedIn, StatusName.CheckedOut, "เช็คเอาท์"),
-                [btnCancelBooking] = new StatusAction(StatusName.Confirmed, StatusName.Cancelled, "ยกเลิก"),
+                [btnCheckIn] = new StatusAction(BookingStatusName.Confirmed, BookingStatusName.CheckedIn, "เช็คอิน"),
+                [btnCheckOut] = new StatusAction(BookingStatusName.CheckedIn, BookingStatusName.CheckedOut, "เช็คเอาท์"),
+                [btnCancelBooking] = new StatusAction(BookingStatusName.Confirmed, BookingStatusName.Cancelled, "ยกเลิก"),
             };
 
             cboFilterStatus.SelectedIndex = 0;
@@ -94,7 +76,7 @@ namespace Mini_Project_OOP.Forms
             dgvBookings.SelectionChanged += (s, e) => UpdateActionButtons();
             dgvBookings.CellFormatting += dgvBookings_CellFormatting;
 
-            foreach (var pair in statusActions)
+            foreach (var pair in _statusActions)
             {
                 StatusAction action = pair.Value;
                 pair.Key.Click += async (s, e) => await RunSafeAsync(() => ChangeStatusAsync(action));
@@ -140,8 +122,12 @@ namespace Mini_Project_OOP.Forms
 
             // คำค้นตรงกับ "ชื่อ/เบอร์ลูกค้า" หรือ "เลขห้อง" อย่างใดอย่างหนึ่ง
             // Filter ไม่มี OR ข้ามคอลัมน์ จึงค้นแยกแล้วรวมผลลัพธ์
-            List<int> customerIds = await FindCustomerIdsAsync(keyword);
-            List<int> roomIds = await FindRoomIdsAsync(keyword);
+            // สองทางนี้ไม่ขึ้นต่อกัน จึงยิงฐานข้อมูลพร้อมกันได้
+            Task<List<int>> customerIdsTask = FindCustomerIdsAsync(keyword);
+            Task<List<int>> roomIdsTask = FindRoomIdsAsync(keyword);
+            await Task.WhenAll(customerIdsTask, roomIdsTask);
+            List<int> customerIds = customerIdsTask.Result;
+            List<int> roomIds = roomIdsTask.Result;
 
             var found = new List<Booking>();
             if (customerIds.Count > 0)
@@ -171,14 +157,14 @@ namespace Mini_Project_OOP.Forms
             if (keyColumn != null)
                 filter.In(keyColumn, keyIds.Cast<object>());
 
-            var result = await bookingRepo.FindAsync(
+            var result = await _data.Bookings.FindAsync(
                 filter, "Customer", "Room.RoomType", "BookingStatus");
             return result.ToList();
         }
 
         private async Task<List<int>> FindRoomIdsAsync(string keyword)
         {
-            var rooms = await roomRepo.FindAsync(new Filter().Like("RoomNumber", "%" + keyword + "%"));
+            var rooms = await _data.Rooms.FindAsync(new Filter().Like("RoomNumber", "%" + keyword + "%"));
             return rooms.Select(r => r.Id).ToList();
         }
 
@@ -186,10 +172,11 @@ namespace Mini_Project_OOP.Forms
         private async Task<List<int>> FindCustomerIdsAsync(string keyword)
         {
             string pattern = "%" + keyword + "%";
-            var byName = await customerRepo.FindAsync(new Filter().Like("FullName", pattern));
-            var byPhone = await customerRepo.FindAsync(new Filter().Like("PhoneNumber", pattern));
+            var byNameTask = _data.Customers.FindAsync(new Filter().Like("FullName", pattern));
+            var byPhoneTask = _data.Customers.FindAsync(new Filter().Like("PhoneNumber", pattern));
+            await Task.WhenAll(byNameTask, byPhoneTask);
 
-            return byName.Concat(byPhone).Select(c => c.Id).Distinct().ToList();
+            return byNameTask.Result.Concat(byPhoneTask.Result).Select(c => c.Id).Distinct().ToList();
         }
 
         private void BindBookings(List<Booking> bookings)
@@ -226,7 +213,7 @@ namespace Mini_Project_OOP.Forms
         {
             string current = GetSelectedBooking()?.Status;
 
-            foreach (var pair in statusActions)
+            foreach (var pair in _statusActions)
                 pair.Key.Enabled = current == pair.Value.From;
         }
 
@@ -249,7 +236,7 @@ namespace Mini_Project_OOP.Forms
             }
 
             // ดึงข้อมูลล่าสุดจาก DB กันกรณีข้อมูลในตารางเก่าไปแล้ว
-            Booking booking = await bookingRepo.GetByIdAsync(selected.Id);
+            Booking booking = await _data.Bookings.GetByIdAsync(selected.Id);
             if (booking == null || booking.BookingStatusId != fromId.Value)
             {
                 ShowError("สถานะการจองนี้ถูกเปลี่ยนไปแล้ว กรุณาค้นหาใหม่");
@@ -258,9 +245,9 @@ namespace Mini_Project_OOP.Forms
             }
 
             booking.BookingStatusId = toId.Value;
-            await bookingRepo.UpdateAsync(booking);
+            await _data.Bookings.UpdateAsync(booking);
 
-            await Mini_Project_OOP.Services.RoomStatusSync.SyncAsync(_data);   // <-- เพิ่มบรรทัดนี้
+            await RoomStatusSync.SyncAsync(_data);   // ให้สถานะห้องตรงกับการจองหลังเปลี่ยนสถานะ
 
             await ApplyFilterAsync();
             SelectRowById(selected.Id);
@@ -282,17 +269,17 @@ namespace Mini_Project_OOP.Forms
         // โหลดตารางสถานะครั้งแรกครั้งเดียว แล้วใช้ cache
         private async Task<int?> GetStatusIdAsync(string name)
         {
-            if (statusIds == null)
+            if (_statusIds == null)
             {
                 var map = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
-                foreach (BookingStatus s in await statusRepo.GetAllAsync())
+                foreach (BookingStatus s in await _data.BookingStatuses.GetAllAsync())
                 {
                     if (s.Status != null) map[s.Status] = s.Id;
                 }
-                statusIds = map;
+                _statusIds = map;
             }
 
-            return statusIds.TryGetValue(name, out int id) ? id : (int?)null;
+            return _statusIds.TryGetValue(name, out int id) ? id : (int?)null;
         }
 
         // ------------------------------------------------------------------
@@ -352,11 +339,6 @@ namespace Mini_Project_OOP.Forms
             dgvBookings.DataSource = null;
             lblTotalCount.Text = "รวม 0 รายการ";
             UpdateActionButtons();
-        }
-
-        private void ucBookingList_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

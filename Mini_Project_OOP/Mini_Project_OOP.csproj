@@ -38,7 +38,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <PreferNativeArm64>false</PreferNativeArm64>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,7 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\AppTheme.cs" />
+    <Compile Include="Constants\StatusNames.cs" />
     <Compile Include="Model\EntityMap.cs" />
+    <Compile Include="Helper\DataForm.cs" />
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,9 +80,7 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucBooking.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\ucBooking.cs" />
     <Compile Include="Forms\ucBooking.Designer.cs">
       <DependentUpon>ucBooking.cs</DependentUpon>
     </Compile>
@@ -90,9 +90,7 @@
     <Compile Include="Forms\ucBookingList.Designer.cs">
       <DependentUpon>ucBookingList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucCustomers.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\ucCustomers.cs" />
     <Compile Include="Forms\ucCustomers.Designer.cs">
       <DependentUpon>ucCustomers.cs</DependentUpon>
     </Compile>
@@ -102,18 +100,17 @@
     <Compile Include="Forms\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucRooms.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\ucRooms.cs" />
     <Compile Include="Forms\ucRooms.Designer.cs">
       <DependentUpon>ucRooms.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\ThemeExtensions.cs" />
+    <Compile Include="Helper\GridExtensions.cs" />
+    <Compile Include="Helper\TextUtils.cs" />
     <Compile Include="Model\Models.cs" />
     <Compile Include="Model\Filter.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\IRepository.cs" />
-    <Compile Include="Model\tbl_Users.cs" />
+    <Compile Include="Model\AppUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AppData.cs" />
@@ -121,6 +118,7 @@
     <Compile Include="Services\CurrentUser.cs" />
     <Compile Include="Services\DatabaseService.cs" />
     <Compile Include="Services\RoomStatusSync.cs" />
+    <Compile Include="Services\StatusText.cs" />
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
