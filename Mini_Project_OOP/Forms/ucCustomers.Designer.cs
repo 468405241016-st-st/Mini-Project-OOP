@@ -38,11 +38,6 @@
             this.btnShowAll = new System.Windows.Forms.Button();
             this.pnlCustomerList = new System.Windows.Forms.Panel();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
-            this.colCustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIdCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlCustomerDetail = new System.Windows.Forms.Panel();
             this.pnlCustomerDetailHeader = new System.Windows.Forms.Panel();
             this.lblCustomerDetailTitle = new System.Windows.Forms.Label();
@@ -58,6 +53,11 @@
             this.btnSaveCustomer = new System.Windows.Forms.Button();
             this.btnClearCustomer = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
+            this.colCustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIdCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSearch.SuspendLayout();
             this.pnlCustomerList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
@@ -201,42 +201,6 @@
             this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomers.Size = new System.Drawing.Size(640, 563);
             this.dgvCustomers.TabIndex = 0;
-            // 
-            // colCustomerId
-            // 
-            this.colCustomerId.HeaderText = "รหัส";
-            this.colCustomerId.Name = "colCustomerId";
-            this.colCustomerId.ReadOnly = true;
-            this.colCustomerId.Width = 60;
-            // 
-            // colFullName
-            // 
-            this.colFullName.HeaderText = "ชื่อ-นามสกุล";
-            this.colFullName.Name = "colFullName";
-            this.colFullName.ReadOnly = true;
-            this.colFullName.Width = 160;
-            // 
-            // colPhone
-            // 
-            this.colPhone.HeaderText = "เบอร์โทร";
-            this.colPhone.Name = "colPhone";
-            this.colPhone.ReadOnly = true;
-            this.colPhone.Width = 110;
-            // 
-            // colIdCard
-            // 
-            this.colIdCard.HeaderText = "เลขบัตร / พาสปอร์ต";
-            this.colIdCard.Name = "colIdCard";
-            this.colIdCard.ReadOnly = true;
-            this.colIdCard.Width = 150;
-            // 
-            // colEmail
-            // 
-            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEmail.HeaderText = "อีเมล";
-            this.colEmail.MinimumWidth = 60;
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
             // 
             // pnlCustomerDetail
             // 
@@ -439,6 +403,47 @@
             this.btnDeleteCustomer.TabIndex = 21;
             this.btnDeleteCustomer.Text = "ลบลูกค้า";
             this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            // 
+            // colCustomerId
+            // 
+            this.colCustomerId.DataPropertyName = "Id";
+            this.colCustomerId.HeaderText = "รหัส";
+            this.colCustomerId.Name = "colCustomerId";
+            this.colCustomerId.ReadOnly = true;
+            this.colCustomerId.Width = 60;
+            // 
+            // colFullName
+            // 
+            this.colFullName.DataPropertyName = "FullName";
+            this.colFullName.HeaderText = "ชื่อ-นามสกุล";
+            this.colFullName.Name = "colFullName";
+            this.colFullName.ReadOnly = true;
+            this.colFullName.Width = 160;
+            // 
+            // colPhone
+            // 
+            this.colPhone.DataPropertyName = "PhoneNumber";
+            this.colPhone.HeaderText = "เบอร์โทร";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            this.colPhone.Width = 110;
+            // 
+            // colIdCard
+            // 
+            this.colIdCard.DataPropertyName = "NationalId";
+            this.colIdCard.HeaderText = "เลขบัตร / พาสปอร์ต";
+            this.colIdCard.Name = "colIdCard";
+            this.colIdCard.ReadOnly = true;
+            this.colIdCard.Width = 150;
+            // 
+            // colEmail
+            // 
+            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "อีเมล";
+            this.colEmail.MinimumWidth = 60;
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
             // 
             // ucCustomers
             // 

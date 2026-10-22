@@ -1,14 +1,15 @@
-﻿using Mini_Project_OOP.Services;
+﻿using Mini_Project_OOP.Constants;
+using Mini_Project_OOP.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Mini_Project_OOP.Constants;
 
 namespace Mini_Project_OOP.Forms
 {
@@ -24,6 +25,8 @@ namespace Mini_Project_OOP.Forms
         private readonly List<Button> navItems = new List<Button>();
         private readonly Dictionary<Button, Panel> indicators =
             new Dictionary<Button, Panel>();
+
+        private readonly AppData _appData;
         public FormMain()
         {
             InitializeComponent();
@@ -46,6 +49,9 @@ namespace Mini_Project_OOP.Forms
 
             SelectNavItem(btnNavDashboard);
             OpenChildForm(new ucDashboard());
+
+            _appData = new AppData(Path.GetFullPath(
+                Path.Combine(Application.StartupPath, @"..\..\Mini_Project_Database.accdb")));
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -88,6 +94,7 @@ namespace Mini_Project_OOP.Forms
             indicator.BringToFront();
 
             indicators.Add(button, indicator);
+
         }
 
         private void SelectNavItem(Button selectedButton)
@@ -160,14 +167,14 @@ namespace Mini_Project_OOP.Forms
         private void btnNavCustomers_Click(object sender, EventArgs e)
         {
             SelectNavItem(btnNavCustomers);
-            OpenChildForm(new ucCustomers());
+            OpenChildForm(new ucCustomers(_appData));
             lblPageTitle.Text = btnNavCustomers.Text;
         }
 
         private void btnNavBookingList_Click(object sender, EventArgs e)
         {
             SelectNavItem(btnNavBookingList);
-            OpenChildForm(new ucBookingList());
+            OpenChildForm(new ucBookingList(_appData));
             lblPageTitle.Text = btnNavBookingList.Text;
         }
 

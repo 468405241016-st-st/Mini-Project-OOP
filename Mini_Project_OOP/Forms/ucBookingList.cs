@@ -3,7 +3,6 @@ using Mini_Project_OOP.Model;
 using Mini_Project_OOP.Services;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -70,12 +69,12 @@ namespace Mini_Project_OOP.Forms
         // ------------------------------------------------------------------
         // Constructor
         // ------------------------------------------------------------------
-        public ucBookingList()
+        public ucBookingList(AppData data)
         {
             InitializeComponent();
 
-            // สร้าง AppData ครั้งเดียว (เดิมสร้าง 3 รอบ = สร้าง DatabaseService ซ้ำ 3 ตัว)
-            var data = new AppData(GetDatabasePath());
+            // รับ AppData ตัวเดียวกันจากฟอร์มหลัก (ไม่สร้างเองแล้ว)
+            if (data == null) throw new ArgumentNullException(nameof(data));
             bookingRepo = data.Bookings;
             customerRepo = data.Customers;
             statusRepo = data.BookingStatuses;
@@ -100,13 +99,6 @@ namespace Mini_Project_OOP.Forms
             }
 
             UpdateActionButtons();
-        }
-
-        // ชี้ไปที่ไฟล์ต้นฉบับในโฟลเดอร์โปรเจกต์ (ขึ้นไป 2 ชั้นจาก bin\Debug)
-        private static string GetDatabasePath()
-        {
-            return Path.GetFullPath(
-                Path.Combine(Application.StartupPath, @"..\..\Mini_Project_Database.accdb"));
         }
 
         // ------------------------------------------------------------------
