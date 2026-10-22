@@ -45,14 +45,24 @@ namespace Mini_Project_OOP.Forms
             RegisterNavItem(btnNavCustomers);
             RegisterNavItem(btnNavBookingList);
 
-            SelectNavItem(btnNavDashboard);
-
-            SelectNavItem(btnNavDashboard);
-            OpenChildForm(new ucDashboard());
+            
 
             _appData = new AppData(Path.GetFullPath(
                 Path.Combine(Application.StartupPath, @"..\..\Mini_Project_Database.accdb")));
+
+            ShowDashboard();
+        
         }
+
+        private void ShowDashboard()
+        {
+            SelectNavItem(btnNavDashboard);
+            OpenChildForm(new ucDashboard(_appData, () => btnNavBooking.PerformClick()));
+            lblPageTitle.Text = btnNavDashboard.Text;
+        }
+
+
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("ต้องการออกจากระบบหรือไม่?", "ออกจากระบบ",
@@ -145,9 +155,7 @@ namespace Mini_Project_OOP.Forms
 
         private void btnNavDashboard_Click(object sender, EventArgs e)
         {
-            SelectNavItem(btnNavDashboard);
-            OpenChildForm(new ucDashboard());
-            lblPageTitle.Text = btnNavDashboard.Text;
+            ShowDashboard();
         }
 
         private void btnNavBooking_Click(object sender, EventArgs e)
@@ -188,5 +196,9 @@ namespace Mini_Project_OOP.Forms
             get { return false; }
         }
 
+        private void pnlHost_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

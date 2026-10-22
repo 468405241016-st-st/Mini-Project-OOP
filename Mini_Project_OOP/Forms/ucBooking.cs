@@ -155,7 +155,7 @@ namespace Mini_Project_OOP.Forms
                 cboRoomType.DataSource = null;
                 cboRoomType.Items.Clear();
                 cboRoomType.DataSource = choices;
-                cboRoomType.SelectedIndex = 0;
+                if (cboRoomType.Items.Count > 0) cboRoomType.SelectedIndex = 0;
 
                 cboStatus.DataSource = null;
                 cboStatus.Items.Clear();
@@ -604,6 +604,11 @@ namespace Mini_Project_OOP.Forms
         {
             try { return new MailAddress(email).Address == email; }
             catch (FormatException) { return false; }
+        }
+
+        private void ucBooking_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

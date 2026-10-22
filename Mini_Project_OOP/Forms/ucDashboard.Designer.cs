@@ -84,11 +84,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(212, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 2, 19, 0);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(174, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(0, 2, 14, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
+            this.label3.Size = new System.Drawing.Size(50, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "ซ่อมบำรุง";
             // 
@@ -106,7 +106,7 @@
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(239)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Prompt", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(239)))), ((int)(((byte)(236)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
@@ -131,15 +131,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 59);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 48);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 36;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(811, 590);
+            this.dataGridView1.Size = new System.Drawing.Size(608, 479);
             this.dataGridView1.TabIndex = 1;
             // 
             // colId
@@ -184,12 +183,11 @@
             // flowRooms
             // 
             this.flowRooms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowRooms.Font = new System.Drawing.Font("Prompt", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowRooms.Location = new System.Drawing.Point(0, 55);
-            this.flowRooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowRooms.Location = new System.Drawing.Point(0, 45);
             this.flowRooms.Name = "flowRooms";
-            this.flowRooms.Padding = new System.Windows.Forms.Padding(15, 12, 0, 0);
-            this.flowRooms.Size = new System.Drawing.Size(353, 371);
+            this.flowRooms.Padding = new System.Windows.Forms.Padding(11, 10, 0, 0);
+            this.flowRooms.Size = new System.Drawing.Size(265, 301);
             this.flowRooms.TabIndex = 3;
             // 
             // flowLegend
@@ -201,11 +199,10 @@
             this.flowLegend.Controls.Add(this.panel3);
             this.flowLegend.Controls.Add(this.label3);
             this.flowLegend.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLegend.Location = new System.Drawing.Point(0, 426);
-            this.flowLegend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLegend.Location = new System.Drawing.Point(0, 346);
             this.flowLegend.Name = "flowLegend";
-            this.flowLegend.Padding = new System.Windows.Forms.Padding(21, 5, 0, 0);
-            this.flowLegend.Size = new System.Drawing.Size(353, 34);
+            this.flowLegend.Padding = new System.Windows.Forms.Padding(16, 4, 0, 0);
+            this.flowLegend.Size = new System.Drawing.Size(265, 28);
             this.flowLegend.TabIndex = 2;
             this.flowLegend.WrapContents = false;
             // 
@@ -213,20 +210,20 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(252)))), ((int)(((byte)(231)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(21, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.panel1.Location = new System.Drawing.Point(16, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(18, 17);
+            this.panel1.Size = new System.Drawing.Size(14, 14);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 2, 19, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 2, 14, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 18);
+            this.label1.Size = new System.Drawing.Size(23, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "ว่าง";
             // 
@@ -234,20 +231,20 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(90, 10);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.panel2.Location = new System.Drawing.Point(71, 8);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(18, 17);
+            this.panel2.Size = new System.Drawing.Size(14, 14);
             this.panel2.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(113, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 2, 19, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(89, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 2, 14, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 18);
+            this.label2.Size = new System.Drawing.Size(53, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "\tมีผู้เข้าพัก";
             // 
@@ -255,10 +252,10 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(243)))), ((int)(((byte)(199)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(189, 10);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.panel3.Location = new System.Drawing.Point(156, 8);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(18, 17);
+            this.panel3.Size = new System.Drawing.Size(14, 14);
             this.panel3.TabIndex = 4;
             // 
             // btnNewBooking
@@ -268,12 +265,11 @@
             this.btnNewBooking.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnNewBooking.FlatAppearance.BorderSize = 0;
             this.btnNewBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewBooking.Font = new System.Drawing.Font("Prompt", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnNewBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnNewBooking.ForeColor = System.Drawing.Color.White;
-            this.btnNewBooking.Location = new System.Drawing.Point(0, 460);
-            this.btnNewBooking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewBooking.Location = new System.Drawing.Point(0, 374);
             this.btnNewBooking.Name = "btnNewBooking";
-            this.btnNewBooking.Size = new System.Drawing.Size(353, 49);
+            this.btnNewBooking.Size = new System.Drawing.Size(265, 40);
             this.btnNewBooking.TabIndex = 1;
             this.btnNewBooking.Text = "+ จองห้องใหม่";
             this.btnNewBooking.UseVisualStyleBackColor = false;
@@ -281,13 +277,12 @@
             // lblBookingTitle
             // 
             this.lblBookingTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblBookingTitle.Font = new System.Drawing.Font("Prompt", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
+            this.lblBookingTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblBookingTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.lblBookingTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblBookingTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookingTitle.Name = "lblBookingTitle";
-            this.lblBookingTitle.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.lblBookingTitle.Size = new System.Drawing.Size(589, 55);
+            this.lblBookingTitle.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblBookingTitle.Size = new System.Drawing.Size(442, 45);
             this.lblBookingTitle.TabIndex = 0;
             this.lblBookingTitle.Text = "การจองล่าสุด";
             this.lblBookingTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -295,13 +290,12 @@
             // lblRoomTitle
             // 
             this.lblRoomTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblRoomTitle.Font = new System.Drawing.Font("Prompt", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblRoomTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblRoomTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(92)))), ((int)(((byte)(87)))));
             this.lblRoomTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblRoomTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRoomTitle.Name = "lblRoomTitle";
-            this.lblRoomTitle.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.lblRoomTitle.Size = new System.Drawing.Size(353, 55);
+            this.lblRoomTitle.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblRoomTitle.Size = new System.Drawing.Size(265, 45);
             this.lblRoomTitle.TabIndex = 0;
             this.lblRoomTitle.Text = "สถานะห้องพัก";
             this.lblRoomTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -313,10 +307,10 @@
             this.pnlBookings.Controls.Add(this.dataGridView1);
             this.pnlBookings.Controls.Add(this.lblBookingTitle);
             this.pnlBookings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBookings.Location = new System.Drawing.Point(22, 10);
-            this.pnlBookings.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.pnlBookings.Location = new System.Drawing.Point(16, 8);
+            this.pnlBookings.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.pnlBookings.Name = "pnlBookings";
-            this.pnlBookings.Size = new System.Drawing.Size(591, 511);
+            this.pnlBookings.Size = new System.Drawing.Size(444, 416);
             this.pnlBookings.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -332,12 +326,11 @@
             this.tableLayoutPanel1.Controls.Add(this.pnlCard3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pnlCard2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pnlCard1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 14);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 11);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1039, 123);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(779, 100);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // pnlCard4
@@ -347,10 +340,10 @@
             this.pnlCard4.Controls.Add(this.lblTitle4);
             this.pnlCard4.Controls.Add(this.pnlStripe4);
             this.pnlCard4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCard4.Location = new System.Drawing.Point(788, 10);
-            this.pnlCard4.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.pnlCard4.Location = new System.Drawing.Point(590, 8);
+            this.pnlCard4.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.pnlCard4.Name = "pnlCard4";
-            this.pnlCard4.Size = new System.Drawing.Size(240, 103);
+            this.pnlCard4.Size = new System.Drawing.Size(181, 84);
             this.pnlCard4.TabIndex = 3;
             // 
             // lblMaintenance
@@ -358,8 +351,7 @@
             this.lblMaintenance.AutoSize = true;
             this.lblMaintenance.Font = new System.Drawing.Font("Tahoma", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblMaintenance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(64)))), ((int)(((byte)(14)))));
-            this.lblMaintenance.Location = new System.Drawing.Point(27, 49);
-            this.lblMaintenance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMaintenance.Location = new System.Drawing.Point(20, 40);
             this.lblMaintenance.Name = "lblMaintenance";
             this.lblMaintenance.Size = new System.Drawing.Size(57, 39);
             this.lblMaintenance.TabIndex = 2;
@@ -367,11 +359,10 @@
             // 
             // lblTitle4
             // 
-            this.lblTitle4.Font = new System.Drawing.Font("Prompt", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblTitle4.Location = new System.Drawing.Point(27, 18);
-            this.lblTitle4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTitle4.Location = new System.Drawing.Point(20, 15);
             this.lblTitle4.Name = "lblTitle4";
-            this.lblTitle4.Size = new System.Drawing.Size(205, 23);
+            this.lblTitle4.Size = new System.Drawing.Size(154, 19);
             this.lblTitle4.TabIndex = 1;
             this.lblTitle4.Text = "\tซ่อมบำรุง (Maintenance)";
             // 
@@ -380,9 +371,8 @@
             this.pnlStripe4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(119)))), ((int)(((byte)(6)))));
             this.pnlStripe4.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlStripe4.Location = new System.Drawing.Point(0, 0);
-            this.pnlStripe4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlStripe4.Name = "pnlStripe4";
-            this.pnlStripe4.Size = new System.Drawing.Size(7, 103);
+            this.pnlStripe4.Size = new System.Drawing.Size(5, 84);
             this.pnlStripe4.TabIndex = 0;
             // 
             // pnlCard3
@@ -392,10 +382,10 @@
             this.pnlCard3.Controls.Add(this.lblTitle3);
             this.pnlCard3.Controls.Add(this.pnlStripe3);
             this.pnlCard3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCard3.Location = new System.Drawing.Point(529, 10);
-            this.pnlCard3.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.pnlCard3.Location = new System.Drawing.Point(396, 8);
+            this.pnlCard3.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.pnlCard3.Name = "pnlCard3";
-            this.pnlCard3.Size = new System.Drawing.Size(237, 103);
+            this.pnlCard3.Size = new System.Drawing.Size(178, 84);
             this.pnlCard3.TabIndex = 2;
             // 
             // lblOccupied
@@ -403,8 +393,7 @@
             this.lblOccupied.AutoSize = true;
             this.lblOccupied.Font = new System.Drawing.Font("Tahoma", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblOccupied.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.lblOccupied.Location = new System.Drawing.Point(27, 49);
-            this.lblOccupied.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOccupied.Location = new System.Drawing.Point(20, 40);
             this.lblOccupied.Name = "lblOccupied";
             this.lblOccupied.Size = new System.Drawing.Size(57, 39);
             this.lblOccupied.TabIndex = 2;
@@ -412,11 +401,10 @@
             // 
             // lblTitle3
             // 
-            this.lblTitle3.Font = new System.Drawing.Font("Prompt", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblTitle3.Location = new System.Drawing.Point(27, 18);
-            this.lblTitle3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTitle3.Location = new System.Drawing.Point(20, 15);
             this.lblTitle3.Name = "lblTitle3";
-            this.lblTitle3.Size = new System.Drawing.Size(180, 23);
+            this.lblTitle3.Size = new System.Drawing.Size(135, 19);
             this.lblTitle3.TabIndex = 1;
             this.lblTitle3.Text = "\tมีผู้เข้าพัก (Occupied)";
             // 
@@ -425,9 +413,8 @@
             this.pnlStripe3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.pnlStripe3.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlStripe3.Location = new System.Drawing.Point(0, 0);
-            this.pnlStripe3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlStripe3.Name = "pnlStripe3";
-            this.pnlStripe3.Size = new System.Drawing.Size(7, 103);
+            this.pnlStripe3.Size = new System.Drawing.Size(5, 84);
             this.pnlStripe3.TabIndex = 0;
             // 
             // pnlCard2
@@ -437,10 +424,10 @@
             this.pnlCard2.Controls.Add(this.lblTitle2);
             this.pnlCard2.Controls.Add(this.pnlStripe2);
             this.pnlCard2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCard2.Location = new System.Drawing.Point(270, 10);
-            this.pnlCard2.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.pnlCard2.Location = new System.Drawing.Point(202, 8);
+            this.pnlCard2.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.pnlCard2.Name = "pnlCard2";
-            this.pnlCard2.Size = new System.Drawing.Size(237, 103);
+            this.pnlCard2.Size = new System.Drawing.Size(178, 84);
             this.pnlCard2.TabIndex = 1;
             // 
             // lblAvailable
@@ -448,8 +435,7 @@
             this.lblAvailable.AutoSize = true;
             this.lblAvailable.Font = new System.Drawing.Font("Tahoma", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblAvailable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(101)))), ((int)(((byte)(52)))));
-            this.lblAvailable.Location = new System.Drawing.Point(27, 49);
-            this.lblAvailable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAvailable.Location = new System.Drawing.Point(20, 40);
             this.lblAvailable.Name = "lblAvailable";
             this.lblAvailable.Size = new System.Drawing.Size(57, 39);
             this.lblAvailable.TabIndex = 2;
@@ -457,11 +443,10 @@
             // 
             // lblTitle2
             // 
-            this.lblTitle2.Font = new System.Drawing.Font("Prompt", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblTitle2.Location = new System.Drawing.Point(27, 18);
-            this.lblTitle2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTitle2.Location = new System.Drawing.Point(20, 15);
             this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(131, 23);
+            this.lblTitle2.Size = new System.Drawing.Size(98, 19);
             this.lblTitle2.TabIndex = 1;
             this.lblTitle2.Text = "ว่าง (Available)";
             // 
@@ -470,9 +455,8 @@
             this.pnlStripe2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
             this.pnlStripe2.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlStripe2.Location = new System.Drawing.Point(0, 0);
-            this.pnlStripe2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlStripe2.Name = "pnlStripe2";
-            this.pnlStripe2.Size = new System.Drawing.Size(7, 103);
+            this.pnlStripe2.Size = new System.Drawing.Size(5, 84);
             this.pnlStripe2.TabIndex = 0;
             // 
             // pnlCard1
@@ -482,10 +466,10 @@
             this.pnlCard1.Controls.Add(this.lblTitle1);
             this.pnlCard1.Controls.Add(this.pnlStripe1);
             this.pnlCard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCard1.Location = new System.Drawing.Point(11, 10);
-            this.pnlCard1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.pnlCard1.Location = new System.Drawing.Point(8, 8);
+            this.pnlCard1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.pnlCard1.Name = "pnlCard1";
-            this.pnlCard1.Size = new System.Drawing.Size(237, 103);
+            this.pnlCard1.Size = new System.Drawing.Size(178, 84);
             this.pnlCard1.TabIndex = 0;
             // 
             // lblTotal
@@ -493,8 +477,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Tahoma", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(222)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
-            this.lblTotal.Location = new System.Drawing.Point(27, 49);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Location = new System.Drawing.Point(20, 40);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(57, 39);
             this.lblTotal.TabIndex = 2;
@@ -502,11 +485,10 @@
             // 
             // lblTitle1
             // 
-            this.lblTitle1.Font = new System.Drawing.Font("Prompt", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblTitle1.Location = new System.Drawing.Point(27, 18);
-            this.lblTitle1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTitle1.Location = new System.Drawing.Point(20, 15);
             this.lblTitle1.Name = "lblTitle1";
-            this.lblTitle1.Size = new System.Drawing.Size(99, 23);
+            this.lblTitle1.Size = new System.Drawing.Size(74, 19);
             this.lblTitle1.TabIndex = 1;
             this.lblTitle1.Text = "ห้องทั้งหมด";
             // 
@@ -515,9 +497,8 @@
             this.pnlStripe1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(120)))), ((int)(((byte)(87)))));
             this.pnlStripe1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlStripe1.Location = new System.Drawing.Point(0, 0);
-            this.pnlStripe1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlStripe1.Name = "pnlStripe1";
-            this.pnlStripe1.Size = new System.Drawing.Size(7, 103);
+            this.pnlStripe1.Size = new System.Drawing.Size(5, 84);
             this.pnlStripe1.TabIndex = 0;
             // 
             // tlpMain
@@ -530,14 +511,13 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38F));
             this.tlpMain.Controls.Add(this.pnlBookings, 0, 0);
             this.tlpMain.Controls.Add(this.pnlRooms, 1, 0);
-            this.tlpMain.Location = new System.Drawing.Point(16, 148);
-            this.tlpMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpMain.Location = new System.Drawing.Point(12, 120);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.Padding = new System.Windows.Forms.Padding(11, 0, 11, 10);
+            this.tlpMain.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpMain.Size = new System.Drawing.Size(1012, 541);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.Size = new System.Drawing.Size(759, 440);
             this.tlpMain.TabIndex = 3;
             // 
             // pnlRooms
@@ -549,23 +529,23 @@
             this.pnlRooms.Controls.Add(this.btnNewBooking);
             this.pnlRooms.Controls.Add(this.lblRoomTitle);
             this.pnlRooms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRooms.Location = new System.Drawing.Point(635, 10);
-            this.pnlRooms.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.pnlRooms.Location = new System.Drawing.Point(476, 8);
+            this.pnlRooms.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.pnlRooms.Name = "pnlRooms";
-            this.pnlRooms.Size = new System.Drawing.Size(355, 511);
+            this.pnlRooms.Size = new System.Drawing.Size(267, 416);
             this.pnlRooms.TabIndex = 1;
             // 
             // ucDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 696);
+            this.ClientSize = new System.Drawing.Size(795, 566);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tlpMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ucDashboard";
             this.Text = "ucDashboard";
+            this.Load += new System.EventHandler(this.ucDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLegend.ResumeLayout(false);
             this.flowLegend.PerformLayout();

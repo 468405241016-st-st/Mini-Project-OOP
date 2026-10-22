@@ -47,12 +47,6 @@
             this.btnFilterReset = new System.Windows.Forms.Button();
             this.pnlBookingGrid = new System.Windows.Forms.Panel();
             this.dgvBookings = new System.Windows.Forms.DataGridView();
-            this.pnlFooterLine = new System.Windows.Forms.Panel();
-            this.pnlBookingFooter = new System.Windows.Forms.Panel();
-            this.btnCheckIn = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.btnCancelBooking = new System.Windows.Forms.Button();
-            this.lblTotalCount = new System.Windows.Forms.Label();
             this.colBkId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +55,12 @@
             this.colBkCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlFooterLine = new System.Windows.Forms.Panel();
+            this.pnlBookingFooter = new System.Windows.Forms.Panel();
+            this.btnCheckIn = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.btnCancelBooking = new System.Windows.Forms.Button();
+            this.lblTotalCount = new System.Windows.Forms.Label();
             this.pnlFilter.SuspendLayout();
             this.pnlBookingGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).BeginInit();
@@ -91,11 +91,11 @@
             // lblFilterStatus
             // 
             this.lblFilterStatus.AutoSize = true;
-            this.lblFilterStatus.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFilterStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFilterStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFilterStatus.Location = new System.Drawing.Point(16, 16);
             this.lblFilterStatus.Name = "lblFilterStatus";
-            this.lblFilterStatus.Size = new System.Drawing.Size(48, 21);
+            this.lblFilterStatus.Size = new System.Drawing.Size(44, 17);
             this.lblFilterStatus.TabIndex = 0;
             this.lblFilterStatus.Text = "สถานะ";
             // 
@@ -121,11 +121,11 @@
             // lblFilterFrom
             // 
             this.lblFilterFrom.AutoSize = true;
-            this.lblFilterFrom.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFilterFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFilterFrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFilterFrom.Location = new System.Drawing.Point(188, 16);
             this.lblFilterFrom.Name = "lblFilterFrom";
-            this.lblFilterFrom.Size = new System.Drawing.Size(84, 21);
+            this.lblFilterFrom.Size = new System.Drawing.Size(74, 17);
             this.lblFilterFrom.TabIndex = 3;
             this.lblFilterFrom.Text = "เช็คอินตั้งแต่";
             // 
@@ -142,11 +142,11 @@
             // lblFilterTo
             // 
             this.lblFilterTo.AutoSize = true;
-            this.lblFilterTo.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFilterTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFilterTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFilterTo.Location = new System.Drawing.Point(340, 16);
             this.lblFilterTo.Name = "lblFilterTo";
-            this.lblFilterTo.Size = new System.Drawing.Size(54, 21);
+            this.lblFilterTo.Size = new System.Drawing.Size(46, 17);
             this.lblFilterTo.TabIndex = 5;
             this.lblFilterTo.Text = "ถึงวันที่";
             // 
@@ -163,11 +163,11 @@
             // lblFilterKeyword
             // 
             this.lblFilterKeyword.AutoSize = true;
-            this.lblFilterKeyword.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblFilterKeyword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblFilterKeyword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
             this.lblFilterKeyword.Location = new System.Drawing.Point(492, 16);
             this.lblFilterKeyword.Name = "lblFilterKeyword";
-            this.lblFilterKeyword.Size = new System.Drawing.Size(125, 21);
+            this.lblFilterKeyword.Size = new System.Drawing.Size(105, 17);
             this.lblFilterKeyword.TabIndex = 7;
             this.lblFilterKeyword.Text = "ชื่อลูกค้า / เลขห้อง";
             // 
@@ -191,7 +191,7 @@
             this.btnFilterSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilterSearch.FlatAppearance.BorderSize = 0;
             this.btnFilterSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterSearch.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnFilterSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnFilterSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnFilterSearch.Location = new System.Drawing.Point(798, 40);
             this.btnFilterSearch.Name = "btnFilterSearch";
@@ -208,7 +208,7 @@
             this.btnFilterReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilterReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnFilterReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterReset.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnFilterReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnFilterReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
             this.btnFilterReset.Location = new System.Drawing.Point(906, 40);
             this.btnFilterReset.Name = "btnFilterReset";
@@ -290,91 +290,6 @@
             this.dgvBookings.Size = new System.Drawing.Size(1018, 462);
             this.dgvBookings.TabIndex = 0;
             // 
-            // pnlFooterLine
-            // 
-            this.pnlFooterLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFooterLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(224)))));
-            this.pnlFooterLine.Location = new System.Drawing.Point(0, 462);
-            this.pnlFooterLine.Name = "pnlFooterLine";
-            this.pnlFooterLine.Size = new System.Drawing.Size(1018, 1);
-            this.pnlFooterLine.TabIndex = 1;
-            // 
-            // pnlBookingFooter
-            // 
-            this.pnlBookingFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlBookingFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pnlBookingFooter.Controls.Add(this.btnCheckIn);
-            this.pnlBookingFooter.Controls.Add(this.btnCheckOut);
-            this.pnlBookingFooter.Controls.Add(this.btnCancelBooking);
-            this.pnlBookingFooter.Controls.Add(this.lblTotalCount);
-            this.pnlBookingFooter.Location = new System.Drawing.Point(0, 463);
-            this.pnlBookingFooter.Name = "pnlBookingFooter";
-            this.pnlBookingFooter.Size = new System.Drawing.Size(1018, 56);
-            this.pnlBookingFooter.TabIndex = 2;
-            // 
-            // btnCheckIn
-            // 
-            this.btnCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
-            this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckIn.FlatAppearance.BorderSize = 0;
-            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckIn.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCheckIn.Location = new System.Drawing.Point(16, 8);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(140, 40);
-            this.btnCheckIn.TabIndex = 15;
-            this.btnCheckIn.Text = "เช็คอิน";
-            this.btnCheckIn.UseVisualStyleBackColor = false;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckOut.Enabled = false;
-            this.btnCheckOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
-            this.btnCheckOut.Location = new System.Drawing.Point(164, 8);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(140, 40);
-            this.btnCheckOut.TabIndex = 16;
-            this.btnCheckOut.Text = "เช็คเอาท์";
-            this.btnCheckOut.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelBooking
-            // 
-            this.btnCancelBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnCancelBooking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelBooking.FlatAppearance.BorderSize = 0;
-            this.btnCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelBooking.Font = new System.Drawing.Font("Prompt", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnCancelBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCancelBooking.Location = new System.Drawing.Point(312, 8);
-            this.btnCancelBooking.Name = "btnCancelBooking";
-            this.btnCancelBooking.Size = new System.Drawing.Size(160, 40);
-            this.btnCancelBooking.TabIndex = 17;
-            this.btnCancelBooking.Text = "ยกเลิกการจอง";
-            this.btnCancelBooking.UseVisualStyleBackColor = false;
-            // 
-            // lblTotalCount
-            // 
-            this.lblTotalCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalCount.Font = new System.Drawing.Font("Prompt", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblTotalCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
-            this.lblTotalCount.Location = new System.Drawing.Point(802, 16);
-            this.lblTotalCount.Name = "lblTotalCount";
-            this.lblTotalCount.Size = new System.Drawing.Size(200, 24);
-            this.lblTotalCount.TabIndex = 18;
-            this.lblTotalCount.Text = "รวม 0 รายการ";
-            this.lblTotalCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // colBkId
             // 
             this.colBkId.DataPropertyName = "Id";
@@ -447,6 +362,91 @@
             this.colBkStatus.ReadOnly = true;
             this.colBkStatus.Width = 120;
             // 
+            // pnlFooterLine
+            // 
+            this.pnlFooterLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFooterLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(224)))));
+            this.pnlFooterLine.Location = new System.Drawing.Point(0, 462);
+            this.pnlFooterLine.Name = "pnlFooterLine";
+            this.pnlFooterLine.Size = new System.Drawing.Size(1018, 1);
+            this.pnlFooterLine.TabIndex = 1;
+            // 
+            // pnlBookingFooter
+            // 
+            this.pnlBookingFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlBookingFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlBookingFooter.Controls.Add(this.btnCheckIn);
+            this.pnlBookingFooter.Controls.Add(this.btnCheckOut);
+            this.pnlBookingFooter.Controls.Add(this.btnCancelBooking);
+            this.pnlBookingFooter.Controls.Add(this.lblTotalCount);
+            this.pnlBookingFooter.Location = new System.Drawing.Point(0, 463);
+            this.pnlBookingFooter.Name = "pnlBookingFooter";
+            this.pnlBookingFooter.Size = new System.Drawing.Size(1018, 56);
+            this.pnlBookingFooter.TabIndex = 2;
+            // 
+            // btnCheckIn
+            // 
+            this.btnCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
+            this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckIn.FlatAppearance.BorderSize = 0;
+            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCheckIn.Location = new System.Drawing.Point(16, 8);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(140, 40);
+            this.btnCheckIn.TabIndex = 15;
+            this.btnCheckIn.Text = "เช็คอิน";
+            this.btnCheckIn.UseVisualStyleBackColor = false;
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckOut.Enabled = false;
+            this.btnCheckOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
+            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(122)))), ((int)(((byte)(115)))));
+            this.btnCheckOut.Location = new System.Drawing.Point(164, 8);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(140, 40);
+            this.btnCheckOut.TabIndex = 16;
+            this.btnCheckOut.Text = "เช็คเอาท์";
+            this.btnCheckOut.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelBooking
+            // 
+            this.btnCancelBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancelBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnCancelBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelBooking.FlatAppearance.BorderSize = 0;
+            this.btnCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCancelBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCancelBooking.Location = new System.Drawing.Point(312, 8);
+            this.btnCancelBooking.Name = "btnCancelBooking";
+            this.btnCancelBooking.Size = new System.Drawing.Size(160, 40);
+            this.btnCancelBooking.TabIndex = 17;
+            this.btnCancelBooking.Text = "ยกเลิกการจอง";
+            this.btnCancelBooking.UseVisualStyleBackColor = false;
+            // 
+            // lblTotalCount
+            // 
+            this.lblTotalCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblTotalCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(108)))));
+            this.lblTotalCount.Location = new System.Drawing.Point(802, 16);
+            this.lblTotalCount.Name = "lblTotalCount";
+            this.lblTotalCount.Size = new System.Drawing.Size(200, 24);
+            this.lblTotalCount.TabIndex = 18;
+            this.lblTotalCount.Text = "รวม 0 รายการ";
+            this.lblTotalCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ucBookingList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -456,6 +456,7 @@
             this.Controls.Add(this.pnlBookingGrid);
             this.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Name = "ucBookingList";
+            this.Load += new System.EventHandler(this.ucBookingList_Load);
             this.pnlFilter.ResumeLayout(false);
             this.pnlFilter.PerformLayout();
             this.pnlBookingGrid.ResumeLayout(false);

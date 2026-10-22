@@ -65,6 +65,7 @@ namespace Mini_Project_OOP.Forms
 
         // cache ชื่อสถานะ -> Id (ตารางสถานะเล็กและแทบไม่เปลี่ยน โหลดครั้งเดียวพอ)
         private Dictionary<string, int> statusIds;
+        private AppData _data;
 
         // ------------------------------------------------------------------
         // Constructor
@@ -75,6 +76,7 @@ namespace Mini_Project_OOP.Forms
 
             // รับ AppData ตัวเดียวกันจากฟอร์มหลัก (ไม่สร้างเองแล้ว)
             if (data == null) throw new ArgumentNullException(nameof(data));
+            _data = data;
             bookingRepo = data.Bookings;
             customerRepo = data.Customers;
             statusRepo = data.BookingStatuses;
@@ -258,6 +260,8 @@ namespace Mini_Project_OOP.Forms
             booking.BookingStatusId = toId.Value;
             await bookingRepo.UpdateAsync(booking);
 
+            await Mini_Project_OOP.Services.RoomStatusSync.SyncAsync(_data);   // <-- เพิ่มบรรทัดนี้
+
             await ApplyFilterAsync();
             SelectRowById(selected.Id);
         }
@@ -348,6 +352,11 @@ namespace Mini_Project_OOP.Forms
             dgvBookings.DataSource = null;
             lblTotalCount.Text = "รวม 0 รายการ";
             UpdateActionButtons();
+        }
+
+        private void ucBookingList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

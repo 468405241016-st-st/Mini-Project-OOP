@@ -703,6 +703,7 @@
             this.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.Name = "ucBooking";
+            this.Load += new System.EventHandler(this.ucBooking_Load);
             this.pnlCustomer.ResumeLayout(false);
             this.pnlCustomer.PerformLayout();
             this.pnlAvailableRooms.ResumeLayout(false);

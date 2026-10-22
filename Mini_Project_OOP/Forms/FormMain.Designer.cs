@@ -367,6 +367,7 @@
             this.pnlHost.Name = "pnlHost";
             this.pnlHost.Size = new System.Drawing.Size(1060, 696);
             this.pnlHost.TabIndex = 2;
+            this.pnlHost.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHost_Paint);
             // 
             // timer1
             // 
