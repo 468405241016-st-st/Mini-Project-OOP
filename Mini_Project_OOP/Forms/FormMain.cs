@@ -153,14 +153,14 @@ namespace Mini_Project_OOP.Forms
         private void btnNavBooking_Click(object sender, EventArgs e)
         {
             SelectNavItem(btnNavBooking);
-            OpenChildForm(new ucBooking());
+            OpenChildForm(new ucBooking(_appData));
             lblPageTitle.Text = btnNavBooking.Text;
         }
 
         private void btnNavRooms_Click(object sender, EventArgs e)
         {
             SelectNavItem(btnNavRooms);
-            OpenChildForm(new ucRooms());
+            OpenChildForm(new ucRooms(_appData));
             lblPageTitle.Text = btnNavRooms.Text;
         }
 
