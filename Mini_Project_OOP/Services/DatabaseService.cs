@@ -95,11 +95,21 @@ namespace Mini_Project_OOP.Services
 
         private void AddParameters(OleDbCommand cmd, Dictionary<string, object> parameters)
         {
-            if (parameters != null)
+            if (parameters == null) return;
+
+            foreach (var param in parameters)
             {
-                foreach (var param in parameters)
+                object value = param.Value ?? DBNull.Value;
+
+                if (value is DateTime dt)
                 {
-                    cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                    // ตัดมิลลิวินาทีทิ้ง และบอกชนิดเป็น Date ให้ Access
+                    var p = cmd.Parameters.Add(param.Key, OleDbType.Date);
+                    p.Value = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue(param.Key, value);
                 }
             }
         }

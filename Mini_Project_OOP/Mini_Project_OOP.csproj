@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\AppTheme.cs" />
+    <Compile Include="Model\EntityMap.cs" />
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,18 +107,14 @@
       <DependentUpon>ucRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\ThemeExtensions.cs" />
+    <Compile Include="Model\Models.cs" />
     <Compile Include="Model\Filter.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\IRepository.cs" />
-    <Compile Include="Model\tbl_Bookings.cs" />
-    <Compile Include="Model\tbl_BookingStatus.cs" />
-    <Compile Include="Model\tbl_Customers.cs" />
-    <Compile Include="Model\tbl_Rooms.cs" />
-    <Compile Include="Model\tbl_RoomStatus.cs" />
-    <Compile Include="Model\tbl_RoomTypes.cs" />
     <Compile Include="Model\tbl_Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AppData.cs" />
     <Compile Include="Services\AppDb.cs" />
     <Compile Include="Services\CurrentUser.cs" />
     <Compile Include="Services\DatabaseService.cs" />
@@ -166,9 +163,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mini_Project_Database.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Mini_Project_Database.accdb" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

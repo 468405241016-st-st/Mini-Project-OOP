@@ -14,16 +14,10 @@ namespace Mini_Project_OOP.Forms
 {
     public partial class ucBooking : Form
     {
-        private readonly DatabaseService _dbService;
-        private readonly IRepository<tbl_Bookings> _booking;
         public ucBooking()
         {
             InitializeComponent();
 
-            string dbPath = Application.StartupPath + @"\Mini_Project_Database.accdb";
-            _dbService = new DatabaseService(dbPath);
-
-            _booking = new Repository<tbl_Bookings> (_dbService);
 
         }
     }

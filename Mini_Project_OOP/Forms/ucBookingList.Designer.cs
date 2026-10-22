@@ -30,11 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlFilter = new System.Windows.Forms.Panel();
             this.lblFilterStatus = new System.Windows.Forms.Label();
             this.cboFilterStatus = new System.Windows.Forms.ComboBox();
@@ -57,12 +56,11 @@
             this.colBkId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBkType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Roomtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkCheckIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBkStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBkCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFilter.SuspendLayout();
             this.pnlBookingGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).BeginInit();
@@ -266,21 +264,20 @@
             this.colBkId,
             this.colBkCustomer,
             this.colBkRoom,
-            this.colBkType,
+            this.Roomtype,
             this.colBkCheckIn,
             this.colBkCheckOut,
             this.colBkTotal,
-            this.colBkStatus,
-            this.colBkCreated});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(239)))), ((int)(((byte)(234)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBookings.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colBkStatus});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(239)))), ((int)(((byte)(234)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBookings.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBookings.EnableHeadersVisualStyles = false;
             this.dgvBookings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(238)))));
             this.dgvBookings.Location = new System.Drawing.Point(0, 0);
@@ -388,7 +385,7 @@
             // 
             // colBkCustomer
             // 
-            this.colBkCustomer.DataPropertyName = "CustomerId";
+            this.colBkCustomer.DataPropertyName = "Customer";
             this.colBkCustomer.HeaderText = "ลูกค้า";
             this.colBkCustomer.Name = "colBkCustomer";
             this.colBkCustomer.ReadOnly = true;
@@ -396,19 +393,18 @@
             // 
             // colBkRoom
             // 
-            this.colBkRoom.DataPropertyName = "RoomId";
+            this.colBkRoom.DataPropertyName = "RoomNumber";
             this.colBkRoom.HeaderText = "ห้อง";
             this.colBkRoom.Name = "colBkRoom";
             this.colBkRoom.ReadOnly = true;
             this.colBkRoom.Width = 80;
             // 
-            // colBkType
+            // Roomtype
             // 
-            this.colBkType.DataPropertyName = "BookingStatusId";
-            this.colBkType.HeaderText = "ประเภท";
-            this.colBkType.Name = "colBkType";
-            this.colBkType.ReadOnly = true;
-            this.colBkType.Width = 110;
+            this.Roomtype.DataPropertyName = "Roomtype";
+            this.Roomtype.HeaderText = "ประเภท";
+            this.Roomtype.Name = "Roomtype";
+            this.Roomtype.ReadOnly = true;
             // 
             // colBkCheckIn
             // 
@@ -445,22 +441,11 @@
             // 
             // colBkStatus
             // 
+            this.colBkStatus.DataPropertyName = "Status";
             this.colBkStatus.HeaderText = "สถานะ";
             this.colBkStatus.Name = "colBkStatus";
             this.colBkStatus.ReadOnly = true;
             this.colBkStatus.Width = 120;
-            // 
-            // colBkCreated
-            // 
-            this.colBkCreated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBkCreated.DataPropertyName = "CreatedAt";
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle6.NullValue = null;
-            this.colBkCreated.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colBkCreated.HeaderText = "สร้างเมื่อ";
-            this.colBkCreated.MinimumWidth = 60;
-            this.colBkCreated.Name = "colBkCreated";
-            this.colBkCreated.ReadOnly = true;
             // 
             // ucBookingList
             // 
@@ -494,21 +479,20 @@
         private System.Windows.Forms.Button btnFilterSearch;
         private System.Windows.Forms.Button btnFilterReset;
         private System.Windows.Forms.Panel pnlBookingGrid;
-        private System.Windows.Forms.DataGridView dgvBookings;
         private System.Windows.Forms.Panel pnlFooterLine;
         private System.Windows.Forms.Panel pnlBookingFooter;
         private System.Windows.Forms.Button btnCheckIn;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnCancelBooking;
         private System.Windows.Forms.Label lblTotalCount;
+        private System.Windows.Forms.DataGridView dgvBookings;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBkId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBkCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBkRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBkType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Roomtype;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBkCheckIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBkCheckOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBkTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBkStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBkCreated;
     }
 }

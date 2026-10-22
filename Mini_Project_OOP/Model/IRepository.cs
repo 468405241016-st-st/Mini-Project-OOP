@@ -8,8 +8,12 @@ namespace Mini_Project_OOP.Model
 {
     public interface IRepository<T> where T : class
     {
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync(int id);
+        // includes รับ string ได้ตรงๆ เช่น "Customer", "Orders.Items" หรือ new IncludeSpec("Orders", filter)
+        Task<IEnumerable<T>> GetAllAsync(params IncludeSpec[] includes);
+        Task<IEnumerable<T>> FindAsync(Filter where, params IncludeSpec[] includes);
+        Task<T> FirstOrDefaultAsync(Filter where, params IncludeSpec[] includes);
+        Task<T> GetByIdAsync(int id, params IncludeSpec[] includes);
+        Task<int> CountAsync(Filter where = null);
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(int id);
