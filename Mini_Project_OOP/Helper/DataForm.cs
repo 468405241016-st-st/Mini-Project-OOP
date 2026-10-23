@@ -9,7 +9,6 @@ namespace Mini_Project_OOP.Helper
     /// ฐานของหน้าจอที่คุยกับฐานข้อมูล: กันกดซ้ำระหว่างรอ, โชว์ cursor รอ,
     /// จับ error แล้วแสดงเป็นข้อความ และมี dialog มาตรฐานที่ทุกหน้าใช้ร่วมกัน
     /// </summary>
-    [DesignerCategory("Code")]
     public class DataForm : Form
     {
         /// <summary>true ระหว่างที่กำลังคุยกับฐานข้อมูล</summary>

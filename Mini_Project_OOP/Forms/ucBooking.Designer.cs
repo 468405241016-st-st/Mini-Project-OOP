@@ -1,4 +1,6 @@
-﻿namespace Mini_Project_OOP.Forms
+﻿using System.ComponentModel;
+
+namespace Mini_Project_OOP.Forms
 {
     partial class ucBooking
     {

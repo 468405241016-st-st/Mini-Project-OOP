@@ -11,7 +11,7 @@ namespace Mini_Project_OOP.Forms
     public partial class FormMain : Form
     {
         // ไฟล์ฐานข้อมูลอยู่ที่โฟลเดอร์โปรเจกต์ (ขึ้นจาก bin\Debug สองชั้น)
-        private const string DatabaseRelativePath = @"..\..\" + AppDb.DatabaseFileName;
+        public string DatabaseRelativePath = AppDb.DbPath;
         private const int IndicatorWidth = 3;
 
         private readonly AppData _appData;

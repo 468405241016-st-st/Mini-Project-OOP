@@ -12,20 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <UpdateUrl>http://localhost/Mini_Project_OOP/</UpdateUrl>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -48,6 +51,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9F1E1EE0F782FBF836B1535BFC8BAD99602C7D0A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Mini_Project_OOP_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
@@ -67,7 +82,9 @@
     <Compile Include="Constants\AppTheme.cs" />
     <Compile Include="Constants\StatusNames.cs" />
     <Compile Include="Model\EntityMap.cs" />
-    <Compile Include="Helper\DataForm.cs" />
+    <Compile Include="Helper\DataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,7 +97,9 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucBooking.cs" />
+    <Compile Include="Forms\ucBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ucBooking.Designer.cs">
       <DependentUpon>ucBooking.cs</DependentUpon>
     </Compile>
@@ -90,7 +109,9 @@
     <Compile Include="Forms\ucBookingList.Designer.cs">
       <DependentUpon>ucBookingList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucCustomers.cs" />
+    <Compile Include="Forms\ucCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ucCustomers.Designer.cs">
       <DependentUpon>ucCustomers.cs</DependentUpon>
     </Compile>
@@ -100,7 +121,9 @@
     <Compile Include="Forms\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucRooms.cs" />
+    <Compile Include="Forms\ucRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ucRooms.Designer.cs">
       <DependentUpon>ucRooms.cs</DependentUpon>
     </Compile>
@@ -145,6 +168,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Mini_Project_OOP_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -164,7 +188,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mini_Project_Database.accdb" />
+    <Content Include="Mini_Project_Database.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -178,5 +204,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
